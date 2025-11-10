@@ -1,0 +1,13 @@
+# 全局配置
+timeout: 10
+retry: 1
+log_level: INFO
+report_title: "API自动化测试报告"
+
+# 环境选择（dev/test/prod）
+active_env: dev
+
+url: "http://dev-api.example.com"
+#pre_base_url: "http://test-api.example.com"
+username: "test123"
+password: "123456"
