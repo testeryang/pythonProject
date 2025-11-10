@@ -15,7 +15,7 @@ suite.addTest(Login("test_login"))
 
 one_runner = TestRunner(suite,
                         filename=nowtime()+"test.html",
-                        report_dir=r"C:\Users\Administrator\PycharmProjects\PythonProject\reports",
+                        report_dir=r"reports",
                         title="演示用例运行产生的测试报告",
                         tester="jack",
                         desc="第一个报告",
