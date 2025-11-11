@@ -4,7 +4,7 @@ import requests  # 需安装：pip install requests
 from tests.BlockExprole import BaseData
 
 # 用户接口测试类
-class TestApi(BaseData):
+class get_LatestBlocks(BaseData):
     # 测试用例1：获取存在的用户信息（正常场景）
     def test_get_LatestBlocks(self):
         url = self.base_url+"demo/block/latest?page=1&page_size=1"

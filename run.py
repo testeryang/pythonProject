@@ -4,7 +4,7 @@ from datetime import datetime
 
 from unittestreport import TestRunner
 
-from tests.BlockExprole.GetLatestBlocks import TestApi
+from tests.BlockExprole.GetLatestBlocks import get_LatestBlocks
 from tests.login import Login
 
 def nowtime():
@@ -14,10 +14,11 @@ def nowtime():
 
 suite = unittest.TestSuite()
 # suite.addTest(Login("test_login"))
-suite.addTest(TestApi('test_get_LatestBlocks'))
+suite.addTest(get_LatestBlocks('test_get_LatestBlocks'))
+
 
 one_runner = TestRunner(suite,
-                        filename=nowtime()+"test.html",
+                        filename=nowtime()+"测试报告.html",
                         report_dir=r"reports",
                         title="测试报告",
                         tester="jack",

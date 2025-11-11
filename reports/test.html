@@ -142,7 +142,7 @@
 
 <!--报告标题-->
 <div class="title text-success">
-    <div class="shadow-lg p-3 mb-5 bg-white rounded">测试报告</div>
+    <div class="shadow-lg p-3 mb-5 bg-white rounded">演示用例运行产生的测试报告</div>
 </div>
 
 <!--汇总信息-->
@@ -156,11 +156,11 @@
             </li>
             <li class="list-group-item">
                 <button type="button" class="btn btn-success">开始时间</button>
-                <span class="text-dark">2025-11-11 17:08:27</span>
+                <span class="text-dark">2025-11-10 17:11:12</span>
             </li>
             <li class="list-group-item">
                 <button type="button" class="btn btn-success">执行时间</button>
-                <span class="text-dark">0.68 S</span>
+                <span class="text-dark">0.00 S</span>
             </li>
             <li class="list-group-item">
                 <button type="button" class="btn btn-success">用例总数</button>
@@ -225,7 +225,7 @@
                     <select id="testClass">
                         <option>所有</option>
                         
-                            <option>TestApi</option>
+                            <option>Login</option>
                         
                     </select>
 
@@ -253,10 +253,10 @@
             
                 <tr>
                     <td>1</td>
-                    <td class="TestApi">TestApi</td>
-                    <td>test_get_LatestBlocks</td>
-                    <td>None</td>
-                    <td>0.68s</td>
+                    <td class="Login">Login</td>
+                    <td>test_login</td>
+                    <td>用户登录接口</td>
+                    <td>0.000458s</td>
                     
                         <td class="text-success">成功</td>
                     
@@ -270,9 +270,8 @@
                     <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
                         
 
-                            <pre>http://165.154.1.151:8000/demo/block/latest?page=1&page_size=1
-case完成
-test_get_LatestBlocks (tests.BlockExprole.GetLatestBlocks.TestApi.test_get_LatestBlocks)执行——>【通过】
+                            <pre>{'username': 'test123', 'password': '123456'}
+test_login (tests.login.Login.test_login)执行——>【通过】
 </pre>
                         
                         
