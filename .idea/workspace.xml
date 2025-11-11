@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a7c7862-dce4-48dd-a517-45be7492e89b" name="更改" comment="1">
-      <change afterPath="$PROJECT_DIR$/tests/BlockExprole/GetLatestBlocks.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/BlockExprole/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/2025-11-10_17_16test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/history.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    <list default="true" id="0a7c7862-dce4-48dd-a517-45be7492e89b" name="更改" comment="添加了apache服务器获取测试报告的内容">
       <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -215,7 +207,23 @@
       <option name="project" value="LOCAL" />
       <updated>1762774905305</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="添加了apache服务器获取测试报告的内容">
+      <option name="closed" value="true" />
+      <created>1762855390363</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1762855390363</updated>
+    </task>
+    <task id="LOCAL-00005" summary="添加了apache服务器获取测试报告的内容">
+      <option name="closed" value="true" />
+      <created>1762855438924</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1762855438925</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -243,6 +251,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1" />
-    <option name="LAST_COMMIT_MESSAGE" value="1" />
+    <MESSAGE value="添加了apache服务器获取测试报告的内容" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加了apache服务器获取测试报告的内容" />
   </component>
 </project>

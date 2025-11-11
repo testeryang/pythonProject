@@ -9,7 +9,7 @@ from tests.login import Login
 
 def nowtime():
     current_time = datetime.now()
-    formatted_time = current_time.strftime("%Y-%m-%d %H.%M")
+    formatted_time = current_time.strftime("%Y-%m-%d_%H.%M")
     return formatted_time
 
 suite = unittest.TestSuite()
