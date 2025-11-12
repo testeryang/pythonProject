@@ -1,0 +1,10 @@
+2025-11-12 14:41:24 - DEBUG - logger.<module>:90 - 这是DEBUG级别日志（仅文件输出）
+2025-11-12 14:41:24 - INFO - logger.<module>:91 - 这是INFO级别日志（控制台+文件）
+2025-11-12 14:41:24 - WARNING - logger.<module>:92 - 这是WARNING级别日志
+2025-11-12 14:41:24 - ERROR - logger.<module>:93 - 这是ERROR级别日志（同时写入错误日志文件）
+2025-11-12 14:41:24 - CRITICAL - logger.<module>:94 - 这是CRITICAL级别日志
+2025-11-12 14:41:54 - DEBUG - logger.<module>:90 - 这是DEBUG级别日志（仅文件输出）
+2025-11-12 14:41:54 - INFO - logger.<module>:91 - 这是INFO级别日志（控制台+文件）
+2025-11-12 14:41:54 - WARNING - logger.<module>:92 - 这是WARNING级别日志
+2025-11-12 14:41:54 - ERROR - logger.<module>:93 - 这是ERROR级别日志（同时写入错误日志文件）
+2025-11-12 14:41:54 - CRITICAL - logger.<module>:94 - 这是CRITICAL级别日志

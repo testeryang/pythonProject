@@ -5,14 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a7c7862-dce4-48dd-a517-45be7492e89b" name="更改" comment="添加了apache服务器获取测试报告的内容">
-      <change afterPath="$PROJECT_DIR$/reports/2025-11-10_17_16test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reports/2025-11-10_19_41test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reports/2025-11-11 17-07test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reports/2025-11-11_17_03test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reports/test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/BlockExprole/GetLatestTransactions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/BlockExprole/GetTransactionbyHash.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/2025-11-11 17.08test.html" beforeDir="false" afterPath="$PROJECT_DIR$/reports/2025-11-11 17.08test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/test_framework_20251110.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/test_framework_20251111.log" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/GetAccountInfo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/test_framework_error_20251110.log" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/GetBlockbyHeight.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/test_framework_error_20251111.log" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/GetLatestBlockHeight.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reports/history.json" beforeDir="false" afterPath="$PROJECT_DIR$/reports/history.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/BlockExprole/GetLatestBlocks.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/GetLatestBlocks.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/BlockExprole/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/__init__.py" afterDir="false" />
@@ -48,6 +50,9 @@
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="355yoxmrUdiMqksPTk9sgKJmpLf" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -55,11 +60,19 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python 测试.Python 测试 (GetLatestBlockHeight.py 内).executor": "Run",
     "Python 测试.Python 测试 (login.py 内).executor": "Run",
     "Python 测试.Python 测试 (runner.py 内).executor": "Run",
     "Python 测试.runner.test_login 的 Python 测试.executor": "Run",
     "Python 测试.runner.test_login_success 的 Python 测试.executor": "Run",
+    "Python 测试.tests.BlockExprole.GetAccountInfo.GetAccountInfo.test_GetAccountInfo 的 Python 测试.executor": "Run",
+    "Python 测试.tests.BlockExprole.GetBlockbyHeight.get_BlockbyHeight.test_get_BlockbyHeight 的 Python 测试.executor": "Run",
+    "Python 测试.tests.BlockExprole.GetBlockbyHeight.get_BlockbyHeight.test_get_blockbyheight 的 Python 测试.executor": "Run",
+    "Python 测试.tests.BlockExprole.GetLatestBlockHeight.GetLatestBlockHeight.test_getLatestBlockHeight 的 Python 测试.executor": "Run",
     "Python 测试.tests.BlockExprole.GetLatestBlocks.TestUserApi.test_get_existing_user 的 Python 测试.executor": "Run",
+    "Python 测试.tests.BlockExprole.GetLatestBlocks.get_LatestBlocks.test_get_LatestBlocks 的 Python 测试.executor": "Run",
+    "Python 测试.tests.BlockExprole.GetLatestTransactions.GetLatestTransactions.test_GetLatestTransactions 的 Python 测试.executor": "Run",
+    "Python 测试.tests.BlockExprole.GetTransactionbyHash.GetTransactionbyHash.test_GetTransactionbyHash 的 Python 测试.executor": "Run",
     "Python 测试.tests.login.test_login 的 Python 测试.executor": "Run",
     "Python.config.executor": "Run",
     "Python.http_client.executor": "Run",
@@ -70,7 +83,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
-    "settings.editor.selected.configurable": "project.propVCSSupport.CommitDialog"
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -78,8 +91,8 @@
       <recent name="C:\Users\Administrator\PycharmProjects\PythonProject\tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.run">
-    <configuration name="login" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python 测试.tests.BlockExprole.GetAccountInfo.GetAccountInfo.test_GetAccountInfo 的 Python 测试">
+    <configuration name="logger" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PythonProject" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -88,11 +101,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/core" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/login.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/core/logger.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -101,29 +114,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="PythonProject" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="run.test_login 的 Python 测试" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="tests.BlockExprole.GetAccountInfo.GetAccountInfo.test_GetAccountInfo 的 Python 测试" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="PythonProject" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -134,11 +125,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;run.test_login&quot;" />
+      <option name="_new_target" value="&quot;tests.BlockExprole.GetAccountInfo.GetAccountInfo.test_GetAccountInfo&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="tests.BlockExprole.GetLatestBlocks.TestUserApi.test_get_existing_user 的 Python 测试" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="tests.BlockExprole.GetLatestBlocks.get_LatestBlocks.test_get_LatestBlocks 的 Python 测试" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="PythonProject" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -149,11 +140,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.BlockExprole.GetLatestBlocks.TestUserApi.test_get_existing_user&quot;" />
+      <option name="_new_target" value="&quot;tests.BlockExprole.GetLatestBlocks.get_LatestBlocks.test_get_LatestBlocks&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="tests.login.test_login 的 Python 测试" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="tests.BlockExprole.GetLatestTransactions.GetLatestTransactions.test_GetLatestTransactions 的 Python 测试" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="PythonProject" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -164,17 +155,32 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.login.test_login&quot;" />
+      <option name="_new_target" value="&quot;tests.BlockExprole.GetLatestTransactions.GetLatestTransactions.test_GetLatestTransactions&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tests.BlockExprole.GetTransactionbyHash.GetTransactionbyHash.test_GetTransactionbyHash 的 Python 测试" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="PythonProject" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.BlockExprole.GetTransactionbyHash.GetTransactionbyHash.test_GetTransactionbyHash&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.run" />
-        <item itemvalue="Python 测试.tests.BlockExprole.GetLatestBlocks.TestUserApi.test_get_existing_user 的 Python 测试" />
-        <item itemvalue="Python 测试.run.test_login 的 Python 测试" />
-        <item itemvalue="Python 测试.tests.login.test_login 的 Python 测试" />
-        <item itemvalue="Python.login" />
+        <item itemvalue="Python 测试.tests.BlockExprole.GetAccountInfo.GetAccountInfo.test_GetAccountInfo 的 Python 测试" />
+        <item itemvalue="Python 测试.tests.BlockExprole.GetTransactionbyHash.GetTransactionbyHash.test_GetTransactionbyHash 的 Python 测试" />
+        <item itemvalue="Python 测试.tests.BlockExprole.GetLatestTransactions.GetLatestTransactions.test_GetLatestTransactions 的 Python 测试" />
+        <item itemvalue="Python.logger" />
+        <item itemvalue="Python 测试.tests.BlockExprole.GetLatestBlocks.get_LatestBlocks.test_get_LatestBlocks 的 Python 测试" />
       </list>
     </recent_temporary>
   </component>
@@ -241,7 +247,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762855912043</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="添加了apache服务器获取测试报告的内容">
+      <option name="closed" value="true" />
+      <created>1762861099511</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1762861099511</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
