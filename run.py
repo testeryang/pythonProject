@@ -4,7 +4,14 @@ from datetime import datetime
 
 from unittestreport import TestRunner
 
+from tests.BlockExprole.GetAccountBalances import GetAccountBalances
+from tests.BlockExprole.GetAccountInfo import GetAccountInfo
+from tests.BlockExprole.GetAccountTransactions import GetAccountTransactions
+from tests.BlockExprole.GetBlockbyHeight import get_BlockbyHeight
 from tests.BlockExprole.GetLatestBlocks import get_LatestBlocks
+from tests.BlockExprole.GetLatestTransactions import GetLatestTransactions
+from tests.BlockExprole.GetTransactionbyHash import GetTransactionbyHash
+
 
 def nowtime():
     current_time = datetime.now()
@@ -12,9 +19,14 @@ def nowtime():
     return formatted_time
 
 suite = unittest.TestSuite()
-# suite.addTest(Login("test_login"))
 suite.addTest(get_LatestBlocks('test_get_LatestBlocks'))
-print(suite.__str__())
+suite.addTest(GetAccountBalances('test_GetAccountBalances'))
+suite.addTest(GetAccountInfo('test_GetAccountInfo'))
+suite.addTest(GetAccountTransactions('test_GetAccountTransactions'))
+suite.addTest(get_BlockbyHeight('test_getblockbyheight'))
+suite.addTest(get_LatestBlocks('test_getLatestBlocks'))
+suite.addTest(GetLatestTransactions('test_GetLatestTransactions'))
+suite.addTest(GetTransactionbyHash('test_GetTransactionbyHash'))
 
 one_runner = TestRunner(suite,
                         filename=nowtime()+"测试报告.html",

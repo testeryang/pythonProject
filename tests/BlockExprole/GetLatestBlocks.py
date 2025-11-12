@@ -6,7 +6,7 @@ from tests.BlockExprole import BaseData
 # 用户接口测试类
 class get_LatestBlocks(BaseData):
     # 测试用例1：获取存在的用户信息（正常场景）
-    def test_get_LatestBlocks(self):
+    def test_getLatestBlocks(self):
         url = self.base_url+"demo/block/latest?page=1&page_size=1"
         # 发送 GET 请求
         response = requests.get(url, headers=self.headers)
