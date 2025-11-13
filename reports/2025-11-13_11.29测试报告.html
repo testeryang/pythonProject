@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试报告</title>
+
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src=" https://cdn.staticfile.org/jquery/2.0.0/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/echarts/5.1.2/echarts.min.js"></script>
+    <!--    页面样式-->
+    <style type="text/css">
+        /*标题样式*/
+        .title {
+            width: auto;
+            height: 60px;
+            text-align: center;
+            font: bolder 38px/60px "Microsoft YaHei UI";
+        }
+
+        /*汇总信息样式*/
+        .summary {
+            width: 90%;
+            position: absolute;
+            top: 120px;
+            margin-left: 5%;
+
+        }
+
+        .text-left {
+            font: bolder 20px/30px "Microsoft YaHei UI";
+        }
+
+        .left {
+            width: 50%;
+            float: left;
+
+        }
+
+        .right {
+            width: 50%;
+            float: right;
+
+        }
+
+        .desc {
+            float: left;
+            width: 100%;
+        }
+
+        .list-group-item span {
+            font: normal 16px/38px "Microsoft YaHei UI";
+            padding: 30px;
+
+        }
+
+        .list-group-item {
+            position: relative;
+            display: block;
+            padding: .4rem 1.25rem;
+            background-color: #fff;
+            border: 1px solid rgba(0, 0, 0, .125);
+        }
+
+        /* 执行信息样式   */
+        .test_info {
+            width: 90%;
+            position: absolute;
+            top: 900px;
+            margin-left: 5%;
+
+            color: #28a745 !important;
+        }
+
+        .table td, th {
+            border: solid 2px rgba(9, 122, 51, 0.11) !important;
+            padding: 0;
+            line-height: 40px;
+            text-align: center;
+
+        }
+
+
+        select {
+            border: 0;
+            padding: 0;
+            margin: 0;
+            height: 2em;
+            width: 8em;
+            margin-left: 2em;
+        }
+
+        option {
+            text-align: center;
+            height: 36px;
+            font: none 18px/36px "Microsoft YaHei UI";
+            color: #28a745 !important;
+        }
+
+        .test_log {
+            background: rgba(163, 171, 189, 0.15);
+            width: 100%;
+            height: 50px;
+            border-top: none;
+            border-bottom: none;
+            display: none;
+            text-align: left;
+        }
+
+        .test_log td {
+            text-align: left;
+            height: 30px;
+            margin: 0;
+            padding-left: 3em;
+            padding-right:3em;
+            font: none 18px/24px "Microsoft YaHei UI";
+            color: #9e141a;
+        }
+
+        pre {
+            margin: 0;
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+            line-height: 22px;
+            font-size: 14px
+        }
+
+        /*    测试图表显示*/
+        .char {
+            width: 90%;
+            position: absolute;
+            top: 450px;
+            margin-left: 5%;
+            color: #28a745 !important;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<!--报告标题-->
+<div class="title text-success">
+    <div class="shadow-lg p-3 mb-5 bg-white rounded">测试报告</div>
+</div>
+
+<!--汇总信息-->
+<div class="summary">
+    <p class="text-left text-success">测试结果汇总</p>
+    <div class="left">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <button type="button" class="btn btn-success">测试人员</button>
+                <span class="text-dark">杨杰</span>
+            </li>
+            <li class="list-group-item">
+                <button type="button" class="btn btn-success">开始时间</button>
+                <span class="text-dark">2025-11-13 11:29:45</span>
+            </li>
+            <li class="list-group-item">
+                <button type="button" class="btn btn-success">执行时间</button>
+                <span class="text-dark">12.54 S</span>
+            </li>
+            <li class="list-group-item">
+                <button type="button" class="btn btn-success">用例总数</button>
+                <span class="text-dark">9</span>
+            </li>
+
+
+        </ul>
+    </div>
+    <div class="right">
+        <ul class="list-group">
+
+            <li class="list-group-item">
+                <button type="button" class="btn btn-success">成功用例</button>
+                <span class="text-success">7</span>
+            </li>
+            <li class="list-group-item">
+                <button type="button" class="btn btn-warning">失败用例</button>
+                <span class="text-warning">1</span>
+            </li>
+            <li class="list-group-item">
+                <button type="button" class="btn btn-danger">错误用例</button>
+                <span class="text-danger">1</span>
+            </li>
+            <li class="list-group-item">
+                <button type="button" class="btn btn-secondary">跳过用例</button>
+                <span class="text-secondary">0</span>
+            </li>
+        </ul>
+    </div>
+    <div class="desc">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <button type="button" class="btn btn-success">描述信息</button>
+                <span class="text-secondary">这里是接口自动化运行后获得的测试报告结果</span>
+            </li>
+        </ul>
+    </div>
+
+
+</div>
+
+<!--测试图表-->
+<div class="char">
+    <p class="text-left text-success">图表展示</p>
+    <div id="char2" style="width: 49%;height: 400px;float: left"></div>
+    <div id="char" style="width: 49%;height: 400px ;float: left"></div>
+</div>
+
+<!--详细信息-->
+<div class="test_info">
+
+    <p class="text-left text-success">详细信息</p>
+    <div class="table_data">
+
+        <table class="table">
+            <thead class="bg-success text-light">
+            <tr>
+                <th scope="col" style="width: 5%;padding: 0">编号</th>
+                <th scope="col" style="width: 20%;padding: 0">
+                    <span>测试类</span>
+                    <select id="testClass">
+                        <option>所有</option>
+                        
+                            <option>get_LatestBlocks</option>
+                        
+                            <option>GetAccountInfo</option>
+                        
+                            <option>GetTransactionbyHash</option>
+                        
+                            <option>GetAccountTransactions</option>
+                        
+                            <option>GetLatestTransactions</option>
+                        
+                            <option>get_BlockbyHeight</option>
+                        
+                            <option>GetLatestBlockHeight</option>
+                        
+                            <option>Getvalidators</option>
+                        
+                            <option>GetAccountBalances</option>
+                        
+                    </select>
+
+                </th>
+
+                <th scope="col" style="width: 15%;padding: 0">测试方法</th>
+                <th scope="col" style="width: 20%;padding: 0">用例描述</th>
+                <th scope="col" style="width: 15%;padding: 0">执行时间</th>
+                <th scope="col" style="width: 20%;padding: 0">
+
+                    <span>执行结果</span>
+                    <select id="testResult">
+                        <option>所有</option>
+                        <option class="text-success">成功</option>
+                        <option class="text-warning">失败</option>
+                        <option class="text-danger">错误</option>
+                        <option class="text-info">跳过</option>
+                    </select>
+
+                </th>
+                <th scope="col" style="width: 10%;padding: 0">详细信息</th>
+            </tr>
+            </thead>
+            <tbody>
+            
+                <tr>
+                    <td>1</td>
+                    <td class="get_LatestBlocks">get_LatestBlocks</td>
+                    <td>test_getLatestBlocks</td>
+                    <td>获取最新的区块信息</td>
+                    <td>1.12s</td>
+                    
+                        <td class="text-success">成功</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>test_getLatestBlocks脚本完成
+该脚本总共用时：1.122
+test_getLatestBlocks (tests.BlockExprole.GetLatestBlocks.get_LatestBlocks.test_getLatestBlocks)执行——>【通过】
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>2</td>
+                    <td class="GetLatestBlockHeight">GetLatestBlockHeight</td>
+                    <td>test_getLatestBlockHeight</td>
+                    <td>获取最新的区块高度</td>
+                    <td>0.433s</td>
+                    
+                        <td class="text-success">成功</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>141387715
+test_getLatestBlockHeight脚本完成
+该脚本总共用时：0.433
+test_getLatestBlockHeight (tests.BlockExprole.GetLatestBlockHeight.GetLatestBlockHeight.test_getLatestBlockHeight)执行——>【通过】
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>3</td>
+                    <td class="GetAccountBalances">GetAccountBalances</td>
+                    <td>test_GetAccountBalances</td>
+                    <td>获取用户余额</td>
+                    <td>2.22s</td>
+                    
+                        <td class="text-danger">错误</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>Traceback (most recent call last):
+</pre>
+                        
+
+                            <pre>  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python313\Lib\unittest\case.py", line 58, in testPartExecutor
+    yield
+</pre>
+                        
+
+                            <pre>  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python313\Lib\unittest\case.py", line 651, in run
+    self._callTestMethod(testMethod)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+</pre>
+                        
+
+                            <pre>  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python313\Lib\unittest\case.py", line 606, in _callTestMethod
+    if method() is not None:
+       ~~~~~~^^
+</pre>
+                        
+
+                            <pre>  File "C:\Users\Administrator\PycharmProjects\PythonProject\tests\BlockExprole\GetAccountBalances.py", line 18, in test_GetAccountBalances
+    self.assertIsNotNone(response.json()['data'])
+                         ~~~~~~~~~~~~~~~^^^^^^^^
+</pre>
+                        
+
+                            <pre>KeyError: 'data'
+</pre>
+                        
+
+                            <pre>{'data': [{'block_number': 141387715, 'block_timestamp': '2025-11-13 03:29:54.815 +0000 UTC', 'block_unix_timestamp': 1763004594815, 'claim_ids': None, 'code': 0, 'codespace': '', 'data': '\x12<\n:/cosmos.distribution.v1beta1.MsgSetWithdrawAddressResponse\x12.\n%/cosmos.authz.v1beta1.MsgExecResponse\x12\x05\n\x03\x12\x01\x00', 'error_log': '', 'events': [], 'gas_fee': '{"amount":[{"denom":"inj","amount":"30080000000000"}],"gas_limit":188000,"payer":"inj15tswkcmf98vpph9czvm9ceuv3pmq90ckny940a"}', 'gas_used': 100699, 'gas_wanted': 188000, 'hash': '0xecd55e447255c6364c9cdf98223d2e0743b4e8e519f1b44de8c5825ba769ecd4', 'id': '', 'info': '', 'logs': '[{"msg_index":"0","events":[{"type":"message","attributes":[{"key":"action","value":"/cosmos.distribution.v1beta1.MsgSetWithdrawAddress","index":true},{"key":"sender","value":"inj15tswkcmf98vpph9czvm9ceuv3pmq90ckny940a","index":true},{"key":"module","value":"distribution","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"set_withdraw_address","attributes":[{"key":"withdraw_address","value":"inj15tswkcmf98vpph9czvm9ceuv3pmq90ckny940a","index":true},{"key":"msg_index","value":"0","index":true}]}]},{"msg_index":"1","events":[{"type":"message","attributes":[{"key":"action","value":"/cosmos.authz.v1beta1.MsgExec","index":true},{"key":"sender","value":"inj15tswkcmf98vpph9czvm9ceuv3pmq90ckny940a","index":true},{"key":"module","value":"authz","index":true},{"key":"msg_index","value":"1","index":true}]},{"type":"injective.exchange.v2.EventOrderCancelFail","attributes":[{"key":"cid","value":"\\"#00000006b48cb4dd3276bb0000024171\\"","index":true},{"key":"description","value":"\\"invalid order identifier string: struct field error\\"","index":true},{"key":"market_id","value":"\\"0x9b9980167ecc3645ff1a5517886652d94a0825e54a77d2057cbbe3ebee015963\\"","index":true},{"key":"order_hash","value":"\\"\\"","index":true},{"key":"subaccount_id","value":"\\"0x3e3b2053a8b49287062dfc3368b8ece0bae0723c000000000000000000000003\\"","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"1","index":true}]},{"type":"injective.exchange.v1beta1.EventOrderCancelFail","attributes":[{"key":"cid","value":"\\"\\"","index":true},{"key":"description","value":"\\"\\"","index":true},{"key":"market_id","value":"\\"0x9b9980167ecc3645ff1a5517886652d94a0825e54a77d2057cbbe3ebee015963\\"","index":true},{"key":"order_hash","value":"\\"\\"","index":true},{"key":"subaccount_id","value":"\\"\\"","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"1","index":true}]}]}]', 'memo': '', 'messages': '[{"type":"/cosmos.distribution.v1beta1.MsgSetWithdrawAddress","value":{"delegator_address":"inj15tswkcmf98vpph9czvm9ceuv3pmq90ckny940a","withdraw_address":"inj15tswkcmf98vpph9czvm9ceuv3pmq90ckny940a"}},{"type":"/cosmos.authz.v1beta1.MsgExec","value":{"grantee":"inj15tswkcmf98vpph9czvm9ceuv3pmq90ckny940a","msgs":[{"@type":"/injective.exchange.v1beta1.MsgBatchUpdateOrders","sender":"inj18cajq5agkjfgwp3dlsek3w8vuzawqu3uaztpen","subaccount_id":"","spot_market_ids_to_cancel_all":[],"derivative_market_ids_to_cancel_all":[],"spot_orders_to_cancel":[],"derivative_orders_to_cancel":[{"market_id":"0x9b9980167ecc3645ff1a5517886652d94a0825e54a77d2057cbbe3ebee015963","subaccount_id":"0x3e3b2053a8b49287062dfc3368b8ece0bae0723c000000000000000000000003","order_hash":"","order_mask":0,"cid":"#00000006b48cb4dd3276bb0000024171"}],"spot_orders_to_create":[],"derivative_orders_to_create":[],"binary_options_orders_to_cancel":[],"binary_options_market_ids_to_cancel_all":[],"binary_options_orders_to_create":[]}]}}]', 'payer': 'inj15tswkcmf98vpph9czvm9ceuv3pmq90ckny940a', 'signatures': ['{"pubkey":"03b270a78161532df8bcc0c88d51349cb5b98a997eeae78fd70a9f4299d99d56df","address":"inj15tswkcmf98vpph9czvm9ceuv3pmq90ckny940a","sequence":2918047,"signature":"0kTLtCbAKaaCFshTSQ5iQ818P9i6OpVvftY1ntfxXQMTO55D/h7iJsULMZnavsxD92y5UtT6YnkW20uMvHX8Kg=="}'], 'tx_number': 2920476, 'tx_type': 'injective'}], 'pagination': {'has_next': False, 'has_prev': False, 'page': 1, 'page_size': 5, 'total': 1, 'total_pages': 1}}
+{'code': 504, 'reason': '', 'message': 'context deadline exceeded', 'metadata': {}}
+test_GetAccountBalances (tests.BlockExprole.GetAccountBalances.GetAccountBalances.test_GetAccountBalances)执行——>【错误Error】
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>4</td>
+                    <td class="GetAccountInfo">GetAccountInfo</td>
+                    <td>test_GetAccountInfo</td>
+                    <td>获取用户详细信息</td>
+                    <td>1.55s</td>
+                    
+                        <td class="text-success">成功</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>{'data': [{'block_number': 141387719, 'block_timestamp': '2025-11-13 03:29:57.69 +0000 UTC', 'block_unix_timestamp': 1763004597690, 'claim_ids': None, 'code': 0, 'codespace': '', 'data': '\x126\n4/injective.wasmx.v1.MsgExecuteContractCompatResponse', 'error_log': '', 'events': [], 'gas_fee': '{"amount":[{"denom":"inj","amount":"231254000000000"}],"gas_limit":462508,"payer":"inj1a4xxtvvqv7dmf2aqz0njut5cjms0vj9yuwhkpl"}', 'gas_used': 357019, 'gas_wanted': 462508, 'hash': '0x0b5e8ca7a2923f3711eb08a5c93f6c80a081c60ec177a736d185134ce5b159fb', 'id': '', 'info': '', 'logs': '[{"msg_index":"0","events":[{"type":"message","attributes":[{"key":"action","value":"/injective.wasmx.v1.MsgExecuteContractCompat","index":true},{"key":"sender","value":"inj1a4xxtvvqv7dmf2aqz0njut5cjms0vj9yuwhkpl","index":true},{"key":"module","value":"wasmx","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"execute","attributes":[{"key":"_contract_address","value":"inj1f8z8jyqqxm5fjqcx457afu8l4d4ekpw8c478ca","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"wasm","attributes":[{"key":"_contract_address","value":"inj1f8z8jyqqxm5fjqcx457afu8l4d4ekpw8c478ca","index":true},{"key":"action","value":"claim_rewards","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"wasm-claim_rewards","attributes":[{"key":"_contract_address","value":"inj1f8z8jyqqxm5fjqcx457afu8l4d4ekpw8c478ca","index":true},{"key":"player","value":"inj1a4xxtvvqv7dmf2aqz0njut5cjms0vj9yuwhkpl","index":true},{"key":"claimed_amount","value":"106439953353","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"coin_received","attributes":[{"key":"receiver","value":"inj19ejy8n9qsectrf4semdp9cpknflld0j6hf2fle","index":true},{"key":"amount","value":"106439953353factory/inj1ng84mfnq4z4tuh0cd7a28x0hxw75vxcm70ls9q/HPNJ","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"coinbase","attributes":[{"key":"minter","value":"inj19ejy8n9qsectrf4semdp9cpknflld0j6hf2fle","index":true},{"key":"amount","value":"106439953353factory/inj1ng84mfnq4z4tuh0cd7a28x0hxw75vxcm70ls9q/HPNJ","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"coin_spent","attributes":[{"key":"spender","value":"inj19ejy8n9qsectrf4semdp9cpknflld0j6hf2fle","index":true},{"key":"amount","value":"106439953353factory/inj1ng84mfnq4z4tuh0cd7a28x0hxw75vxcm70ls9q/HPNJ","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"coin_received","attributes":[{"key":"receiver","value":"inj1f8z8jyqqxm5fjqcx457afu8l4d4ekpw8c478ca","index":true},{"key":"amount","value":"106439953353factory/inj1ng84mfnq4z4tuh0cd7a28x0hxw75vxcm70ls9q/HPNJ","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"transfer","attributes":[{"key":"recipient","value":"inj1f8z8jyqqxm5fjqcx457afu8l4d4ekpw8c478ca","index":true},{"key":"sender","value":"inj19ejy8n9qsectrf4semdp9cpknflld0j6hf2fle","index":true},{"key":"amount","value":"106439953353factory/inj1ng84mfnq4z4tuh0cd7a28x0hxw75vxcm70ls9q/HPNJ","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.tokenfactory.v1beta1.EventMint","attributes":[{"key":"amount","value":"{\\"denom\\":\\"factory/inj1ng84mfnq4z4tuh0cd7a28x0hxw75vxcm70ls9q/HPNJ\\",\\"amount\\":\\"106439953353\\"}","index":true},{"key":"minter","value":"\\"inj1f8z8jyqqxm5fjqcx457afu8l4d4ekpw8c478ca\\"","index":true},{"key":"receiver","value":"\\"inj1f8z8jyqqxm5fjqcx457afu8l4d4ekpw8c478ca\\"","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"coin_spent","attributes":[{"key":"spender","value":"inj1f8z8jyqqxm5fjqcx457afu8l4d4ekpw8c478ca","index":true},{"key":"amount","value":"106439953353factory/inj1ng84mfnq4z4tuh0cd7a28x0hxw75vxcm70ls9q/HPNJ","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"coin_received","attributes":[{"key":"receiver","value":"inj1a4xxtvvqv7dmf2aqz0njut5cjms0vj9yuwhkpl","index":true},{"key":"amount","value":"106439953353factory/inj1ng84mfnq4z4tuh0cd7a28x0hxw75vxcm70ls9q/HPNJ","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"transfer","attributes":[{"key":"recipient","value":"inj1a4xxtvvqv7dmf2aqz0njut5cjms0vj9yuwhkpl","index":true},{"key":"sender","value":"inj1f8z8jyqqxm5fjqcx457afu8l4d4ekpw8c478ca","index":true},{"key":"amount","value":"106439953353factory/inj1ng84mfnq4z4tuh0cd7a28x0hxw75vxcm70ls9q/HPNJ","index":true},{"key":"msg_index","value":"0","index":true}]}]}]', 'memo': '', 'messages': '[{"type":"/injective.wasmx.v1.MsgExecuteContractCompat","value":{"sender":"inj1a4xxtvvqv7dmf2aqz0njut5cjms0vj9yuwhkpl","contract":"inj1f8z8jyqqxm5fjqcx457afu8l4d4ekpw8c478ca","msg":"{\\"claim_rewards\\":{}}","funds":"0"}}]', 'payer': 'inj1a4xxtvvqv7dmf2aqz0njut5cjms0vj9yuwhkpl', 'signatures': ['{"pubkey":"02d03a6b180fca5a004cbbfb71757b69ea147fec90f7cc0f0c0f19e1304af92b0e","address":"inj1a4xxtvvqv7dmf2aqz0njut5cjms0vj9yuwhkpl","sequence":1772,"signature":"f9HS/l4awNNuvHxwMspiKLzR5rTKlmWiEzMagGnLURYlW0MbZAyz4XETO9c5pNTnhoXuIBwAmz1lPq8CsYi+AQ=="}'], 'tx_number': 1809, 'tx_type': 'injective'}], 'pagination': {'has_next': False, 'has_prev': False, 'page': 1, 'page_size': 5, 'total': 1, 'total_pages': 1}}
+test_GetAccountInfo脚本完成
+该脚本总共用时：1.548
+test_GetAccountInfo (tests.BlockExprole.GetAccountInfo.GetAccountInfo.test_GetAccountInfo)执行——>【通过】
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>5</td>
+                    <td class="GetAccountTransactions">GetAccountTransactions</td>
+                    <td>test_GetAccountTransactions</td>
+                    <td>获取用户的trans信息</td>
+                    <td>3.63s</td>
+                    
+                        <td class="text-success">成功</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>{'data': [{'block_number': 141387721, 'block_timestamp': '2025-11-13 03:29:58.88 +0000 UTC', 'block_unix_timestamp': 1763004598880, 'claim_ids': None, 'code': 0, 'codespace': '', 'data': 'EtEICiUvY29zbW9zLmF1dGh6LnYxYmV0YTEuTXNnRXhlY1Jlc3BvbnNlEqcICqQIIkIweDZmMDRiMGVlMjgwYWFiYTg4ZmJmM2MzODUyNjYzMzFmMGRmNGQwYTQ5ZDNlNzc5ZWM3OWU1YzJhNTVmNzAyMTYiQjB4MWExNTVjODhjYzNmMTQzZTg3NDllN2QwZDBlNDJlYTNkYmM5NzkwNDUzMzNmMTI2YjUwOGViODk3YTdkM2YzNSJCMHhhOGFiNDk5OTIzY2MwZTY5ZWE5OWJmYTg1YWNjNmQzMTE4ZjRmOTY3NTU2N2Q1NWM0NmM5ZjBlOTc3ZDEwZDAwIkIweGM0Njk0ZTQ3M2NkMGJjNmMyYWE0MTczMmU0YmM1MzdjMzQxYzk3ZjViMTJiN2I1OGJjYmMzMWEyYjQyOTU0OGEiQjB4ZTI4NzBjZGFiZWE5YmQ3NjYyMWJhNmU3MTdhMzRmYmVmNDRjYTJiMDg4MDJjMmYxOGFiNjUwY2YwYTIwMTEzNSJCMHhiOTRlMjdhNGFkNWUwNzliNzg5MGJlNWNlZWM4MWUwYjQ3ZjU0ZWVjYzY0Y2M2NTg5ODk3MjE1NWNkMTU2ZjkzIkIweDMzYzM1NjQ2YWE1MTAzNGU5ZmI3YmQ1ZGExNmZkODBkNTI0ZTYyMWMwODhkMWMyZjc5YjYxNmFkYmJmNjgyMWEiQjB4N2ExNWQyOTg5YmFhM2I2NmYzNjA4YTFlYjA2Y2Y2ZWFjOGY2Y2Q3YWNjNDEzM2RlZTMxOTJmNjJiOGE4MDc4NiJCMHhiNmFiZWFhOWNhZGI2MWNmNzkwMzBhN2E5Mzg3ZjRhOTQwYjk0MTFlNmI1OWQ5NTU3MDdiYTNmYjEyYmIzNTEyIkIweGM1ZDQ3OGZkNmUyOTFmNDIzMDYxZjQxM2I5MzNhMTUzOTA3NjVkZjNlYTUzMGU2YTQ4MGJjYjI3MThkMGZiM2ZKJGEwMGM1ZWRjLTc2MjctNDI5Zi1iNmQ0LWQ1NDhhOGFjNWQ1ZEokMmRjOWRmYjktOGM1My00ZTk5LWIzMDQtOTc4MDU1MGM2NWVmSiQ2ZGNlNDU5NS1hMTJlLTQ4YTUtYjQzNS00M2RkODU2M2Q1YjRKJDlhYTVhZDUzLWYxMDgtNGY3Yi04YWM2LWVlN2FhYzZjMmYwMUokZTMzODE4N2MtMmQxYy00OTVhLWEwZTAtNmRlMDNmMTJmZmQ5SiQ0MzFlMmEwNi1lNzY0LTQ0NjUtOWFmNi1lZTY3MGY1YmFmOTFKJDEwOTBlNzJiLWRmMzgtNDFiZi04NTAwLTVhZDkyMGU3YjA4ZEokMzliMzk5NDQtMDUxOS00OTIzLWExZmYtZWQ4YjAzZjE4MzNiSiQ3NTFhYzNhYy03MGMzLTRjNDEtYjU0Ny04MmJkYmZkNjlhMGRKJGU4MGI3MDFlLTZhNTktNDViYy1hOTA3LTIwNGI1YjNlNTAwZg==', 'error_log': '', 'events': [], 'gas_fee': '{"amount":[{"denom":"inj","amount":"199046400000000"}],"gas_limit":1244040,"payer":"inj1d25y0hfk3axsd58n62h2zan6295rkqq95x2mcw"}', 'gas_used': 1187300, 'gas_wanted': 1244040, 'hash': '0x462da12c3361681b160525766262a7ee316c83a50ca5dad8b4be4a27b4fa22d3', 'id': '', 'info': '', 'logs': '[{"msg_index":"0","events":[{"type":"message","attributes":[{"key":"action","value":"/cosmos.authz.v1beta1.MsgExec","index":true},{"key":"sender","value":"inj1d25y0hfk3axsd58n62h2zan6295rkqq95x2mcw","index":true},{"key":"module","value":"authz","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.exchange.v2.EventCancelDerivativeOrder","attributes":[{"key":"isLimitCancel","value":"true","index":true},{"key":"limit_order","value":"{\\"order_info\\":{\\"subaccount_id\\":\\"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001\\",\\"fee_recipient\\":\\"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m\\",\\"price\\":\\"0.023000000000000000\\",\\"quantity\\":\\"92164.000000000000000000\\",\\"cid\\":\\"01dda034-2f18-4fe5-a883-4de66ea7ed16\\"},\\"order_type\\":\\"BUY_PO\\",\\"margin\\":\\"529.000000000000000000\\",\\"fillable\\":\\"92164.000000000000000000\\",\\"trigger_price\\":\\"0.000000000000000000\\",\\"order_hash\\":\\"y5AbZ7R9KaBJjUApCd8psjDLB/+e1yWF6TUj9fS4CxI=\\",\\"expiration_block\\":\\"0\\"}","index":true},{"key":"market_id","value":"\\"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072\\"","index":true},{"key":"market_order_cancel","value":"null","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.exchange.v1beta1.EventCancelDerivativeOrder","attributes":[{"key":"isLimitCancel","value":"true","index":true},{"key":"limit_order","value":"{\\"order_info\\":{\\"subaccount_id\\":\\"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001\\",\\"fee_recipient\\":\\"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m\\",\\"price\\":\\"23000.000000000000000000\\",\\"quantity\\":\\"92164.000000000000000000\\",\\"cid\\":\\"01dda034-2f18-4fe5-a883-4de66ea7ed16\\"},\\"order_type\\":\\"BUY_PO\\",\\"margin\\":\\"529000000.000000000000000000\\",\\"fillable\\":\\"92164.000000000000000000\\",\\"trigger_price\\":\\"0.000000000000000000\\",\\"order_hash\\":\\"y5AbZ7R9KaBJjUApCd8psjDLB/+e1yWF6TUj9fS4CxI=\\"}","index":true},{"key":"market_id","value":"\\"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072\\"","index":true},{"key":"market_order_cancel","value":"null","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.exchange.v2.EventCancelDerivativeOrder","attributes":[{"key":"isLimitCancel","value":"true","index":true},{"key":"limit_order","value":"{\\"order_info\\":{\\"subaccount_id\\":\\"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001\\",\\"fee_recipient\\":\\"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m\\",\\"price\\":\\"0.046100000000000000\\",\\"quantity\\":\\"46082.000000000000000000\\",\\"cid\\":\\"29946cb9-83e7-4819-8495-e1c40b5591ed\\"},\\"order_type\\":\\"BUY_PO\\",\\"margin\\":\\"531.000000000000000000\\",\\"fillable\\":\\"46082.000000000000000000\\",\\"trigger_price\\":\\"0.000000000000000000\\",\\"order_hash\\":\\"tpu1MifafdPopwBb35RS0Z/OXC8/UO0l8vUP2CzRNco=\\",\\"expiration_block\\":\\"0\\"}","index":true},{"key":"market_id","value":"\\"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072\\"","index":true},{"key":"market_order_cancel","value":"null","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.exchange.v1beta1.EventCancelDerivativeOrder","attributes":[{"key":"isLimitCancel","value":"true","index":true},{"key":"limit_order","value":"{\\"order_info\\":{\\"subaccount_id\\":\\"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001\\",\\"fee_recipient\\":\\"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m\\",\\"price\\":\\"46100.000000000000000000\\",\\"quantity\\":\\"46082.000000000000000000\\",\\"cid\\":\\"29946cb9-83e7-4819-8495-e1c40b5591ed\\"},\\"order_type\\":\\"BUY_PO\\",\\"margin\\":\\"531000000.000000000000000000\\",\\"fillable\\":\\"46082.000000000000000000\\",\\"trigger_price\\":\\"0.000000000000000000\\",\\"order_hash\\":\\"tpu1MifafdPopwBb35RS0Z/OXC8/UO0l8vUP2CzRNco=\\"}","index":true},{"key":"market_id","value":"\\"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072\\"","index":true},{"key":"market_order_cancel","value":"null","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.exchange.v2.EventCancelDerivativeOrder","attributes":[{"key":"isLimitCancel","value":"true","index":true},{"key":"limit_order","value":"{\\"order_info\\":{\\"subaccount_id\\":\\"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001\\",\\"fee_recipient\\":\\"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m\\",\\"price\\":\\"0.092200000000000000\\",\\"quantity\\":\\"23041.000000000000000000\\",\\"cid\\":\\"8592981c-216e-472f-ac77-6ee407e2408b\\"},\\"order_type\\":\\"BUY_PO\\",\\"margin\\":\\"531.000000000000000000\\",\\"fillable\\":\\"23041.000000000000000000\\",\\"trigger_price\\":\\"0.000000000000000000\\",\\"order_hash\\":\\"iLD6uOvg9M9DXIYySeiqRM/NCKvEDdm0MxZ+db+C8aw=\\",\\"expiration_block\\":\\"0\\"}","index":true},{"key":"market_id","value":"\\"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072\\"","index":true},{"key":"market_order_cancel","value":"null","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.exchange.v1beta1.EventCancelDerivativeOrder","attributes":[{"key":"isLimitCancel","value":"true","index":true},{"key":"limit_order","value":"{\\"order_info\\":{\\"subaccount_id\\":\\"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001\\",\\"fee_recipient\\":\\"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m\\",\\"price\\":\\"92200.000000000000000000\\",\\"quantity\\":\\"23041.000000000000000000\\",\\"cid\\":\\"8592981c-216e-472f-ac77-6ee407e2408b\\"},\\"order_type\\":\\"BUY_PO\\",\\"margin\\":\\"531000000.000000000000000000\\",\\"fillable\\":\\"23041.000000000000000000\\",\\"trigger_price\\":\\"0.000000000000000000\\",\\"order_hash\\":\\"iLD6uOvg9M9DXIYySeiqRM/NCKvEDdm0MxZ+db+C8aw=\\"}","index":true},{"key":"market_id","value":"\\"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072\\"","index":true},{"key":"market_order_cancel","value":"null","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.exchange.v2.EventCancelDerivativeOrder","attributes":[{"key":"isLimitCancel","value":"true","index":true},{"key":"limit_order","value":"{\\"order_info\\":{\\"subaccount_id\\":\\"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001\\",\\"fee_recipient\\":\\"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m\\",\\"price\\":\\"0.138300000000000000\\",\\"quantity\\":\\"10842.000000000000000000\\",\\"cid\\":\\"eb503795-e736-4b42-b229-8135fb3a610e\\"},\\"order_type\\":\\"BUY_PO\\",\\"margin\\":\\"374.000000000000000000\\",\\"fillable\\":\\"10842.000000000000000000\\",\\"trigger_price\\":\\"0.000000000000000000\\",\\"order_hash\\":\\"fAXIx0xylFbVQR8q+HxgGcpM/anwWsI1zqj4k1Oti7Y=\\",\\"expiration_block\\":\\"0\\"}","index":true},{"key":"market_id","value":"\\"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072\\"","index":true},{"key":"market_order_cancel","value":"null","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.exchange.v1beta1.EventCancelDerivativeOrder","attributes":[{"key":"isLimitCancel","value":"true","index":true},{"key":"limit_order","value":"{\\"order_info\\":{\\"subaccount_id\\":\\"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001\\",\\"fee_recipient\\":\\"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m\\",\\"price\\":\\"138300.000000000000000000\\",\\"quantity\\":\\"10842.000000000000000000\\",\\"cid\\":\\"eb503795-e736-4b42-b229-8135fb3a610e\\"},\\"order_type\\":\\"BUY_PO\\",\\"margin\\":\\"374000000.000000000000000000\\",\\"fillable\\":\\"10842.000000000000000000\\",\\"trigger_price\\":\\"0.000000000000000000\\",\\"order_hash\\":\\"fAXIx0xylFbVQR8q+HxgGcpM/anwWsI1zqj4k1Oti7Y=\\"}","index":true},{"key":"market_id","value":"\\"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072\\"","index":true},{"key":"market_order_cancel","value":"null","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.exchange.v2.EventCancelDerivativeOrder","attributes":[{"key":"isLimitCancel","value":"true","index":true},{"key":"limit_order","value":"{\\"order_info\\":{\\"subaccount_id\\":\\"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001\\",\\"fee_recipient\\":\\"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m\\",\\"price\\":\\"0.069100000000000000\\",\\"quantity\\":\\"30721.000000000000000000\\",\\"cid\\":\\"0427f843-bed1-473d-b95d-127fee3165d3\\"},\\"order_type\\":\\"BUY_PO\\",\\"margin\\":\\"530.000000000000000000\\",\\"fillable\\":\\"30721.000000000000000000\\",\\"trigger_price\\":\\"0.000000000000000000\\",\\"order_hash\\":\\"D9IWQLz8aQYXBRRAmcngnLHxEZrSkAgPdd9jF6pVhn4=\\",\\"expiration_block\\":\\"0\\"}","index":true},{"key":"market_id","value":"\\"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072\\"","index":true},{"key":"market_order_cancel","value":"null","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.exchange.v1beta1.EventCancelDerivativeOrder","attributes":[{"key":"isLimitCancel","value":"true","index":true},{"key":"limit_order","value":"{\\"order_info\\":{\\"subaccount_id\\":\\"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001\\",\\"fee_recipient\\":\\"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m\\",\\"price\\":\\"69100.000000000000000000\\",\\"quantity\\":\\"30721.000000000000000000\\",\\"cid\\":\\"0427f843-bed1-473d-b95d-127fee3165d3\\"},\\"order_type\\":\\"BUY_PO\\",\\"margin\\":\\"530000000.000000000000000000\\",\\"fillable\\":\\"30721.000000000000000000\\",\\"trigger_price\\":\\"0.000000000000000000\\",\\"order_hash\\":\\"D9IWQLz8aQYXBRRAmcngnLHxEZrSkAgPdd9jF6pVhn4=\\"}","index":true},{"key":"market_id","value":"\\"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072\\"","index":true},{"key":"market_order_cancel","value":"null","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.exchange.v2.EventCancelDerivativeOrder","attributes":[{"key":"isLimitCancel","value":"true","index":true},{"key":"limit_order","value":"{\\"order_info\\":{\\"subaccount_id\\":\\"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001\\",\\"fee_recipient\\":\\"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m\\",\\"price\\":\\"0.198700000000000000\\",\\"quantity\\":\\"10690.000000000000000000\\",\\"cid\\":\\"1826303e-1254-43e0-9728-1ec54e62ab75\\"},\\"order_type\\":\\"SELL_PO\\",\\"margin\\":\\"531.000000000000000000\\",\\"fillable\\":\\"10690.000000000000000000\\",\\"trigger_price\\":\\"0.000000000000000000\\",\\"order_hash\\":\\"GcZZ2tvtOw2CS/qrzOYDlc3B/glfS0HaNBK60SC4V0k=\\",\\"expiration_block\\":\\"0\\"}","index":true},{"key":"market_id","value":"\\"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072\\"","index":true},{"key":"market_order_cancel","value":"null","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.exchange.v1beta1.EventCancelDerivativeOrder","attributes":[{"key":"isLimitCancel","value":"true","index":true},{"key":"limit_order","value":"{\\"order_info\\":{\\"subaccount_id\\":\\"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001\\",\\"fee_recipient\\":\\"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m\\",\\"price\\":\\"198700.000000000000000000\\",\\"quantity\\":\\"10690.000000000000000000\\",\\"cid\\":\\"1826303e-1254-43e0-9728-1ec54e62ab75\\"},\\"order_type\\":\\"SELL_PO\\",\\"margin\\":\\"531000000.000000000000000000\\",\\"fillable\\":\\"10690.000000000000000000\\",\\"trigger_price\\":\\"0.000000000000000000\\",\\"order_hash\\":\\"GcZZ2tvtOw2CS/qrzOYDlc3B/glfS0HaNBK60SC4V0k=\\"}","index":true},{"key":"market_id","value":"\\"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072\\"","index":true},{"key":"market_order_cancel","value":"null","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.exchange.v2.EventCancelDerivativeOrder","attributes":[{"key":"isLimitCancel","value":"true","index":true},{"key":"limit_order","value":"{\\"order_info\\":{\\"subaccount_id\\":\\"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001\\",\\"fee_recipient\\":\\"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m\\",\\"price\\":\\"0.152900000000000000\\",\\"quantity\\":\\"9810.000000000000000000\\",\\"cid\\":\\"156072bc-da33-492d-b721-729220f7056d\\"},\\"order_type\\":\\"SELL_PO\\",\\"margin\\":\\"374.000000000000000000\\",\\"fillable\\":\\"9810.000000000000000000\\",\\"trigger_price\\":\\"0.000000000000000000\\",\\"order_hash\\":\\"IZZoE2WFHNN2TnzZoH+RgxN4NYm3N3N9NeMCtcA74oI=\\",\\"expiration_block\\":\\"0\\"}","index":true},{"key":"market_id","value":"\\"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072\\"","index":true},{"key":"market_order_cancel","value":"null","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.exchange.v1beta1.EventCancelDerivativeOrder","attributes":[{"key":"isLimitCancel","value":"true","index":true},{"key":"limit_order","value":"{\\"order_info\\":{\\"subaccount_id\\":\\"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001\\",\\"fee_recipient\\":\\"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m\\",\\"price\\":\\"152900.000000000000000000\\",\\"quantity\\":\\"9810.000000000000000000\\",\\"cid\\":\\"156072bc-da33-492d-b721-729220f7056d\\"},\\"order_type\\":\\"SELL_PO\\",\\"margin\\":\\"374000000.000000000000000000\\",\\"fillable\\":\\"9810.000000000000000000\\",\\"trigger_price\\":\\"0.000000000000000000\\",\\"order_hash\\":\\"IZZoE2WFHNN2TnzZoH+RgxN4NYm3N3N9NeMCtcA74oI=\\"}","index":true},{"key":"market_id","value":"\\"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072\\"","index":true},{"key":"market_order_cancel","value":"null","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.exchange.v2.EventCancelDerivativeOrder","attributes":[{"key":"isLimitCancel","value":"true","index":true},{"key":"limit_order","value":"{\\"order_info\\":{\\"subaccount_id\\":\\"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001\\",\\"fee_recipient\\":\\"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m\\",\\"price\\":\\"0.183400000000000000\\",\\"quantity\\":\\"11581.000000000000000000\\",\\"cid\\":\\"b0a88449-e9fe-436e-a46d-fcc6a31459b8\\"},\\"order_type\\":\\"SELL_PO\\",\\"margin\\":\\"530.000000000000000000\\",\\"fillable\\":\\"11581.000000000000000000\\",\\"trigger_price\\":\\"0.000000000000000000\\",\\"order_hash\\":\\"ejPY/jAdnJJC5+uGN3Gn0zWPV0IeHCClT9aKB4xZlgI=\\",\\"expiration_block\\":\\"0\\"}","index":true},{"key":"market_id","value":"\\"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072\\"","index":true},{"key":"market_order_cancel","value":"null","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.exchange.v1beta1.EventCancelDerivativeOrder","attributes":[{"key":"isLimitCancel","value":"true","index":true},{"key":"limit_order","value":"{\\"order_info\\":{\\"subaccount_id\\":\\"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001\\",\\"fee_recipient\\":\\"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m\\",\\"price\\":\\"183400.000000000000000000\\",\\"quantity\\":\\"11581.000000000000000000\\",\\"cid\\":\\"b0a88449-e9fe-436e-a46d-fcc6a31459b8\\"},\\"order_type\\":\\"SELL_PO\\",\\"margin\\":\\"530000000.000000000000000000\\",\\"fillable\\":\\"11581.000000000000000000\\",\\"trigger_price\\":\\"0.000000000000000000\\",\\"order_hash\\":\\"ejPY/jAdnJJC5+uGN3Gn0zWPV0IeHCClT9aKB4xZlgI=\\"}","index":true},{"key":"market_id","value":"\\"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072\\"","index":true},{"key":"market_order_cancel","value":"null","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.exchange.v2.EventCancelDerivativeOrder","attributes":[{"key":"isLimitCancel","value":"true","index":true},{"key":"limit_order","value":"{\\"order_info\\":{\\"subaccount_id\\":\\"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001\\",\\"fee_recipient\\":\\"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m\\",\\"price\\":\\"0.214000000000000000\\",\\"quantity\\":\\"9927.000000000000000000\\",\\"cid\\":\\"014ac9b3-7c79-42d8-9887-a8d8deb1c92f\\"},\\"order_type\\":\\"SELL_PO\\",\\"margin\\":\\"531.000000000000000000\\",\\"fillable\\":\\"9927.000000000000000000\\",\\"trigger_price\\":\\"0.000000000000000000\\",\\"order_hash\\":\\"mx/hNgzjadbAWeePoMVbbE2NvVEPc6Z1L8TwRofkTa0=\\",\\"expiration_block\\":\\"0\\"}","index":true},{"key":"market_id","value":"\\"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072\\"","index":true},{"key":"market_order_cancel","value":"null","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.exchange.v1beta1.EventCancelDerivativeOrder","attributes":[{"key":"isLimitCancel","value":"true","index":true},{"key":"limit_order","value":"{\\"order_info\\":{\\"subaccount_id\\":\\"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001\\",\\"fee_recipient\\":\\"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m\\",\\"price\\":\\"214000.000000000000000000\\",\\"quantity\\":\\"9927.000000000000000000\\",\\"cid\\":\\"014ac9b3-7c79-42d8-9887-a8d8deb1c92f\\"},\\"order_type\\":\\"SELL_PO\\",\\"margin\\":\\"531000000.000000000000000000\\",\\"fillable\\":\\"9927.000000000000000000\\",\\"trigger_price\\":\\"0.000000000000000000\\",\\"order_hash\\":\\"mx/hNgzjadbAWeePoMVbbE2NvVEPc6Z1L8TwRofkTa0=\\"}","index":true},{"key":"market_id","value":"\\"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072\\"","index":true},{"key":"market_order_cancel","value":"null","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.exchange.v2.EventCancelDerivativeOrder","attributes":[{"key":"isLimitCancel","value":"true","index":true},{"key":"limit_order","value":"{\\"order_info\\":{\\"subaccount_id\\":\\"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001\\",\\"fee_recipient\\":\\"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m\\",\\"price\\":\\"0.229300000000000000\\",\\"quantity\\":\\"9265.000000000000000000\\",\\"cid\\":\\"cd8db64f-a257-4a93-983a-22e2f756dcc6\\"},\\"order_type\\":\\"SELL_PO\\",\\"margin\\":\\"531.000000000000000000\\",\\"fillable\\":\\"9265.000000000000000000\\",\\"trigger_price\\":\\"0.000000000000000000\\",\\"order_hash\\":\\"4u/Amsb4MKUl1t7c0xBZc2fheuKmrbzNFZKqhfgxKuU=\\",\\"expiration_block\\":\\"0\\"}","index":true},{"key":"market_id","value":"\\"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072\\"","index":true},{"key":"market_order_cancel","value":"null","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.exchange.v1beta1.EventCancelDerivativeOrder","attributes":[{"key":"isLimitCancel","value":"true","index":true},{"key":"limit_order","value":"{\\"order_info\\":{\\"subaccount_id\\":\\"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001\\",\\"fee_recipient\\":\\"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m\\",\\"price\\":\\"229300.000000000000000000\\",\\"quantity\\":\\"9265.000000000000000000\\",\\"cid\\":\\"cd8db64f-a257-4a93-983a-22e2f756dcc6\\"},\\"order_type\\":\\"SELL_PO\\",\\"margin\\":\\"531000000.000000000000000000\\",\\"fillable\\":\\"9265.000000000000000000\\",\\"trigger_price\\":\\"0.000000000000000000\\",\\"order_hash\\":\\"4u/Amsb4MKUl1t7c0xBZc2fheuKmrbzNFZKqhfgxKuU=\\"}","index":true},{"key":"market_id","value":"\\"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072\\"","index":true},{"key":"market_order_cancel","value":"null","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.exchange.v2.EventNewDerivativeOrders","attributes":[{"key":"buy_orders","value":"[]","index":true},{"key":"market_id","value":"\\"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072\\"","index":true},{"key":"sell_orders","value":"[{\\"order_info\\":{\\"subaccount_id\\":\\"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001\\",\\"fee_recipient\\":\\"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m\\",\\"price\\":\\"0.152900000000000000\\",\\"quantity\\":\\"9810.000000000000000000\\",\\"cid\\":\\"a00c5edc-7627-429f-b6d4-d548a8ac5d5d\\"},\\"order_type\\":\\"SELL_PO\\",\\"margin\\":\\"374.000000000000000000\\",\\"fillable\\":\\"9810.000000000000000000\\",\\"trigger_price\\":\\"0.000000000000000000\\",\\"order_hash\\":\\"bwSw7igKq6iPvzw4UmYzHw300KSdPneex55cKlX3AhY=\\",\\"expiration_block\\":\\"0\\"}]","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.exchange.v1beta1.EventNewDerivativeOrders","attributes":[{"key":"buy_orders","value":"[]","index":true},{"key":"market_id","value":"\\"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072\\"","index":true},{"key":"sell_orders","value":"[{\\"order_info\\":{\\"subaccount_id\\":\\"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001\\",\\"fee_recipient\\":\\"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m\\",\\"price\\":\\"152900.000000000000000000\\",\\"quantity\\":\\"9810.000000000000000000\\",\\"cid\\":\\"a00c5edc-7627-429f-b6d4-d548a8ac5d5d\\"},\\"order_type\\":\\"SELL_PO\\",\\"margin\\":\\"374000000.000000000000000000\\",\\"fillable\\":\\"9810.000000000000000000\\",\\"trigger_price\\":\\"0.000000000000000000\\",\\"order_hash\\":\\"bwSw7igKq6iPvzw4UmYzHw300KSdPneex55cKlX3AhY=\\"}]","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.exchange.v2.EventNewDerivativeOrders","attributes":[{"key":"buy_orders","value":"[]","index":true},{"key":"market_id","value":"\\"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072\\"","index":true},{"key":"sell_orders","value":"[{\\"order_info\\":{\\"subaccount_id\\":\\"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001\\",\\"fee_recipient\\":\\"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m\\",\\"price\\":\\"0.183400000000000000\\",\\"quantity\\":\\"11581.000000000000000000\\",\\"cid\\":\\"2dc9dfb9-8c53-4e99-b304-9780550c65ef\\"},\\"order_type\\":\\"SELL_PO\\",\\"margin\\":\\"530.000000000000000000\\",\\"fillable\\":\\"11581.000000000000000000\\",\\"trigger_price\\":\\"0.000000000000000000\\",\\"order_hash\\":\\"GhVciMw/FD6HSefQ0OQuo9vJeQRTM/EmtQjriXp9PzU=\\",\\"expiration_block\\":\\"0\\"}]","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.exchange.v1beta1.EventNewDerivativeOrders","attributes":[{"key":"buy_orders","value":"[]","index":true},{"key":"market_id","value":"\\"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072\\"","index":true},{"key":"sell_orders","value":"[{\\"order_info\\":{\\"subaccount_id\\":\\"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001\\",\\"fee_recipient\\":\\"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m\\",\\"price\\":\\"183400.000000000000000000\\",\\"quantity\\":\\"11581.000000000000000000\\",\\"cid\\":\\"2dc9dfb9-8c53-4e99-b304-9780550c65ef\\"},\\"order_type\\":\\"SELL_PO\\",\\"margin\\":\\"530000000.000000000000000000\\",\\"fillable\\":\\"11581.000000000000000000\\",\\"trigger_price\\":\\"0.000000000000000000\\",\\"order_hash\\":\\"GhVciMw/FD6HSefQ0OQuo9vJeQRTM/EmtQjriXp9PzU=\\"}]","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.exchange.v2.EventNewDerivativeOrders","attributes":[{"key":"buy_orders","value":"[]","index":true},{"key":"market_id","value":"\\"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072\\"","index":true},{"key":"sell_orders","value":"[{\\"order_info\\":{\\"subaccount_id\\":\\"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001\\",\\"fee_recipient\\":\\"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m\\",\\"price\\":\\"0.198700000000000000\\",\\"quantity\\":\\"10690.000000000000000000\\",\\"cid\\":\\"6dce4595-a12e-48a5-b435-43dd8563d5b4\\"},\\"order_type\\":\\"SELL_PO\\",\\"margin\\":\\"531.000000000000000000\\",\\"fillable\\":\\"10690.000000000000000000\\",\\"trigger_price\\":\\"0.000000000000000000\\",\\"order_hash\\":\\"qKtJmSPMDmnqmb+oWsxtMRj0+WdVZ9VcRsnw6XfRDQA=\\",\\"expiration_block\\":\\"0\\"}]","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.exchange.v1beta1.EventNewDerivativeOrders","attributes":[{"key":"buy_orders","value":"[]","index":true},{"key":"market_id","value":"\\"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072\\"","index":true},{"key":"sell_orders","value":"[{\\"order_info\\":{\\"subaccount_id\\":\\"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001\\",\\"fee_recipient\\":\\"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m\\",\\"price\\":\\"198700.000000000000000000\\",\\"quantity\\":\\"10690.000000000000000000\\",\\"cid\\":\\"6dce4595-a12e-48a5-b435-43dd8563d5b4\\"},\\"order_type\\":\\"SELL_PO\\",\\"margin\\":\\"531000000.000000000000000000\\",\\"fillable\\":\\"10690.000000000000000000\\",\\"trigger_price\\":\\"0.000000000000000000\\",\\"order_hash\\":\\"qKtJmSPMDmnqmb+oWsxtMRj0+WdVZ9VcRsnw6XfRDQA=\\"}]","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.exchange.v2.EventNewDerivativeOrders","attributes":[{"key":"buy_orders","value":"[]","index":true},{"key":"market_id","value":"\\"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072\\"","index":true},{"key":"sell_orders","value":"[{\\"order_info\\":{\\"subaccount_id\\":\\"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001\\",\\"fee_recipient\\":\\"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m\\",\\"price\\":\\"0.214000000000000000\\",\\"quantity\\":\\"9927.000000000000000000\\",\\"cid\\":\\"9aa5ad53-f108-4f7b-8ac6-ee7aac6c2f01\\"},\\"order_type\\":\\"SELL_PO\\",\\"margin\\":\\"531.000000000000000000\\",\\"fillable\\":\\"9927.000000000000000000\\",\\"trigger_price\\":\\"0.000000000000000000\\",\\"order_hash\\":\\"xGlORzzQvGwqpBcy5LxTfDQcl/WxK3tYvLwxorQpVIo=\\",\\"expiration_block\\":\\"0\\"}]","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.exchange.v1beta1.EventNewDerivativeOrders","attributes":[{"key":"buy_orders","value":"[]","index":true},{"key":"market_id","value":"\\"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072\\"","index":true},{"key":"sell_orders","value":"[{\\"order_info\\":{\\"subaccount_id\\":\\"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001\\",\\"fee_recipient\\":\\"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m\\",\\"price\\":\\"214000.000000000000000000\\",\\"quantity\\":\\"9927.000000000000000000\\",\\"cid\\":\\"9aa5ad53-f108-4f7b-8ac6-ee7aac6c2f01\\"},\\"order_type\\":\\"SELL_PO\\",\\"margin\\":\\"531000000.000000000000000000\\",\\"fillable\\":\\"9927.000000000000000000\\",\\"trigger_price\\":\\"0.000000000000000000\\",\\"order_hash\\":\\"xGlORzzQvGwqpBcy5LxTfDQcl/WxK3tYvLwxorQpVIo=\\"}]","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.exchange.v2.EventNewDerivativeOrders","attributes":[{"key":"buy_orders","value":"[]","index":true},{"key":"market_id","value":"\\"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072\\"","index":true},{"key":"sell_orders","value":"[{\\"order_info\\":{\\"subaccount_id\\":\\"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001\\",\\"fee_recipient\\":\\"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m\\",\\"price\\":\\"0.229300000000000000\\",\\"quantity\\":\\"9265.000000000000000000\\",\\"cid\\":\\"e338187c-2d1c-495a-a0e0-6de03f12ffd9\\"},\\"order_type\\":\\"SELL_PO\\",\\"margin\\":\\"531.000000000000000000\\",\\"fillable\\":\\"9265.000000000000000000\\",\\"trigger_price\\":\\"0.000000000000000000\\",\\"order_hash\\":\\"4ocM2r6pvXZiG6bnF6NPvvRMorCIAsLxirZQzwogETU=\\",\\"expiration_block\\":\\"0\\"}]","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.exchange.v1beta1.EventNewDerivativeOrders","attributes":[{"key":"buy_orders","value":"[]","index":true},{"key":"market_id","value":"\\"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072\\"","index":true},{"key":"sell_orders","value":"[{\\"order_info\\":{\\"subaccount_id\\":\\"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001\\",\\"fee_recipient\\":\\"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m\\",\\"price\\":\\"229300.000000000000000000\\",\\"quantity\\":\\"9265.000000000000000000\\",\\"cid\\":\\"e338187c-2d1c-495a-a0e0-6de03f12ffd9\\"},\\"order_type\\":\\"SELL_PO\\",\\"margin\\":\\"531000000.000000000000000000\\",\\"fillable\\":\\"9265.000000000000000000\\",\\"trigger_price\\":\\"0.000000000000000000\\",\\"order_hash\\":\\"4ocM2r6pvXZiG6bnF6NPvvRMorCIAsLxirZQzwogETU=\\"}]","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.exchange.v2.EventNewDerivativeOrders","attributes":[{"key":"buy_orders","value":"[{\\"order_info\\":{\\"subaccount_id\\":\\"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001\\",\\"fee_recipient\\":\\"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m\\",\\"price\\":\\"0.138300000000000000\\",\\"quantity\\":\\"10842.000000000000000000\\",\\"cid\\":\\"431e2a06-e764-4465-9af6-ee670f5baf91\\"},\\"order_type\\":\\"BUY_PO\\",\\"margin\\":\\"374.000000000000000000\\",\\"fillable\\":\\"10842.000000000000000000\\",\\"trigger_price\\":\\"0.000000000000000000\\",\\"order_hash\\":\\"uU4npK1eB5t4kL5c7sgeC0f1TuzGTMZYmJchVc0Vb5M=\\",\\"expiration_block\\":\\"0\\"}]","index":true},{"key":"market_id","value":"\\"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072\\"","index":true},{"key":"sell_orders","value":"[]","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.exchange.v1beta1.EventNewDerivativeOrders","attributes":[{"key":"buy_orders","value":"[{\\"order_info\\":{\\"subaccount_id\\":\\"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001\\",\\"fee_recipient\\":\\"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m\\",\\"price\\":\\"138300.000000000000000000\\",\\"quantity\\":\\"10842.000000000000000000\\",\\"cid\\":\\"431e2a06-e764-4465-9af6-ee670f5baf91\\"},\\"order_type\\":\\"BUY_PO\\",\\"margin\\":\\"374000000.000000000000000000\\",\\"fillable\\":\\"10842.000000000000000000\\",\\"trigger_price\\":\\"0.000000000000000000\\",\\"order_hash\\":\\"uU4npK1eB5t4kL5c7sgeC0f1TuzGTMZYmJchVc0Vb5M=\\"}]","index":true},{"key":"market_id","value":"\\"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072\\"","index":true},{"key":"sell_orders","value":"[]","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.exchange.v2.EventNewDerivativeOrders","attributes":[{"key":"buy_orders","value":"[{\\"order_info\\":{\\"subaccount_id\\":\\"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001\\",\\"fee_recipient\\":\\"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m\\",\\"price\\":\\"0.092200000000000000\\",\\"quantity\\":\\"23041.000000000000000000\\",\\"cid\\":\\"1090e72b-df38-41bf-8500-5ad920e7b08d\\"},\\"order_type\\":\\"BUY_PO\\",\\"margin\\":\\"531.000000000000000000\\",\\"fillable\\":\\"23041.000000000000000000\\",\\"trigger_price\\":\\"0.000000000000000000\\",\\"order_hash\\":\\"M8NWRqpRA06ft71doW/YDVJOYhwIjRwvebYWrbv2gho=\\",\\"expiration_block\\":\\"0\\"}]","index":true},{"key":"market_id","value":"\\"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072\\"","index":true},{"key":"sell_orders","value":"[]","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.exchange.v1beta1.EventNewDerivativeOrders","attributes":[{"key":"buy_orders","value":"[{\\"order_info\\":{\\"subaccount_id\\":\\"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001\\",\\"fee_recipient\\":\\"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m\\",\\"price\\":\\"92200.000000000000000000\\",\\"quantity\\":\\"23041.000000000000000000\\",\\"cid\\":\\"1090e72b-df38-41bf-8500-5ad920e7b08d\\"},\\"order_type\\":\\"BUY_PO\\",\\"margin\\":\\"531000000.000000000000000000\\",\\"fillable\\":\\"23041.000000000000000000\\",\\"trigger_price\\":\\"0.000000000000000000\\",\\"order_hash\\":\\"M8NWRqpRA06ft71doW/YDVJOYhwIjRwvebYWrbv2gho=\\"}]","index":true},{"key":"market_id","value":"\\"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072\\"","index":true},{"key":"sell_orders","value":"[]","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.exchange.v2.EventNewDerivativeOrders","attributes":[{"key":"buy_orders","value":"[{\\"order_info\\":{\\"subaccount_id\\":\\"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001\\",\\"fee_recipient\\":\\"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m\\",\\"price\\":\\"0.069100000000000000\\",\\"quantity\\":\\"30721.000000000000000000\\",\\"cid\\":\\"39b39944-0519-4923-a1ff-ed8b03f1833b\\"},\\"order_type\\":\\"BUY_PO\\",\\"margin\\":\\"530.000000000000000000\\",\\"fillable\\":\\"30721.000000000000000000\\",\\"trigger_price\\":\\"0.000000000000000000\\",\\"order_hash\\":\\"ehXSmJuqO2bzYIoesGz26sj2zXrMQTPe4xkvYrioB4Y=\\",\\"expiration_block\\":\\"0\\"}]","index":true},{"key":"market_id","value":"\\"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072\\"","index":true},{"key":"sell_orders","value":"[]","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.exchange.v1beta1.EventNewDerivativeOrders","attributes":[{"key":"buy_orders","value":"[{\\"order_info\\":{\\"subaccount_id\\":\\"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001\\",\\"fee_recipient\\":\\"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m\\",\\"price\\":\\"69100.000000000000000000\\",\\"quantity\\":\\"30721.000000000000000000\\",\\"cid\\":\\"39b39944-0519-4923-a1ff-ed8b03f1833b\\"},\\"order_type\\":\\"BUY_PO\\",\\"margin\\":\\"530000000.000000000000000000\\",\\"fillable\\":\\"30721.000000000000000000\\",\\"trigger_price\\":\\"0.000000000000000000\\",\\"order_hash\\":\\"ehXSmJuqO2bzYIoesGz26sj2zXrMQTPe4xkvYrioB4Y=\\"}]","index":true},{"key":"market_id","value":"\\"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072\\"","index":true},{"key":"sell_orders","value":"[]","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.exchange.v2.EventNewDerivativeOrders","attributes":[{"key":"buy_orders","value":"[{\\"order_info\\":{\\"subaccount_id\\":\\"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001\\",\\"fee_recipient\\":\\"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m\\",\\"price\\":\\"0.046100000000000000\\",\\"quantity\\":\\"46082.000000000000000000\\",\\"cid\\":\\"751ac3ac-70c3-4c41-b547-82bdbfd69a0d\\"},\\"order_type\\":\\"BUY_PO\\",\\"margin\\":\\"531.000000000000000000\\",\\"fillable\\":\\"46082.000000000000000000\\",\\"trigger_price\\":\\"0.000000000000000000\\",\\"order_hash\\":\\"tqvqqcrbYc95Awp6k4f0qUC5QR5rWdlVcHuj+xK7NRI=\\",\\"expiration_block\\":\\"0\\"}]","index":true},{"key":"market_id","value":"\\"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072\\"","index":true},{"key":"sell_orders","value":"[]","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.exchange.v1beta1.EventNewDerivativeOrders","attributes":[{"key":"buy_orders","value":"[{\\"order_info\\":{\\"subaccount_id\\":\\"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001\\",\\"fee_recipient\\":\\"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m\\",\\"price\\":\\"46100.000000000000000000\\",\\"quantity\\":\\"46082.000000000000000000\\",\\"cid\\":\\"751ac3ac-70c3-4c41-b547-82bdbfd69a0d\\"},\\"order_type\\":\\"BUY_PO\\",\\"margin\\":\\"531000000.000000000000000000\\",\\"fillable\\":\\"46082.000000000000000000\\",\\"trigger_price\\":\\"0.000000000000000000\\",\\"order_hash\\":\\"tqvqqcrbYc95Awp6k4f0qUC5QR5rWdlVcHuj+xK7NRI=\\"}]","index":true},{"key":"market_id","value":"\\"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072\\"","index":true},{"key":"sell_orders","value":"[]","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.exchange.v2.EventNewDerivativeOrders","attributes":[{"key":"buy_orders","value":"[{\\"order_info\\":{\\"subaccount_id\\":\\"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001\\",\\"fee_recipient\\":\\"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m\\",\\"price\\":\\"0.023000000000000000\\",\\"quantity\\":\\"92164.000000000000000000\\",\\"cid\\":\\"e80b701e-6a59-45bc-a907-204b5b3e500f\\"},\\"order_type\\":\\"BUY_PO\\",\\"margin\\":\\"529.000000000000000000\\",\\"fillable\\":\\"92164.000000000000000000\\",\\"trigger_price\\":\\"0.000000000000000000\\",\\"order_hash\\":\\"xdR4/W4pH0IwYfQTuTOhU5B2XfPqUw5qSAvLJxjQ+z8=\\",\\"expiration_block\\":\\"0\\"}]","index":true},{"key":"market_id","value":"\\"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072\\"","index":true},{"key":"sell_orders","value":"[]","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"injective.exchange.v1beta1.EventNewDerivativeOrders","attributes":[{"key":"buy_orders","value":"[{\\"order_info\\":{\\"subaccount_id\\":\\"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001\\",\\"fee_recipient\\":\\"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m\\",\\"price\\":\\"23000.000000000000000000\\",\\"quantity\\":\\"92164.000000000000000000\\",\\"cid\\":\\"e80b701e-6a59-45bc-a907-204b5b3e500f\\"},\\"order_type\\":\\"BUY_PO\\",\\"margin\\":\\"529000000.000000000000000000\\",\\"fillable\\":\\"92164.000000000000000000\\",\\"trigger_price\\":\\"0.000000000000000000\\",\\"order_hash\\":\\"xdR4/W4pH0IwYfQTuTOhU5B2XfPqUw5qSAvLJxjQ+z8=\\"}]","index":true},{"key":"market_id","value":"\\"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072\\"","index":true},{"key":"sell_orders","value":"[]","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"0","index":true}]}]}]', 'memo': '', 'messages': '[{"type":"/cosmos.authz.v1beta1.MsgExec","value":{"grantee":"inj1d25y0hfk3axsd58n62h2zan6295rkqq95x2mcw","msgs":[{"@type":"/injective.exchange.v1beta1.MsgBatchUpdateOrders","sender":"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m","subaccount_id":"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001","spot_market_ids_to_cancel_all":[],"derivative_market_ids_to_cancel_all":["0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072"],"spot_orders_to_cancel":[],"derivative_orders_to_cancel":[],"spot_orders_to_create":[],"derivative_orders_to_create":[{"market_id":"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072","order_info":{"subaccount_id":"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001","fee_recipient":"","price":"152900.000000000000000000","quantity":"9810.000000000000000000","cid":"a00c5edc-7627-429f-b6d4-d548a8ac5d5d"},"order_type":"SELL_PO","margin":"374000000.000000000000000000","trigger_price":"0.000000000000000000"},{"market_id":"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072","order_info":{"subaccount_id":"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001","fee_recipient":"","price":"183400.000000000000000000","quantity":"11581.000000000000000000","cid":"2dc9dfb9-8c53-4e99-b304-9780550c65ef"},"order_type":"SELL_PO","margin":"530000000.000000000000000000","trigger_price":"0.000000000000000000"},{"market_id":"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072","order_info":{"subaccount_id":"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001","fee_recipient":"","price":"198700.000000000000000000","quantity":"10690.000000000000000000","cid":"6dce4595-a12e-48a5-b435-43dd8563d5b4"},"order_type":"SELL_PO","margin":"531000000.000000000000000000","trigger_price":"0.000000000000000000"},{"market_id":"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072","order_info":{"subaccount_id":"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001","fee_recipient":"","price":"214000.000000000000000000","quantity":"9927.000000000000000000","cid":"9aa5ad53-f108-4f7b-8ac6-ee7aac6c2f01"},"order_type":"SELL_PO","margin":"531000000.000000000000000000","trigger_price":"0.000000000000000000"},{"market_id":"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072","order_info":{"subaccount_id":"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001","fee_recipient":"","price":"229300.000000000000000000","quantity":"9265.000000000000000000","cid":"e338187c-2d1c-495a-a0e0-6de03f12ffd9"},"order_type":"SELL_PO","margin":"531000000.000000000000000000","trigger_price":"0.000000000000000000"},{"market_id":"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072","order_info":{"subaccount_id":"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001","fee_recipient":"","price":"138300.000000000000000000","quantity":"10842.000000000000000000","cid":"431e2a06-e764-4465-9af6-ee670f5baf91"},"order_type":"BUY_PO","margin":"374000000.000000000000000000","trigger_price":"0.000000000000000000"},{"market_id":"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072","order_info":{"subaccount_id":"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001","fee_recipient":"","price":"92200.000000000000000000","quantity":"23041.000000000000000000","cid":"1090e72b-df38-41bf-8500-5ad920e7b08d"},"order_type":"BUY_PO","margin":"531000000.000000000000000000","trigger_price":"0.000000000000000000"},{"market_id":"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072","order_info":{"subaccount_id":"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001","fee_recipient":"","price":"69100.000000000000000000","quantity":"30721.000000000000000000","cid":"39b39944-0519-4923-a1ff-ed8b03f1833b"},"order_type":"BUY_PO","margin":"530000000.000000000000000000","trigger_price":"0.000000000000000000"},{"market_id":"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072","order_info":{"subaccount_id":"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001","fee_recipient":"","price":"46100.000000000000000000","quantity":"46082.000000000000000000","cid":"751ac3ac-70c3-4c41-b547-82bdbfd69a0d"},"order_type":"BUY_PO","margin":"531000000.000000000000000000","trigger_price":"0.000000000000000000"},{"market_id":"0x25f4199b79a3db374b93a695e48cdc0c48c7aac844fc7ed04a0166e21ac7a072","order_info":{"subaccount_id":"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001","fee_recipient":"","price":"23000.000000000000000000","quantity":"92164.000000000000000000","cid":"e80b701e-6a59-45bc-a907-204b5b3e500f"},"order_type":"BUY_PO","margin":"529000000.000000000000000000","trigger_price":"0.000000000000000000"}],"binary_options_orders_to_cancel":[],"binary_options_market_ids_to_cancel_all":[],"binary_options_orders_to_create":[]}]}}]', 'payer': 'inj1d25y0hfk3axsd58n62h2zan6295rkqq95x2mcw', 'signatures': ['{"pubkey":"02098c91627057a8528e2eb4b60b1d9bcb16fa5e0376753ea1a2a5f0e674953035","address":"inj1d25y0hfk3axsd58n62h2zan6295rkqq95x2mcw","sequence":904378,"signature":"PI8IQg8wT7Y5O9E/fR3siCw+JRA2WWV8zFlwXWFXMPod5H+qHx5kpgxgKMjVJz26ryl4p0CsAUBxMHnx497m8w=="}'], 'tx_number': 904405, 'tx_type': 'injective'}], 'pagination': {'has_next': False, 'has_prev': False, 'page': 1, 'page_size': 5, 'total': 1, 'total_pages': 1}}
+test_GetAccountTransactions脚本完成
+该脚本总共用时：3.627
+test_GetAccountTransactions (tests.BlockExprole.GetAccountTransactions.GetAccountTransactions.test_GetAccountTransactions)执行——>【通过】
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>6</td>
+                    <td class="get_BlockbyHeight">get_BlockbyHeight</td>
+                    <td>test_getblockbyheight</td>
+                    <td>根据区块高度查询</td>
+                    <td>0.452s</td>
+                    
+                        <td class="text-success">成功</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>{'code': 200, 'message': 'success', 'data': {'block_hash': '0xe3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'block_unix_timestamp': 1625058000000, 'height': 1, 'moniker': 'Injective Node 3', 'num_precommits': 0, 'num_txs': 0, 'parent_hash': '0x0000000000000000000000000000000000000000000000000000000000000000', 'proposer': 'injvalcons1d8als5uv78vsgf6qhyku0wcgcssp47mepfxuuy', 'timestamp': '2021-06-30 13:00:00 +0000 UTC', 'total_txs': 0, 'txs': []}}
+test_getblockbyheight脚本完成
+该脚本总共用时：0.452
+test_getblockbyheight (tests.BlockExprole.GetBlockbyHeight.get_BlockbyHeight.test_getblockbyheight)执行——>【通过】
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>7</td>
+                    <td class="GetLatestTransactions">GetLatestTransactions</td>
+                    <td>test_GetLatestTransactions</td>
+                    <td>获取最新5条trans信息</td>
+                    <td>1.16s</td>
+                    
+                        <td class="text-success">成功</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>{'data': [{'block_number': 141387727, 'block_timestamp': '2025-11-13 03:30:02.606 +0000 UTC', 'block_unix_timestamp': 1763004602606, 'claim_ids': None, 'code': 0, 'codespace': '', 'data': '\x12<\n:/cosmos.distribution.v1beta1.MsgSetWithdrawAddressResponse\x12/\n%/cosmos.authz.v1beta1.MsgExecResponse\x12\x06\n\x04\x12\x02\x01\x01', 'error_log': '', 'events': [], 'gas_fee': '{"amount":[{"denom":"inj","amount":"40960000000000"}],"gas_limit":256000,"payer":"inj13a8z3cgdjyzrfrnd3x8x389l47a2sdep4r6y04"}', 'gas_used': 159891, 'gas_wanted': 256000, 'hash': '0x1f2c328ddbb9a390eef0d5144de6c7c71d8d657d7434fb03f546029c35b77104', 'id': '', 'info': '', 'logs': '[{"msg_index":"0","events":[{"type":"message","attributes":[{"key":"action","value":"/cosmos.distribution.v1beta1.MsgSetWithdrawAddress","index":true},{"key":"sender","value":"inj13a8z3cgdjyzrfrnd3x8x389l47a2sdep4r6y04","index":true},{"key":"module","value":"distribution","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"set_withdraw_address","attributes":[{"key":"withdraw_address","value":"inj13a8z3cgdjyzrfrnd3x8x389l47a2sdep4r6y04","index":true},{"key":"msg_index","value":"0","index":true}]}]},{"msg_index":"1","events":[{"type":"message","attributes":[{"key":"action","value":"/cosmos.authz.v1beta1.MsgExec","index":true},{"key":"sender","value":"inj13a8z3cgdjyzrfrnd3x8x389l47a2sdep4r6y04","index":true},{"key":"module","value":"authz","index":true},{"key":"msg_index","value":"1","index":true}]},{"type":"injective.exchange.v2.EventCancelDerivativeOrder","attributes":[{"key":"isLimitCancel","value":"true","index":true},{"key":"limit_order","value":"{\\"order_info\\":{\\"subaccount_id\\":\\"0x3e3b2053a8b49287062dfc3368b8ece0bae0723c000000000000000000000003\\",\\"fee_recipient\\":\\"inj18cajq5agkjfgwp3dlsek3w8vuzawqu3uaztpen\\",\\"price\\":\\"7.361000000000000000\\",\\"quantity\\":\\"1087.491000000000000000\\",\\"cid\\":\\"#00000006b4935be9bee2eb2b00024386\\"},\\"order_type\\":\\"SELL_PO\\",\\"margin\\":\\"0.000000000000000000\\",\\"fillable\\":\\"1087.491000000000000000\\",\\"trigger_price\\":null,\\"order_hash\\":\\"aX9815HqALmAxoq4gFQGCmG5zCwDY9Cf8jjlSfiyqg4=\\",\\"expiration_block\\":\\"0\\"}","index":true},{"key":"market_id","value":"\\"0x9b9980167ecc3645ff1a5517886652d94a0825e54a77d2057cbbe3ebee015963\\"","index":true},{"key":"market_order_cancel","value":"null","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"1","index":true}]},{"type":"injective.exchange.v1beta1.EventCancelDerivativeOrder","attributes":[{"key":"isLimitCancel","value":"true","index":true},{"key":"limit_order","value":"{\\"order_info\\":{\\"subaccount_id\\":\\"0x3e3b2053a8b49287062dfc3368b8ece0bae0723c000000000000000000000003\\",\\"fee_recipient\\":\\"inj18cajq5agkjfgwp3dlsek3w8vuzawqu3uaztpen\\",\\"price\\":\\"7361000.000000000000000000\\",\\"quantity\\":\\"1087.491000000000000000\\",\\"cid\\":\\"#00000006b4935be9bee2eb2b00024386\\"},\\"order_type\\":\\"SELL_PO\\",\\"margin\\":\\"0.000000000000000000\\",\\"fillable\\":\\"1087.491000000000000000\\",\\"trigger_price\\":null,\\"order_hash\\":\\"aX9815HqALmAxoq4gFQGCmG5zCwDY9Cf8jjlSfiyqg4=\\"}","index":true},{"key":"market_id","value":"\\"0x9b9980167ecc3645ff1a5517886652d94a0825e54a77d2057cbbe3ebee015963\\"","index":true},{"key":"market_order_cancel","value":"null","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"1","index":true}]},{"type":"injective.exchange.v2.EventCancelDerivativeOrder","attributes":[{"key":"isLimitCancel","value":"true","index":true},{"key":"limit_order","value":"{\\"order_info\\":{\\"subaccount_id\\":\\"0x3e3b2053a8b49287062dfc3368b8ece0bae0723c000000000000000000000003\\",\\"fee_recipient\\":\\"inj18cajq5agkjfgwp3dlsek3w8vuzawqu3uaztpen\\",\\"price\\":\\"7.355000000000000000\\",\\"quantity\\":\\"124.904000000000000000\\",\\"cid\\":\\"#00000006b4935be9bee2eb2b00024387\\"},\\"order_type\\":\\"BUY_PO\\",\\"margin\\":\\"183.733784000000014203\\",\\"fillable\\":\\"124.904000000000000000\\",\\"trigger_price\\":null,\\"order_hash\\":\\"Mc8J1+7wMW6tEb0De0EK9Ec8C78IIMoIoB13E8pR6cc=\\",\\"expiration_block\\":\\"0\\"}","index":true},{"key":"market_id","value":"\\"0x9b9980167ecc3645ff1a5517886652d94a0825e54a77d2057cbbe3ebee015963\\"","index":true},{"key":"market_order_cancel","value":"null","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"1","index":true}]},{"type":"injective.exchange.v1beta1.EventCancelDerivativeOrder","attributes":[{"key":"isLimitCancel","value":"true","index":true},{"key":"limit_order","value":"{\\"order_info\\":{\\"subaccount_id\\":\\"0x3e3b2053a8b49287062dfc3368b8ece0bae0723c000000000000000000000003\\",\\"fee_recipient\\":\\"inj18cajq5agkjfgwp3dlsek3w8vuzawqu3uaztpen\\",\\"price\\":\\"7355000.000000000000000000\\",\\"quantity\\":\\"124.904000000000000000\\",\\"cid\\":\\"#00000006b4935be9bee2eb2b00024387\\"},\\"order_type\\":\\"BUY_PO\\",\\"margin\\":\\"183733784.000000014203000000\\",\\"fillable\\":\\"124.904000000000000000\\",\\"trigger_price\\":null,\\"order_hash\\":\\"Mc8J1+7wMW6tEb0De0EK9Ec8C78IIMoIoB13E8pR6cc=\\"}","index":true},{"key":"market_id","value":"\\"0x9b9980167ecc3645ff1a5517886652d94a0825e54a77d2057cbbe3ebee015963\\"","index":true},{"key":"market_order_cancel","value":"null","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"1","index":true}]}]}]', 'memo': '', 'messages': '[{"type":"/cosmos.distribution.v1beta1.MsgSetWithdrawAddress","value":{"delegator_address":"inj13a8z3cgdjyzrfrnd3x8x389l47a2sdep4r6y04","withdraw_address":"inj13a8z3cgdjyzrfrnd3x8x389l47a2sdep4r6y04"}},{"type":"/cosmos.authz.v1beta1.MsgExec","value":{"grantee":"inj13a8z3cgdjyzrfrnd3x8x389l47a2sdep4r6y04","msgs":[{"@type":"/injective.exchange.v1beta1.MsgBatchUpdateOrders","sender":"inj18cajq5agkjfgwp3dlsek3w8vuzawqu3uaztpen","subaccount_id":"","spot_market_ids_to_cancel_all":[],"derivative_market_ids_to_cancel_all":[],"spot_orders_to_cancel":[],"derivative_orders_to_cancel":[{"market_id":"0x9b9980167ecc3645ff1a5517886652d94a0825e54a77d2057cbbe3ebee015963","subaccount_id":"0x3e3b2053a8b49287062dfc3368b8ece0bae0723c000000000000000000000003","order_hash":"","order_mask":0,"cid":"#00000006b4935be9bee2eb2b00024386"},{"market_id":"0x9b9980167ecc3645ff1a5517886652d94a0825e54a77d2057cbbe3ebee015963","subaccount_id":"0x3e3b2053a8b49287062dfc3368b8ece0bae0723c000000000000000000000003","order_hash":"","order_mask":0,"cid":"#00000006b4935be9bee2eb2b00024387"}],"spot_orders_to_create":[],"derivative_orders_to_create":[],"binary_options_orders_to_cancel":[],"binary_options_market_ids_to_cancel_all":[],"binary_options_orders_to_create":[]}]}}]', 'payer': 'inj13a8z3cgdjyzrfrnd3x8x389l47a2sdep4r6y04', 'signatures': ['{"pubkey":"03566e947c76403e57c0b0573b96359eb72e10d63610c0532f01b6c3f64a63f429","address":"inj13a8z3cgdjyzrfrnd3x8x389l47a2sdep4r6y04","sequence":2803931,"signature":"n/R5mIs+HWRBYqv09SjHOTL/b6fiabBqmvtv3nuMXAJ3TqrCQBN5s5vbkkFhKpNlyGQh9Zl0ZqkSuWfcl+5UzA=="}'], 'tx_number': 2647693370, 'tx_type': 'injective'}], 'pagination': {'has_next': False, 'has_prev': False, 'page': 1, 'page_size': 5, 'total': 1, 'total_pages': 1}}
+test_GetLatestTransactions脚本完成
+该脚本总共用时：1.164
+test_GetLatestTransactions (tests.BlockExprole.GetLatestTransactions.GetLatestTransactions.test_GetLatestTransactions)执行——>【通过】
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>8</td>
+                    <td class="GetTransactionbyHash">GetTransactionbyHash</td>
+                    <td>test_GetTransactionbyHash</td>
+                    <td>根据交易hash获取trans交易信息</td>
+                    <td>1.86s</td>
+                    
+                        <td class="text-success">成功</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>{'data': [{'block_number': 141387730, 'block_timestamp': '2025-11-13 03:30:04.4 +0000 UTC', 'block_unix_timestamp': 1763004604400, 'claim_ids': None, 'code': 0, 'codespace': '', 'data': '\x12<\n:/cosmos.distribution.v1beta1.MsgSetWithdrawAddressResponse\x12.\n%/cosmos.authz.v1beta1.MsgExecResponse\x12\x05\n\x03\x12\x01\x00', 'error_log': '', 'events': [], 'gas_fee': '{"amount":[{"denom":"inj","amount":"30080000000000"}],"gas_limit":188000,"payer":"inj16sfghugs3wswfj20fx66wzmf3frgjmd3mmpvph"}', 'gas_used': 100636, 'gas_wanted': 188000, 'hash': '0xd03a9e254671dbc8a8640f4f5b0c8debbabec70e17517d3cb15492446a6c12dc', 'id': '', 'info': '', 'logs': '[{"msg_index":"0","events":[{"type":"message","attributes":[{"key":"action","value":"/cosmos.distribution.v1beta1.MsgSetWithdrawAddress","index":true},{"key":"sender","value":"inj16sfghugs3wswfj20fx66wzmf3frgjmd3mmpvph","index":true},{"key":"module","value":"distribution","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"set_withdraw_address","attributes":[{"key":"withdraw_address","value":"inj16sfghugs3wswfj20fx66wzmf3frgjmd3mmpvph","index":true},{"key":"msg_index","value":"0","index":true}]}]},{"msg_index":"1","events":[{"type":"message","attributes":[{"key":"action","value":"/cosmos.authz.v1beta1.MsgExec","index":true},{"key":"sender","value":"inj16sfghugs3wswfj20fx66wzmf3frgjmd3mmpvph","index":true},{"key":"module","value":"authz","index":true},{"key":"msg_index","value":"1","index":true}]},{"type":"injective.exchange.v2.EventOrderCancelFail","attributes":[{"key":"cid","value":"\\"#00000006b493c720bc0c2155000243d0\\"","index":true},{"key":"description","value":"\\"invalid order identifier string: struct field error\\"","index":true},{"key":"market_id","value":"\\"0x9b9980167ecc3645ff1a5517886652d94a0825e54a77d2057cbbe3ebee015963\\"","index":true},{"key":"order_hash","value":"\\"\\"","index":true},{"key":"subaccount_id","value":"\\"0x3e3b2053a8b49287062dfc3368b8ece0bae0723c000000000000000000000003\\"","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"1","index":true}]},{"type":"injective.exchange.v1beta1.EventOrderCancelFail","attributes":[{"key":"cid","value":"\\"\\"","index":true},{"key":"description","value":"\\"\\"","index":true},{"key":"market_id","value":"\\"0x9b9980167ecc3645ff1a5517886652d94a0825e54a77d2057cbbe3ebee015963\\"","index":true},{"key":"order_hash","value":"\\"\\"","index":true},{"key":"subaccount_id","value":"\\"\\"","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"1","index":true}]}]}]', 'memo': '', 'messages': '[{"type":"/cosmos.distribution.v1beta1.MsgSetWithdrawAddress","value":{"delegator_address":"inj16sfghugs3wswfj20fx66wzmf3frgjmd3mmpvph","withdraw_address":"inj16sfghugs3wswfj20fx66wzmf3frgjmd3mmpvph"}},{"type":"/cosmos.authz.v1beta1.MsgExec","value":{"grantee":"inj16sfghugs3wswfj20fx66wzmf3frgjmd3mmpvph","msgs":[{"@type":"/injective.exchange.v1beta1.MsgBatchUpdateOrders","sender":"inj18cajq5agkjfgwp3dlsek3w8vuzawqu3uaztpen","subaccount_id":"","spot_market_ids_to_cancel_all":[],"derivative_market_ids_to_cancel_all":[],"spot_orders_to_cancel":[],"derivative_orders_to_cancel":[{"market_id":"0x9b9980167ecc3645ff1a5517886652d94a0825e54a77d2057cbbe3ebee015963","subaccount_id":"0x3e3b2053a8b49287062dfc3368b8ece0bae0723c000000000000000000000003","order_hash":"","order_mask":0,"cid":"#00000006b493c720bc0c2155000243d0"}],"spot_orders_to_create":[],"derivative_orders_to_create":[],"binary_options_orders_to_cancel":[],"binary_options_market_ids_to_cancel_all":[],"binary_options_orders_to_create":[]}]}}]', 'payer': 'inj16sfghugs3wswfj20fx66wzmf3frgjmd3mmpvph', 'signatures': ['{"pubkey":"02e76b2ca6fa35644ee9ddcba9a195a8dc763c5cff42b18554d5783a915573e72c","address":"inj16sfghugs3wswfj20fx66wzmf3frgjmd3mmpvph","sequence":3165172,"signature":"PUAvME/Nysfw4IxFWudbRxcIAeaTtLbSEc52ySvz/bRgRzNcCWpRL9K00GB1fpDPsvLurFcG/fIVtkl286MxTA=="}'], 'tx_number': 2647693406, 'tx_type': 'injective'}], 'pagination': {'has_next': False, 'has_prev': False, 'page': 1, 'page_size': 5, 'total': 1, 'total_pages': 1}}
+0xd03a9e254671dbc8a8640f4f5b0c8debbabec70e17517d3cb15492446a6c12dc
+{'code': 200, 'message': 'success', 'data': {'block_number': 141387730, 'block_timestamp': '2025-11-13 03:30:04.4 +0000 UTC', 'block_unix_timestamp': 1763004604400, 'claim_ids': None, 'code': 0, 'codespace': '', 'data': '\x12<\n:/cosmos.distribution.v1beta1.MsgSetWithdrawAddressResponse\x12.\n%/cosmos.authz.v1beta1.MsgExecResponse\x12\x05\n\x03\x12\x01\x00', 'error_log': '', 'events': [], 'gas_fee': '{"amount":[{"denom":"inj","amount":"30080000000000"}],"gas_limit":188000,"payer":"inj16sfghugs3wswfj20fx66wzmf3frgjmd3mmpvph"}', 'gas_used': 100636, 'gas_wanted': 188000, 'hash': '0xd03a9e254671dbc8a8640f4f5b0c8debbabec70e17517d3cb15492446a6c12dc', 'id': '', 'info': '', 'logs': '[{"msg_index":"0","events":[{"type":"message","attributes":[{"key":"action","value":"/cosmos.distribution.v1beta1.MsgSetWithdrawAddress","index":true},{"key":"sender","value":"inj16sfghugs3wswfj20fx66wzmf3frgjmd3mmpvph","index":true},{"key":"module","value":"distribution","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"set_withdraw_address","attributes":[{"key":"withdraw_address","value":"inj16sfghugs3wswfj20fx66wzmf3frgjmd3mmpvph","index":true},{"key":"msg_index","value":"0","index":true}]}]},{"msg_index":"1","events":[{"type":"message","attributes":[{"key":"action","value":"/cosmos.authz.v1beta1.MsgExec","index":true},{"key":"sender","value":"inj16sfghugs3wswfj20fx66wzmf3frgjmd3mmpvph","index":true},{"key":"module","value":"authz","index":true},{"key":"msg_index","value":"1","index":true}]},{"type":"injective.exchange.v2.EventOrderCancelFail","attributes":[{"key":"cid","value":"\\"#00000006b493c720bc0c2155000243d0\\"","index":true},{"key":"description","value":"\\"invalid order identifier string: struct field error\\"","index":true},{"key":"market_id","value":"\\"0x9b9980167ecc3645ff1a5517886652d94a0825e54a77d2057cbbe3ebee015963\\"","index":true},{"key":"order_hash","value":"\\"\\"","index":true},{"key":"subaccount_id","value":"\\"0x3e3b2053a8b49287062dfc3368b8ece0bae0723c000000000000000000000003\\"","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"1","index":true}]},{"type":"injective.exchange.v1beta1.EventOrderCancelFail","attributes":[{"key":"cid","value":"\\"\\"","index":true},{"key":"description","value":"\\"\\"","index":true},{"key":"market_id","value":"\\"0x9b9980167ecc3645ff1a5517886652d94a0825e54a77d2057cbbe3ebee015963\\"","index":true},{"key":"order_hash","value":"\\"\\"","index":true},{"key":"subaccount_id","value":"\\"\\"","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"1","index":true}]}]}]', 'memo': '', 'messages': '[{"type":"/cosmos.distribution.v1beta1.MsgSetWithdrawAddress","value":{"delegator_address":"inj16sfghugs3wswfj20fx66wzmf3frgjmd3mmpvph","withdraw_address":"inj16sfghugs3wswfj20fx66wzmf3frgjmd3mmpvph"}},{"type":"/cosmos.authz.v1beta1.MsgExec","value":{"grantee":"inj16sfghugs3wswfj20fx66wzmf3frgjmd3mmpvph","msgs":[{"@type":"/injective.exchange.v1beta1.MsgBatchUpdateOrders","sender":"inj18cajq5agkjfgwp3dlsek3w8vuzawqu3uaztpen","subaccount_id":"","spot_market_ids_to_cancel_all":[],"derivative_market_ids_to_cancel_all":[],"spot_orders_to_cancel":[],"derivative_orders_to_cancel":[{"market_id":"0x9b9980167ecc3645ff1a5517886652d94a0825e54a77d2057cbbe3ebee015963","subaccount_id":"0x3e3b2053a8b49287062dfc3368b8ece0bae0723c000000000000000000000003","order_hash":"","order_mask":0,"cid":"#00000006b493c720bc0c2155000243d0"}],"spot_orders_to_create":[],"derivative_orders_to_create":[],"binary_options_orders_to_cancel":[],"binary_options_market_ids_to_cancel_all":[],"binary_options_orders_to_create":[]}]}}]', 'payer': 'inj16sfghugs3wswfj20fx66wzmf3frgjmd3mmpvph', 'signatures': ['{"pubkey":"02e76b2ca6fa35644ee9ddcba9a195a8dc763c5cff42b18554d5783a915573e72c","address":"inj16sfghugs3wswfj20fx66wzmf3frgjmd3mmpvph","sequence":3165172,"signature":"PUAvME/Nysfw4IxFWudbRxcIAeaTtLbSEc52ySvz/bRgRzNcCWpRL9K00GB1fpDPsvLurFcG/fIVtkl286MxTA=="}'], 'tx_number': 2647693406, 'tx_type': 'injective'}}
+test_GetTransactionbyHash脚本完成
+该脚本总共用时：1.861
+test_GetTransactionbyHash (tests.BlockExprole.GetTransactionbyHash.GetTransactionbyHash.test_GetTransactionbyHash)执行——>【通过】
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>9</td>
+                    <td class="Getvalidators">Getvalidators</td>
+                    <td>test_Getvalidators</td>
+                    <td>获取区块链验证人</td>
+                    <td>0.106s</td>
+                    
+                        <td class="text-warning">失败</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>{'code': 500, 'reason': '', 'message': 'dial tcp: lookup biya-explorer-mysql on 127.0.0.11:53: no such host', 'metadata': {}}
+test_Getvalidators (tests.BlockExprole.Getvalidators.Getvalidators.test_Getvalidators)执行——>【失败】
+</pre>
+                        
+
+                            <pre>Traceback (most recent call last):
+</pre>
+                        
+
+                            <pre>  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python313\Lib\unittest\case.py", line 58, in testPartExecutor
+    yield
+</pre>
+                        
+
+                            <pre>  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python313\Lib\unittest\case.py", line 651, in run
+    self._callTestMethod(testMethod)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+</pre>
+                        
+
+                            <pre>  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python313\Lib\unittest\case.py", line 606, in _callTestMethod
+    if method() is not None:
+       ~~~~~~^^
+</pre>
+                        
+
+                            <pre>  File "C:\Users\Administrator\PycharmProjects\PythonProject\tests\BlockExprole\Getvalidators.py", line 12, in test_Getvalidators
+    self.assertEqual(response.status_code,200)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+</pre>
+                        
+
+                            <pre>AssertionError: 500 != 200
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+
+            </tbody>
+        </table>
+    </div>
+
+    <div style="height: 200px"></div>
+</div>
+
+
+<script>
+    var tbodyTr = $('tbody tr');
+    var testResult = $("#testResult");
+    var testClass = $("#testClass");
+    <!--    用例执行详细信息显示切换-->
+    $(".btn_info").click(function () {
+        $(this).parent().parent().next().toggle();
+
+    });
+    // 当选择用例类之后触发
+    testClass.change(function () {
+        var cls = $(this).val();
+        var res = testResult.val();
+        elementDisplay(cls, res);
+        sort()
+    });
+    testResult.change(function () {
+        var res = $(this).val();
+        var cls = testClass.val();
+        elementDisplay(cls, res);
+        sort()
+    });
+
+    function elementDisplay(cls, res) {
+        // 用例数据的显示
+        if (cls === "所有") {
+            if (res === "所有") {
+                tbodyTr.has('button').show();
+            } else if (res === '成功') {
+                tbodyTr.hide();
+                tbodyTr.has('button').has('.text-success').show()
+
+            } else if (res === '失败') {
+                tbodyTr.hide();
+                tbodyTr.has('button').has('.text-warning').show()
+
+            } else if (res === '错误') {
+                tbodyTr.hide();
+                tbodyTr.has('button').has('.text-danger').show()
+
+            } else if (res === '跳过') {
+                tbodyTr.hide();
+                tbodyTr.has('button').has('.text-info').show()
+            }
+        } else {
+            if (res === "所有") {
+                tbodyTr.hide();
+                tbodyTr.has('button').has('.' + cls + '').show()
+            } else if (res === '成功') {
+                tbodyTr.hide();
+                tbodyTr.has('button').has('.' + cls + '').has('.text-success').show()
+            } else if (res === '失败') {
+                tbodyTr.hide();
+                tbodyTr.has('button').has('.' + cls + '').has('.text-warning').show()
+            } else if (res === '错误') {
+                tbodyTr.hide();
+                tbodyTr.has('button').has('.' + cls + '').has('.text-danger').show()
+            } else if (res === '跳过') {
+                tbodyTr.hide();
+                tbodyTr.has('button').has('.' + cls + '').has('.text-info').show()
+            }
+        }
+    }
+
+    function sort() {
+        //重新排列显示序号
+        // 选择所有可以见的tr
+        var visibleTr = tbodyTr.filter(":visible");
+
+        visibleTr.each(function (index, element) {
+            element.firstElementChild.innerHTML = index + 1;
+
+        })
+
+    }
+
+
+</script>
+
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('char'));
+    var myChart2 = echarts.init(document.getElementById('char2'));
+    // 指定图表的配置项和数据
+    option = {
+        color: ['#00a10a', '#ddb518', 'rgba(204,46,41,0.73)', '#85898c'],
+        tooltip: {
+            trigger: 'item',
+            formatter: '{a} <br/>{b}: {c} ({d}%)'
+        },
+        legend: {
+            orient: 'vertical',
+            left: 10,
+            data: ['通过', '失败', '错误', '跳过']
+        },
+        series: [
+            {
+                name: '测试结果',
+                type: 'pie',
+                radius: ['50%', '70%'],
+                avoidLabelOverlap: false,
+                label: {
+                    show: false,
+                    position: 'center'
+                },
+                emphasis: {
+                    label: {
+                        show: true,
+                        fontSize: '30',
+                        fontWeight: 'bold'
+                    }
+                },
+                labelLine: {
+                    show: false
+                },
+                data: [
+                    {value: 7, name: '通过'},
+                    {value: 1, name: '失败'},
+                    {value: 1, name: '错误'},
+                    {value: 0, name: '跳过'}
+                ]
+            }
+        ]
+    };
+    option2 = {
+        tooltip: {
+            formatter: '{a} <br/>{b} : {c}%'
+        },
+        toolbox: {
+            feature: {
+                restore: {},
+                saveAsImage: {}
+            }
+        },
+        series: [
+            {
+                name: '测试结果',
+                type: 'gauge',
+                detail: {formatter: '77.78%'},
+                data: [{value: '77.78', name: '用例通过率'}],
+                axisLine: {
+                    lineStyle: {
+                        color: [
+                            [0.2, '#c20000'],
+                            [0.8, '#ddb518'],
+                            [1, '#00a10a']]
+                    }
+                }
+            }
+        ]
+    };
+
+
+    myChart2.setOption(option2);
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+
+
+</body>
+</html>
