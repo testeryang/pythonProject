@@ -6,6 +6,7 @@ from tests.BlockExprole import BaseData
 class get_BlockbyHeight(BaseData):
     # 测试用例1：获取存在的用户信息（正常场景）
     def test_getblockbyheight(self):
+        """根据区块高度查询"""
         url = self.base_url + "/demo/block/by-height?height=1"
         # 发送 GET 请求
         response = requests.get(url, headers=self.headers)

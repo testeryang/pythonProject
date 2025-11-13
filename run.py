@@ -8,6 +8,7 @@ from tests.BlockExprole.GetAccountBalances import GetAccountBalances
 from tests.BlockExprole.GetAccountInfo import GetAccountInfo
 from tests.BlockExprole.GetAccountTransactions import GetAccountTransactions
 from tests.BlockExprole.GetBlockbyHeight import get_BlockbyHeight
+from tests.BlockExprole.GetLatestBlockHeight import GetLatestBlockHeight
 from tests.BlockExprole.GetLatestBlocks import get_LatestBlocks
 from tests.BlockExprole.GetLatestTransactions import GetLatestTransactions
 from tests.BlockExprole.GetTransactionbyHash import GetTransactionbyHash
@@ -19,12 +20,12 @@ def nowtime():
     return formatted_time
 
 suite = unittest.TestSuite()
-suite.addTest(get_LatestBlocks('test_get_LatestBlocks'))
+suite.addTest(get_LatestBlocks('test_getLatestBlocks'))
+suite.addTest(GetLatestBlockHeight('test_getLatestBlockHeight'))
 suite.addTest(GetAccountBalances('test_GetAccountBalances'))
 suite.addTest(GetAccountInfo('test_GetAccountInfo'))
 suite.addTest(GetAccountTransactions('test_GetAccountTransactions'))
 suite.addTest(get_BlockbyHeight('test_getblockbyheight'))
-suite.addTest(get_LatestBlocks('test_getLatestBlocks'))
 suite.addTest(GetLatestTransactions('test_GetLatestTransactions'))
 suite.addTest(GetTransactionbyHash('test_GetTransactionbyHash'))
 

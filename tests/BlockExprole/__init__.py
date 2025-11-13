@@ -3,7 +3,6 @@ import time
 
 from src.core.config import config
 
-
 class BaseData(unittest.TestCase):
     base_url = config.get_url()  # 替换为实际接口域名
     headers = {"Content-Type": "application/json"}  # 请求头

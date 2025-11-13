@@ -44,7 +44,7 @@ class TestLogger:
     def _add_console_handler(self):
         """添加控制台输出处理器"""
         console_handler = logging.StreamHandler(sys.stdout)
-        console_handler.setLevel(logging.INFO)  # 控制台只输出INFO及以上级别
+        console_handler.setLevel(logging.DEBUG)  # 控制台只输出INFO及以上级别
         console_handler.setFormatter(self.formatter)
         self.logger.addHandler(console_handler)
 
@@ -59,7 +59,7 @@ class TestLogger:
             backupCount=7,
             encoding='utf-8'
         )
-        file_handler.setLevel(logging.DEBUG)  # 文件记录DEBUG及以上级别
+        file_handler.setLevel(logging.INFO)  # 文件记录DEBUG及以上级别
         file_handler.setFormatter(self.formatter)
         # 自定义轮转文件名（如：test_20231001.log.20231002）
         file_handler.suffix = "%Y%m%d"
@@ -92,3 +92,4 @@ if __name__ == "__main__":
     logger.warning("这是WARNING级别日志")
     logger.error("这是ERROR级别日志（同时写入错误日志文件）")
     logger.critical("这是CRITICAL级别日志")
+

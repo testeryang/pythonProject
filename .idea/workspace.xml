@@ -4,14 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a7c7862-dce4-48dd-a517-45be7492e89b" name="更改" comment="新增block api,transation api">
-      <change afterPath="$PROJECT_DIR$/tests/BlockExprole/GetAccountBalances.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/BlockExprole/GetAccountTransactions.py" afterDir="false" />
+    <list default="true" id="0a7c7862-dce4-48dd-a517-45be7492e89b" name="更改" comment="新增account api">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/test_framework_20251112.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/test_framework_20251112.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/history.json" beforeDir="false" afterPath="$PROJECT_DIR$/reports/history.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/logger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/BlockExprole/GetAccountBalances.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/GetAccountBalances.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/BlockExprole/GetAccountInfo.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/GetAccountInfo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/BlockExprole/GetAccountTransactions.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/GetAccountTransactions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/BlockExprole/GetBlockbyHeight.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/GetBlockbyHeight.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/BlockExprole/GetLatestBlockHeight.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/GetLatestBlockHeight.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/BlockExprole/GetLatestBlocks.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/GetLatestBlocks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/BlockExprole/GetLatestTransactions.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/GetLatestTransactions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/BlockExprole/GetTransactionbyHash.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/GetTransactionbyHash.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/BlockExprole/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +48,11 @@
     &quot;accountId&quot;: &quot;15d042ef-6613-4372-824a-012a16b9c419&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/AppData/Local/Programs/Python/Python313/Lib/unittest/suite.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/.venv/Lib/site-packages/yaml/__init__.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$APPLICATION_HOME_DIR$/plugins/python-ce/helpers/typeshed/stdlib/sys/__init__.pyi" root0="SKIP_INSPECTION" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -77,9 +90,13 @@
     "Python.run.executor": "Run",
     "Python.runner.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "master",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+    "junie.onboarding.icon.badge.shown": "true",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "to.speed.mode.migration.done": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -87,7 +104,29 @@
       <recent name="C:\Users\Administrator\PycharmProjects\PythonProject\tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Python 测试.tests.BlockExprole.GetAccountBalances.GetAccountTransactions.test_GetAccountTransactions 的 Python 测试">
+  <component name="RunManager" selected="Python.run">
+    <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PythonProject" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="tests.BlockExprole.GetAccountBalances.GetAccountTransactions.test_GetAccountTransactions 的 Python 测试" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="PythonProject" />
       <option name="ENV_FILES" value="" />
@@ -133,21 +172,6 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="tests.BlockExprole.GetLatestTransactions.GetLatestTransactions.test_GetLatestTransactions 的 Python 测试" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="PythonProject" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.BlockExprole.GetLatestTransactions.GetLatestTransactions.test_GetLatestTransactions&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <configuration name="tests.BlockExprole.GetTransactionbyHash.GetTransactionbyHash.test_GetTransactionbyHash 的 Python 测试" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="PythonProject" />
       <option name="ENV_FILES" value="" />
@@ -165,11 +189,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python 测试.tests.BlockExprole.GetAccountBalances.GetAccountTransactions.test_GetAccountTransactions 的 Python 测试" />
-        <item itemvalue="Python 测试.tests.BlockExprole.GetAccountTransactions.GetAccountTransactions.test_GetAccountTransactions 的 Python 测试" />
+        <item itemvalue="Python.run" />
         <item itemvalue="Python 测试.tests.BlockExprole.GetAccountInfo.GetAccountInfo.test_GetAccountInfo 的 Python 测试" />
+        <item itemvalue="Python 测试.tests.BlockExprole.GetAccountTransactions.GetAccountTransactions.test_GetAccountTransactions 的 Python 测试" />
+        <item itemvalue="Python 测试.tests.BlockExprole.GetAccountBalances.GetAccountTransactions.test_GetAccountTransactions 的 Python 测试" />
         <item itemvalue="Python 测试.tests.BlockExprole.GetTransactionbyHash.GetTransactionbyHash.test_GetTransactionbyHash 的 Python 测试" />
-        <item itemvalue="Python 测试.tests.BlockExprole.GetLatestTransactions.GetLatestTransactions.test_GetLatestTransactions 的 Python 测试" />
       </list>
     </recent_temporary>
   </component>
@@ -260,7 +284,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762931809033</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="新增account api">
+      <option name="closed" value="true" />
+      <created>1762934442850</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1762934442850</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -290,6 +322,7 @@
     <MESSAGE value="1" />
     <MESSAGE value="添加了apache服务器获取测试报告的内容" />
     <MESSAGE value="新增block api,transation api" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增block api,transation api" />
+    <MESSAGE value="新增account api" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增account api" />
   </component>
 </project>
