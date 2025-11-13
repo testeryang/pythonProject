@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试报告</title>
+
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src=" https://cdn.staticfile.org/jquery/2.0.0/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/echarts/5.1.2/echarts.min.js"></script>
+    <!--    页面样式-->
+    <style type="text/css">
+        /*标题样式*/
+        .title {
+            width: auto;
+            height: 60px;
+            text-align: center;
+            font: bolder 38px/60px "Microsoft YaHei UI";
+        }
+
+        /*汇总信息样式*/
+        .summary {
+            width: 90%;
+            position: absolute;
+            top: 120px;
+            margin-left: 5%;
+
+        }
+
+        .text-left {
+            font: bolder 20px/30px "Microsoft YaHei UI";
+        }
+
+        .left {
+            width: 50%;
+            float: left;
+
+        }
+
+        .right {
+            width: 50%;
+            float: right;
+
+        }
+
+        .desc {
+            float: left;
+            width: 100%;
+        }
+
+        .list-group-item span {
+            font: normal 16px/38px "Microsoft YaHei UI";
+            padding: 30px;
+
+        }
+
+        .list-group-item {
+            position: relative;
+            display: block;
+            padding: .4rem 1.25rem;
+            background-color: #fff;
+            border: 1px solid rgba(0, 0, 0, .125);
+        }
+
+        /* 执行信息样式   */
+        .test_info {
+            width: 90%;
+            position: absolute;
+            top: 900px;
+            margin-left: 5%;
+
+            color: #28a745 !important;
+        }
+
+        .table td, th {
+            border: solid 2px rgba(9, 122, 51, 0.11) !important;
+            padding: 0;
+            line-height: 40px;
+            text-align: center;
+
+        }
+
+
+        select {
+            border: 0;
+            padding: 0;
+            margin: 0;
+            height: 2em;
+            width: 8em;
+            margin-left: 2em;
+        }
+
+        option {
+            text-align: center;
+            height: 36px;
+            font: none 18px/36px "Microsoft YaHei UI";
+            color: #28a745 !important;
+        }
+
+        .test_log {
+            background: rgba(163, 171, 189, 0.15);
+            width: 100%;
+            height: 50px;
+            border-top: none;
+            border-bottom: none;
+            display: none;
+            text-align: left;
+        }
+
+        .test_log td {
+            text-align: left;
+            height: 30px;
+            margin: 0;
+            padding-left: 3em;
+            padding-right:3em;
+            font: none 18px/24px "Microsoft YaHei UI";
+            color: #9e141a;
+        }
+
+        pre {
+            margin: 0;
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+            line-height: 22px;
+            font-size: 14px
+        }
+
+        /*    测试图表显示*/
+        .char {
+            width: 90%;
+            position: absolute;
+            top: 450px;
+            margin-left: 5%;
+            color: #28a745 !important;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<!--报告标题-->
+<div class="title text-success">
+    <div class="shadow-lg p-3 mb-5 bg-white rounded">测试报告</div>
+</div>
+
+<!--汇总信息-->
+<div class="summary">
+    <p class="text-left text-success">测试结果汇总</p>
+    <div class="left">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <button type="button" class="btn btn-success">测试人员</button>
+                <span class="text-dark">杨杰</span>
+            </li>
+            <li class="list-group-item">
+                <button type="button" class="btn btn-success">开始时间</button>
+                <span class="text-dark">2025-11-13 19:25:50</span>
+            </li>
+            <li class="list-group-item">
+                <button type="button" class="btn btn-success">执行时间</button>
+                <span class="text-dark">202.40 S</span>
+            </li>
+            <li class="list-group-item">
+                <button type="button" class="btn btn-success">用例总数</button>
+                <span class="text-dark">9</span>
+            </li>
+
+
+        </ul>
+    </div>
+    <div class="right">
+        <ul class="list-group">
+
+            <li class="list-group-item">
+                <button type="button" class="btn btn-success">成功用例</button>
+                <span class="text-success">6</span>
+            </li>
+            <li class="list-group-item">
+                <button type="button" class="btn btn-warning">失败用例</button>
+                <span class="text-warning">0</span>
+            </li>
+            <li class="list-group-item">
+                <button type="button" class="btn btn-danger">错误用例</button>
+                <span class="text-danger">3</span>
+            </li>
+            <li class="list-group-item">
+                <button type="button" class="btn btn-secondary">跳过用例</button>
+                <span class="text-secondary">0</span>
+            </li>
+        </ul>
+    </div>
+    <div class="desc">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <button type="button" class="btn btn-success">描述信息</button>
+                <span class="text-secondary">这里是接口自动化运行后获得的测试报告结果</span>
+            </li>
+        </ul>
+    </div>
+
+
+</div>
+
+<!--测试图表-->
+<div class="char">
+    <p class="text-left text-success">图表展示</p>
+    <div id="char2" style="width: 49%;height: 400px;float: left"></div>
+    <div id="char" style="width: 49%;height: 400px ;float: left"></div>
+</div>
+
+<!--详细信息-->
+<div class="test_info">
+
+    <p class="text-left text-success">详细信息</p>
+    <div class="table_data">
+
+        <table class="table">
+            <thead class="bg-success text-light">
+            <tr>
+                <th scope="col" style="width: 5%;padding: 0">编号</th>
+                <th scope="col" style="width: 20%;padding: 0">
+                    <span>测试类</span>
+                    <select id="testClass">
+                        <option>所有</option>
+                        
+                            <option>GetLatestTransactions</option>
+                        
+                            <option>Getvalidators</option>
+                        
+                            <option>GetAccountTransactions</option>
+                        
+                            <option>GetAccountBalances</option>
+                        
+                            <option>GetLatestBlockHeight</option>
+                        
+                            <option>GetAccountInfo</option>
+                        
+                            <option>get_LatestBlocks</option>
+                        
+                            <option>get_BlockbyHeight</option>
+                        
+                            <option>GetTransactionbyHash</option>
+                        
+                    </select>
+
+                </th>
+
+                <th scope="col" style="width: 15%;padding: 0">测试方法</th>
+                <th scope="col" style="width: 20%;padding: 0">用例描述</th>
+                <th scope="col" style="width: 15%;padding: 0">执行时间</th>
+                <th scope="col" style="width: 20%;padding: 0">
+
+                    <span>执行结果</span>
+                    <select id="testResult">
+                        <option>所有</option>
+                        <option class="text-success">成功</option>
+                        <option class="text-warning">失败</option>
+                        <option class="text-danger">错误</option>
+                        <option class="text-info">跳过</option>
+                    </select>
+
+                </th>
+                <th scope="col" style="width: 10%;padding: 0">详细信息</th>
+            </tr>
+            </thead>
+            <tbody>
+            
+                <tr>
+                    <td>1</td>
+                    <td class="get_LatestBlocks">get_LatestBlocks</td>
+                    <td>test_getLatestBlocks</td>
+                    <td>获取最新的区块信息</td>
+                    <td>5.8s</td>
+                    
+                        <td class="text-success">成功</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>{'data': [{'block_hash': '0x2f162fbf6e47839bcf00bbc1d8fab127951b8afb5779ce87bce153577a558c4b', 'block_unix_timestamp': 1763033156950, 'height': 141433694, 'num_txs': 11, 'proposer': 'injvalcons1d3tqsnsulge3v2xgavw6d7r9jgj902t4mv9u5l'}], 'pagination': {'has_next': True, 'has_prev': False, 'page': 1, 'page_size': 1, 'total': 1586, 'total_pages': 1586}}
+test_getLatestBlocks脚本完成
+该脚本总共用时：5.801
+test_getLatestBlocks (tests.BlockExprole.GetLatestBlocks.get_LatestBlocks.test_getLatestBlocks)执行——>【通过】
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>2</td>
+                    <td class="GetLatestBlockHeight">GetLatestBlockHeight</td>
+                    <td>test_getLatestBlockHeight</td>
+                    <td>获取最新的区块高度</td>
+                    <td>2.04s</td>
+                    
+                        <td class="text-success">成功</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>141433707
+test_getLatestBlockHeight脚本完成
+该脚本总共用时：2.043
+test_getLatestBlockHeight (tests.BlockExprole.GetLatestBlockHeight.GetLatestBlockHeight.test_getLatestBlockHeight)执行——>【通过】
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>3</td>
+                    <td class="GetAccountBalances">GetAccountBalances</td>
+                    <td>test_GetAccountBalances</td>
+                    <td>获取用户余额</td>
+                    <td>6.97s</td>
+                    
+                        <td class="text-danger">错误</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>Traceback (most recent call last):
+</pre>
+                        
+
+                            <pre>  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python313\Lib\unittest\case.py", line 58, in testPartExecutor
+    yield
+</pre>
+                        
+
+                            <pre>  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python313\Lib\unittest\case.py", line 651, in run
+    self._callTestMethod(testMethod)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+</pre>
+                        
+
+                            <pre>  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python313\Lib\unittest\case.py", line 606, in _callTestMethod
+    if method() is not None:
+       ~~~~~~^^
+</pre>
+                        
+
+                            <pre>  File "C:\Users\Administrator\PycharmProjects\PythonProject\tests\BlockExprole\GetAccountBalances.py", line 14, in test_GetAccountBalances
+    address = getaddressinfo.test_GetLatestTransactions()['data']['data'][0]['payer']
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+</pre>
+                        
+
+                            <pre>KeyError: 'payer'
+</pre>
+                        
+
+                            <pre>http://165.154.1.151:8000//demo/transaction/latest?page=1&page_size=5
+{'data': [{'block_number': 141432386, 'block_unix_timestamp': 1763032346847, 'error_log': '', 'hash': '0x9c7e62645445acf5536ff55d7035e3c848e1b1212b564627bf906b6b01d23682', 'messages': '[{"type":"/injective.wasmx.v1.MsgExecuteContractCompat","value":{"sender":"inj10uqjnn294vpe3h264z76glmywgc8npujt9zppx","contract":"inj1f8z8jyqqxm5fjqcx457afu8l4d4ekpw8c478ca","msg":"{\\"draw_ninja\\":{\\"pay_by\\":0,\\"times\\":10}}","funds":"0"}}]'}, {'block_number': 141432386, 'block_unix_timestamp': 1763032346847, 'error_log': '', 'hash': '0x07b249428ab69df1b5f4f53774dad10df459ca93808bd68e4f9a59aa20a9a687', 'messages': '[{"type":"/cosmwasm.wasm.v1.MsgExecuteContract","value":{"sender":"inj1q5xr9ftprkyn0fv9pxuetlet3kq6xhpzjmwqu3","contract":"inj1enyu3agzphq3k935lkxeynq6rq03d9ys0fehr9","msg":{"set_asset":{"denom":{"native":"factory/inj1etz0laas6h7vemg3qtd67jpr6lh8v7xz7gfzqw/hdro"},"price_type":{"fixed":{"price":"0.005214"}},"decimals":6}},"funds":[]}}]'}, {'block_number': 141432386, 'block_unix_timestamp': 1763032346847, 'error_log': '', 'hash': '0x391ad247077760137186279dccc74dfa7c43e97d430902c3abcb3e929b639578', 'messages': '[{"type":"/cosmwasm.wasm.v1.MsgExecuteContract","value":{"sender":"inj1s9hhrdgzerf79w963gv6kez4hvp3jds5avsc6e","contract":"inj14vkq5klmucuw2tz47u83x6ckgevdxx29y3ht49","msg":{"execute_orders_multiple":{"subaccounts":["0x33baf6cb398df0a85a56113e48aca5dab7c1af7500006574682d757364742d70"]}},"funds":[]}},{"type":"/cosmwasm.wasm.v1.MsgExecuteContract","value":{"sender":"inj1s9hhrdgzerf79w963gv6kez4hvp3jds5avsc6e","contract":"inj144w02j59yh5jwf6ufe6pf3uasckw7cca833r6r","msg":{"execute_orders_multiple":{"subaccounts":["0xe7df227480a497a8fe0811d4d9136e74fa8f83e9000074616c69732d75736474"]}},"funds":[]}},{"type":"/cosmwasm.wasm.v1.MsgExecuteContract","value":{"sender":"inj1s9hhrdgzerf79w963gv6kez4hvp3jds5avsc6e","contract":"inj190fr459ufgq5cdj6a4pcpchrem5dqrllkapkwj","msg":{"execute_orders_multiple":{"subaccounts":["0x549990d3275fc407d20cd1faab37e5d400a2a10a0000006864726f2d75736474","0x26e2cadf1288627eb6ad745126de7f8a6a0ac5720000006864726f2d75736474","0x6b813965f320bed42a9fa8b682f85384fb0df86d0000006864726f2d75736474","0xc09d07ac6d6541242f2a60fbef303cac600402f10000006864726f2d75736474","0x09f27952476c8c34db7f830282983b9f96ac8d0d0000006864726f2d75736474"]}},"funds":[]}}]'}, {'block_number': 141432386, 'block_unix_timestamp': 1763032346847, 'error_log': '', 'hash': '0xbcdb0df9024eadd725fb6a239d3cc72333cd4561282e8a92dbd462fdf4a92e5c', 'messages': '[{"type":"/injective.wasmx.v1.MsgExecuteContractCompat","value":{"sender":"inj1uxn33ev7c0zxfxqezlw8qeuf58rl69mt36k8sp","contract":"inj1f8z8jyqqxm5fjqcx457afu8l4d4ekpw8c478ca","msg":"{\\"fuse_ninja\\":{\\"ninja_type\\":\\"SR\\",\\"ninja_ids\\":[2338871,2338931,2338937]}}","funds":"0"}}]'}, {'block_number': 141432386, 'block_unix_timestamp': 1763032346847, 'error_log': '', 'hash': '0xc7eaa53a8584c37edeb9e805da7c0e6dd80209b699c3fde9dc815d356164cce5', 'messages': '[{"type":"/cosmos.authz.v1beta1.MsgExec","value":{"grantee":"inj1ew6kqpwyuhps6j5mpj47pyhcwulzm0drc7ttvy","msgs":[{"@type":"/injective.exchange.v1beta1.MsgBatchUpdateOrders","sender":"inj12423gsxq64jax0ghtdcjdt30x3wtq6md63ec2x","subaccount_id":"","spot_market_ids_to_cancel_all":[],"derivative_market_ids_to_cancel_all":[],"spot_orders_to_cancel":[],"derivative_orders_to_cancel":[{"market_id":"0x63bafbeee644b6606afb8476dd378fba35d516c7081d6045145790af963545aa","subaccount_id":"0x55551440c0d565d33d175b7126ae2f345cb06b6d000000000000000000000000","order_hash":"","order_mask":2,"cid":"4a2b1290-33a2-4cae-8ea0-1b8260f6775a"}],"spot_orders_to_create":[],"derivative_orders_to_create":[{"market_id":"0x63bafbeee644b6606afb8476dd378fba35d516c7081d6045145790af963545aa","order_info":{"subaccount_id":"0x55551440c0d565d33d175b7126ae2f345cb06b6d000000000000000000000000","fee_recipient":"inj12423gsxq64jax0ghtdcjdt30x3wtq6md63ec2x","price":"2502400.000000000000000000","quantity":"5615.300000000000000000","cid":"8c844fa5-8e17-44f6-8ef2-27151601223e"},"order_type":"BUY","margin":"3512931680.000000000000000000","trigger_price":"0.000000000000000000"}],"binary_options_orders_to_cancel":[],"binary_options_market_ids_to_cancel_all":[],"binary_options_orders_to_create":[]}]}}]'}], 'pagination': {'has_next': True, 'has_prev': False, 'page': 1, 'page_size': 5, 'total': 2813, 'total_pages': 563}}
+test_GetAccountBalances (tests.BlockExprole.GetAccountBalances.GetAccountBalances.test_GetAccountBalances)执行——>【错误Error】
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>4</td>
+                    <td class="GetAccountInfo">GetAccountInfo</td>
+                    <td>test_GetAccountInfo</td>
+                    <td>获取用户详细信息</td>
+                    <td>14.7s</td>
+                    
+                        <td class="text-danger">错误</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>Traceback (most recent call last):
+</pre>
+                        
+
+                            <pre>  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python313\Lib\unittest\case.py", line 58, in testPartExecutor
+    yield
+</pre>
+                        
+
+                            <pre>  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python313\Lib\unittest\case.py", line 651, in run
+    self._callTestMethod(testMethod)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+</pre>
+                        
+
+                            <pre>  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python313\Lib\unittest\case.py", line 606, in _callTestMethod
+    if method() is not None:
+       ~~~~~~^^
+</pre>
+                        
+
+                            <pre>  File "C:\Users\Administrator\PycharmProjects\PythonProject\tests\BlockExprole\GetAccountInfo.py", line 10, in test_GetAccountInfo
+    address=getaddressinfo.test_GetLatestTransactions()['data']['data'][0]['payer']
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+</pre>
+                        
+
+                            <pre>KeyError: 'payer'
+</pre>
+                        
+
+                            <pre>http://165.154.1.151:8000//demo/transaction/latest?page=1&page_size=5
+{'data': [{'block_number': 141432387, 'block_unix_timestamp': 1763032347945, 'error_log': '', 'hash': '0x91c158b4aeb97a4ac232132f26917f3e1ec394161924fa431a54ca12cc241d1d', 'messages': '[{"type":"/cosmos.distribution.v1beta1.MsgSetWithdrawAddress","value":{"delegator_address":"inj1fy0gjupxg74efx7am6633msta5v3jj5w4ppgas","withdraw_address":"inj1fy0gjupxg74efx7am6633msta5v3jj5w4ppgas"}},{"type":"/cosmos.authz.v1beta1.MsgExec","value":{"grantee":"inj1fy0gjupxg74efx7am6633msta5v3jj5w4ppgas","msgs":[{"@type":"/injective.exchange.v1beta1.MsgBatchUpdateOrders","sender":"inj18cajq5agkjfgwp3dlsek3w8vuzawqu3uaztpen","subaccount_id":"","spot_market_ids_to_cancel_all":[],"derivative_market_ids_to_cancel_all":[],"spot_orders_to_cancel":[{"market_id":"0xa508cb32923323679f29a032c70342c147c17d0145625922b0ef22e955c844c0","subaccount_id":"0x3e3b2053a8b49287062dfc3368b8ece0bae0723c000000000000000000000004","order_hash":"","order_mask":0,"cid":"#00000009ed5a6da47a4b44ed0004de51"}],"derivative_orders_to_cancel":[{"market_id":"0x9b9980167ecc3645ff1a5517886652d94a0825e54a77d2057cbbe3ebee015963","subaccount_id":"0x3e3b2053a8b49287062dfc3368b8ece0bae0723c000000000000000000000003","order_hash":"","order_mask":0,"cid":"#00000006ed24f11f4e1a989f0004e095"}],"spot_orders_to_create":[],"derivative_orders_to_create":[],"binary_options_orders_to_cancel":[],"binary_options_market_ids_to_cancel_all":[],"binary_options_orders_to_create":[]}]}}]'}, {'block_number': 141432387, 'block_unix_timestamp': 1763032347945, 'error_log': '', 'hash': '0x486b02ac9378b16e9e6b2d3bdf806937442f25cd8ef94f4332759157b44529ba', 'messages': '[{"type":"/cosmos.authz.v1beta1.MsgExec","value":{"grantee":"inj16we5yv97zf0pgcgs25gnm3lw4j9fcg9s2y6q3s","msgs":[{"@type":"/injective.exchange.v1beta1.MsgBatchUpdateOrders","sender":"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m","subaccount_id":"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000006","spot_market_ids_to_cancel_all":[],"derivative_market_ids_to_cancel_all":["0x96408895e808e45d95de88784092683963f415985823b8336605e6fc6de97668"],"spot_orders_to_cancel":[],"derivative_orders_to_cancel":[],"spot_orders_to_create":[],"derivative_orders_to_create":[{"market_id":"0x96408895e808e45d95de88784092683963f415985823b8336605e6fc6de97668","order_info":{"subaccount_id":"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000006","fee_recipient":"","price":"314680000.000000000000000000","quantity":"31.778000000000000000","cid":"5fc05426-879f-437e-812b-4b5c26c3a2fb"},"order_type":"SELL_PO","margin":"999000000.000000000000000000","trigger_price":"0.000000000000000000"},{"market_id":"0x96408895e808e45d95de88784092683963f415985823b8336605e6fc6de97668","order_info":{"subaccount_id":"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000006","fee_recipient":"","price":"234160000.000000000000000000","quantity":"581.056000000000000000","cid":"af54790d-4f1c-4cc3-8dbb-b2d115f8d7a8"},"order_type":"BUY_PO","margin":"0.000000000000000000","trigger_price":"0.000000000000000000"},{"market_id":"0x96408895e808e45d95de88784092683963f415985823b8336605e6fc6de97668","order_info":{"subaccount_id":"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000006","fee_recipient":"","price":"257460000.000000000000000000","quantity":"38.839000000000000000","cid":"22a8e969-3fef-4323-bbfe-41549f91f002"},"order_type":"BUY_PO","margin":"999000000.000000000000000000","trigger_price":"0.000000000000000000"}],"binary_options_orders_to_cancel":[],"binary_options_market_ids_to_cancel_all":[],"binary_options_orders_to_create":[]}]}}]'}, {'block_number': 141432387, 'block_unix_timestamp': 1763032347945, 'error_log': '', 'hash': '0xd332ab384fd6e9b14780bb3781dd7632174cfe1c6d6a847befdea60cb02f7e4f', 'messages': '[{"type":"/cosmos.authz.v1beta1.MsgExec","value":{"grantee":"inj17qj4fk54z63gsw3vdq4qwyz40y9ue5k9anfuxh","msgs":[{"@type":"/injective.exchange.v1beta1.MsgBatchUpdateOrders","sender":"inj1jddhqk6egwcwrwzev5wjeneht0ykmlwhcehc4z","subaccount_id":"0x935b705b5943b0e1b859651d2ccf375bc96dfdd7000000000000000000000027","spot_market_ids_to_cancel_all":[],"derivative_market_ids_to_cancel_all":["0xef0dd633da52cfc21db866b05463c8b43c02265b86bf9257a5d39848cd2eea11"],"spot_orders_to_cancel":[],"derivative_orders_to_cancel":[],"spot_orders_to_create":[],"derivative_orders_to_create":[{"market_id":"0xef0dd633da52cfc21db866b05463c8b43c02265b86bf9257a5d39848cd2eea11","order_info":{"subaccount_id":"0x935b705b5943b0e1b859651d2ccf375bc96dfdd7000000000000000000000027","fee_recipient":"inj17qj4fk54z63gsw3vdq4qwyz40y9ue5k9anfuxh","price":"495400000.000000000000000000","quantity":"22.602000000000000000","cid":""},"order_type":"BUY","margin":"2799000000.000000000000000000","trigger_price":"0.000000000000000000"},{"market_id":"0xef0dd633da52cfc21db866b05463c8b43c02265b86bf9257a5d39848cd2eea11","order_info":{"subaccount_id":"0x935b705b5943b0e1b859651d2ccf375bc96dfdd7000000000000000000000027","fee_recipient":"inj17qj4fk54z63gsw3vdq4qwyz40y9ue5k9anfuxh","price":"499690000.000000000000000000","quantity":"22.602000000000000000","cid":""},"order_type":"SELL","margin":"2823000000.000000000000000000","trigger_price":"0.000000000000000000"}],"binary_options_orders_to_cancel":[],"binary_options_market_ids_to_cancel_all":[],"binary_options_orders_to_create":[]}]}}]'}, {'block_number': 141432387, 'block_unix_timestamp': 1763032347945, 'error_log': '', 'hash': '0xf95fab803df59bd38129dd145453028d4f25e51b2aded9123f378d5712b7c43c', 'messages': '[{"type":"/cosmos.authz.v1beta1.MsgExec","value":{"grantee":"inj1c0el297prws8szcekemq872ml5u0hsav0hqzxr","msgs":[{"@type":"/injective.exchange.v1beta1.MsgBatchUpdateOrders","sender":"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m","subaccount_id":"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001","spot_market_ids_to_cancel_all":[],"derivative_market_ids_to_cancel_all":["0x329e14c73ef0712dd1359d56476f3dd9c1c032f9c755556e5bd0cb536fb479d3"],"spot_orders_to_cancel":[],"derivative_orders_to_cancel":[],"spot_orders_to_create":[],"derivative_orders_to_create":[{"market_id":"0x329e14c73ef0712dd1359d56476f3dd9c1c032f9c755556e5bd0cb536fb479d3","order_info":{"subaccount_id":"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001","fee_recipient":"","price":"336390000.000000000000000000","quantity":"29.727000000000000000","cid":"00be3016-fffd-414b-80ab-e92518456b62"},"order_type":"SELL","margin":"999000000.000000000000000000","trigger_price":"0.000000000000000000"},{"market_id":"0x329e14c73ef0712dd1359d56476f3dd9c1c032f9c755556e5bd0cb536fb479d3","order_info":{"subaccount_id":"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001","fee_recipient":"","price":"275220000.000000000000000000","quantity":"36.333000000000000000","cid":"b213ae02-ad8c-47e6-bf65-e7aaa50b96e7"},"order_type":"BUY","margin":"999000000.000000000000000000","trigger_price":"0.000000000000000000"}],"binary_options_orders_to_cancel":[],"binary_options_market_ids_to_cancel_all":[],"binary_options_orders_to_create":[]}]}}]'}, {'block_number': 141432387, 'block_unix_timestamp': 1763032347945, 'error_log': '', 'hash': '0xe80c745790e51e0c9383325c0c4c0a52abba6b7c7474b5d0dc0bd4ab35e4a4ef', 'messages': '[{"type":"/cosmos.authz.v1beta1.MsgExec","value":{"grantee":"inj1gd2m27l3xua9f5er0jfq6gc5csnq36s547v975","msgs":[{"@type":"/injective.exchange.v1beta1.MsgBatchUpdateOrders","sender":"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m","subaccount_id":"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001","spot_market_ids_to_cancel_all":[],"derivative_market_ids_to_cancel_all":["0x329e14c73ef0712dd1359d56476f3dd9c1c032f9c755556e5bd0cb536fb479d3"],"spot_orders_to_cancel":[],"derivative_orders_to_cancel":[],"spot_orders_to_create":[],"derivative_orders_to_create":[{"market_id":"0x329e14c73ef0712dd1359d56476f3dd9c1c032f9c755556e5bd0cb536fb479d3","order_info":{"subaccount_id":"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001","fee_recipient":"","price":"336390000.000000000000000000","quantity":"29.727000000000000000","cid":"7235a5d2-7360-4362-89ea-b4f9398d9291"},"order_type":"SELL","margin":"999000000.000000000000000000","trigger_price":"0.000000000000000000"},{"market_id":"0x329e14c73ef0712dd1359d56476f3dd9c1c032f9c755556e5bd0cb536fb479d3","order_info":{"subaccount_id":"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000001","fee_recipient":"","price":"275220000.000000000000000000","quantity":"36.333000000000000000","cid":"6b09e9a2-dca4-4166-a9cc-dc2802f47ae9"},"order_type":"BUY","margin":"999000000.000000000000000000","trigger_price":"0.000000000000000000"}],"binary_options_orders_to_cancel":[],"binary_options_market_ids_to_cancel_all":[],"binary_options_orders_to_create":[]}]}}]'}], 'pagination': {'has_next': True, 'has_prev': False, 'page': 1, 'page_size': 5, 'total': 2838, 'total_pages': 568}}
+test_GetAccountInfo (tests.BlockExprole.GetAccountInfo.GetAccountInfo.test_GetAccountInfo)执行——>【错误Error】
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>5</td>
+                    <td class="GetAccountTransactions">GetAccountTransactions</td>
+                    <td>test_GetAccountTransactions</td>
+                    <td>获取用户的trans信息</td>
+                    <td>31.1s</td>
+                    
+                        <td class="text-danger">错误</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>Traceback (most recent call last):
+</pre>
+                        
+
+                            <pre>  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python313\Lib\unittest\case.py", line 58, in testPartExecutor
+    yield
+</pre>
+                        
+
+                            <pre>  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python313\Lib\unittest\case.py", line 651, in run
+    self._callTestMethod(testMethod)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+</pre>
+                        
+
+                            <pre>  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python313\Lib\unittest\case.py", line 606, in _callTestMethod
+    if method() is not None:
+       ~~~~~~^^
+</pre>
+                        
+
+                            <pre>  File "C:\Users\Administrator\PycharmProjects\PythonProject\tests\BlockExprole\GetAccountTransactions.py", line 12, in test_GetAccountTransactions
+    address=getaddressinfo.test_GetLatestTransactions()['data']['data'][0]['payer']
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+</pre>
+                        
+
+                            <pre>KeyError: 'payer'
+</pre>
+                        
+
+                            <pre>http://165.154.1.151:8000//demo/transaction/latest?page=1&page_size=5
+{'data': [{'block_number': 141432394, 'block_unix_timestamp': 1763032352135, 'error_log': '', 'hash': '0x75f1b838312f1a780587d49ca4001a318382283fbf1b6c276537c55c0c585880', 'messages': '[{"type":"/cosmwasm.wasm.v1.MsgExecuteContract","value":{"sender":"inj1s9hhrdgzerf79w963gv6kez4hvp3jds5avsc6e","contract":"inj1dxvlc5snn5y02nn82xdhnvwj3y09t9pnh6msf5","msg":{"execute_orders_multiple":{"subaccounts":["0x4989eccb2edcbd9def79fe9f77523b810b8457c20000000068696e6a2d696e6a","0xd78197de062444ef8df5bdd67ab99ea7e6a840e70000000068696e6a2d696e6a","0xddd2755d0d2e27ef63981ebf1937b8790e53414c0000000068696e6a2d696e6a","0x90756d058653c6c23c8340098124a1b2fc83f1e80000000068696e6a2d696e6a","0x90b9c7fe350331b29ceb01f7a6cee8f9a7bca9890000000068696e6a2d696e6a","0x51d50161f0f374a14aed69e0fb184a433155fffe0000000068696e6a2d696e6a","0xb49068c7562e132f182f4ad3e00d0328c562bb010000000068696e6a2d696e6a","0x91348631e963ce804c40262632e5e40f6d6cd75a0000000068696e6a2d696e6a","0x1f7f3d87fde95a367efdcf089be87512846933c80000000068696e6a2d696e6a","0xc5284bc953cca2b63d0e6cf7db0f733f493b85110000000068696e6a2d696e6a"]}},"funds":[]}},{"type":"/cosmwasm.wasm.v1.MsgExecuteContract","value":{"sender":"inj1s9hhrdgzerf79w963gv6kez4hvp3jds5avsc6e","contract":"inj1dxvlc5snn5y02nn82xdhnvwj3y09t9pnh6msf5","msg":{"execute_orders_multiple":{"subaccounts":["0xf93316f1404eb6f160f74799bb5e220dd464e4a00000000068696e6a2d696e6a","0x70240948033fbe6ae16822a3fa12b59ae2be23020000000068696e6a2d696e6a","0x5a30a778759d947395ba4d84f4207db89505639b0000000068696e6a2d696e6a","0x19c61cef4829782c75f7cb509d0419164103c88e0000000068696e6a2d696e6a","0xa4e227aa97a10276b011c7e7b5a5ea5d96ba3b1e0000000068696e6a2d696e6a","0x6fdd09304619a7f905a508af85af8e61e554d4c20000000068696e6a2d696e6a"]}},"funds":[]}}]'}, {'block_number': 141432394, 'block_unix_timestamp': 1763032352135, 'error_log': '', 'hash': '0x6898aa3217790fe71ae1eb4b88c71d452a5b842e4b12186cce56b36b6795ce45', 'messages': '[{"type":"/cosmos.authz.v1beta1.MsgExec","value":{"grantee":"inj10hps9ch2rcgqjupurdzuunu5vujxjkqmz8tzzt","msgs":[{"@type":"/injective.exchange.v1beta1.MsgBatchUpdateOrders","sender":"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m","subaccount_id":"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000006","spot_market_ids_to_cancel_all":[],"derivative_market_ids_to_cancel_all":["0x1e8369b298705c468c1a313a729bae0dbd4410587465cc69276bf8ba4e0231c1"],"spot_orders_to_cancel":[],"derivative_orders_to_cancel":[],"spot_orders_to_create":[],"derivative_orders_to_create":[{"market_id":"0x1e8369b298705c468c1a313a729bae0dbd4410587465cc69276bf8ba4e0231c1","order_info":{"subaccount_id":"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000006","fee_recipient":"","price":"212250000.000000000000000000","quantity":"47.112000000000000000","cid":"722b5b2f-6b0b-4eae-8433-85209110fb60"},"order_type":"SELL_PO","margin":"999000000.000000000000000000","trigger_price":"0.000000000000000000"},{"market_id":"0x1e8369b298705c468c1a313a729bae0dbd4410587465cc69276bf8ba4e0231c1","order_info":{"subaccount_id":"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000006","fee_recipient":"","price":"173660000.000000000000000000","quantity":"57.582000000000000000","cid":"0d79e919-2bf7-415d-9acd-b2ef7a4d7afd"},"order_type":"BUY_PO","margin":"999000000.000000000000000000","trigger_price":"0.000000000000000000"}],"binary_options_orders_to_cancel":[],"binary_options_market_ids_to_cancel_all":[],"binary_options_orders_to_create":[]}]}}]'}, {'block_number': 141432394, 'block_unix_timestamp': 1763032352135, 'error_log': '', 'hash': '0x7a46f1333a0623f3b9d4074cde7e6b9359118176ff42a825502306f4ad7ac295', 'messages': '[{"type":"/cosmos.authz.v1beta1.MsgExec","value":{"grantee":"inj17qj4fk54z63gsw3vdq4qwyz40y9ue5k9anfuxh","msgs":[{"@type":"/injective.exchange.v1beta1.MsgBatchUpdateOrders","sender":"inj1jddhqk6egwcwrwzev5wjeneht0ykmlwhcehc4z","subaccount_id":"0x935b705b5943b0e1b859651d2ccf375bc96dfdd7000000000000000000000027","spot_market_ids_to_cancel_all":[],"derivative_market_ids_to_cancel_all":["0xef0dd633da52cfc21db866b05463c8b43c02265b86bf9257a5d39848cd2eea11"],"spot_orders_to_cancel":[],"derivative_orders_to_cancel":[],"spot_orders_to_create":[],"derivative_orders_to_create":[{"market_id":"0xef0dd633da52cfc21db866b05463c8b43c02265b86bf9257a5d39848cd2eea11","order_info":{"subaccount_id":"0x935b705b5943b0e1b859651d2ccf375bc96dfdd7000000000000000000000027","fee_recipient":"inj17qj4fk54z63gsw3vdq4qwyz40y9ue5k9anfuxh","price":"495450000.000000000000000000","quantity":"22.599000000000000000","cid":""},"order_type":"BUY","margin":"2799000000.000000000000000000","trigger_price":"0.000000000000000000"},{"market_id":"0xef0dd633da52cfc21db866b05463c8b43c02265b86bf9257a5d39848cd2eea11","order_info":{"subaccount_id":"0x935b705b5943b0e1b859651d2ccf375bc96dfdd7000000000000000000000027","fee_recipient":"inj17qj4fk54z63gsw3vdq4qwyz40y9ue5k9anfuxh","price":"499740000.000000000000000000","quantity":"22.599000000000000000","cid":""},"order_type":"SELL","margin":"2823000000.000000000000000000","trigger_price":"0.000000000000000000"}],"binary_options_orders_to_cancel":[],"binary_options_market_ids_to_cancel_all":[],"binary_options_orders_to_create":[]}]}}]'}, {'block_number': 141432394, 'block_unix_timestamp': 1763032352135, 'error_log': '', 'hash': '0xe67ba5c925cbffded338bf7785c872c5467efb397f12ac151eda1b9585a4e996', 'messages': '[{"type":"/cosmos.authz.v1beta1.MsgExec","value":{"grantee":"inj1yffy4l6w0r3a804zs6nuu4wcau7j33u0wu9px3","msgs":[{"@type":"/injective.exchange.v1beta1.MsgBatchUpdateOrders","sender":"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m","subaccount_id":"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000006","spot_market_ids_to_cancel_all":[],"derivative_market_ids_to_cancel_all":["0x8a325bd4bd29e20eb182fbc6acca2224f5f4067a29e9feb44f60b01f8e5dd0f3"],"spot_orders_to_cancel":[],"derivative_orders_to_cancel":[],"spot_orders_to_create":[],"derivative_orders_to_create":[{"market_id":"0x8a325bd4bd29e20eb182fbc6acca2224f5f4067a29e9feb44f60b01f8e5dd0f3","order_info":{"subaccount_id":"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000006","fee_recipient":"","price":"97540000.000000000000000000","quantity":"62.350000000000000000","cid":"c7c1f02f-fd07-4429-b74c-3cb0c861a4e3"},"order_type":"SELL_PO","margin":"0.000000000000000000","trigger_price":"0.000000000000000000"},{"market_id":"0x8a325bd4bd29e20eb182fbc6acca2224f5f4067a29e9feb44f60b01f8e5dd0f3","order_info":{"subaccount_id":"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000006","fee_recipient":"","price":"113920000.000000000000000000","quantity":"87.770000000000000000","cid":"d7c5c256-d74c-40f8-810f-fc63799882fb"},"order_type":"SELL_PO","margin":"999000000.000000000000000000","trigger_price":"0.000000000000000000"},{"market_id":"0x8a325bd4bd29e20eb182fbc6acca2224f5f4067a29e9feb44f60b01f8e5dd0f3","order_info":{"subaccount_id":"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000006","fee_recipient":"","price":"61340000.000000000000000000","quantity":"163.010000000000000000","cid":"48612f7d-899a-4d9a-b2b4-7b5b241165f7"},"order_type":"BUY_PO","margin":"999000000.000000000000000000","trigger_price":"0.000000000000000000"}],"binary_options_orders_to_cancel":[],"binary_options_market_ids_to_cancel_all":[],"binary_options_orders_to_create":[]}]}}]'}, {'block_number': 141432394, 'block_unix_timestamp': 1763032352135, 'error_log': '', 'hash': '0xd792813284a9caf1efd4a672eb603f8323e27d352de3441ec8947a666cdc6210', 'messages': '[{"type":"/injective.exchange.v1beta1.MsgBatchUpdateOrders","value":{"sender":"inj1hny8rk4455rkynj44l42jdss5sjvg3kvv58tdh","subaccount_id":"","spot_market_ids_to_cancel_all":[],"derivative_market_ids_to_cancel_all":[],"spot_orders_to_cancel":[],"derivative_orders_to_cancel":[{"market_id":"0x5aeb66848398815d1c8485135dc539355028fb3c32d662af9eeecfd47050a1a6","subaccount_id":"0xbcc871dab5a507624e55afeaa93610a424c446cc000000000000000000000000","order_hash":"","order_mask":1,"cid":"251113helixb7e6e485ba37"}],"spot_orders_to_create":[],"derivative_orders_to_create":[{"market_id":"0x5aeb66848398815d1c8485135dc539355028fb3c32d662af9eeecfd47050a1a6","order_info":{"subaccount_id":"0xbcc871dab5a507624e55afeaa93610a424c446cc000000000000000000000000","fee_recipient":"inj1hny8rk4455rkynj44l42jdss5sjvg3kvv58tdh","price":"3070000.000000000000000000","quantity":"325.400000000000000000","cid":"251113helixe36f888ca679"},"order_type":"BUY_PO","margin":"100000000.000000000000000000","trigger_price":"0.000000000000000000"}],"binary_options_orders_to_cancel":[],"binary_options_market_ids_to_cancel_all":[],"binary_options_orders_to_create":[]}}]'}], 'pagination': {'has_next': True, 'has_prev': False, 'page': 1, 'page_size': 5, 'total': 2906, 'total_pages': 582}}
+test_GetAccountTransactions (tests.BlockExprole.GetAccountTransactions.GetAccountTransactions.test_GetAccountTransactions)执行——>【错误Error】
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>6</td>
+                    <td class="get_BlockbyHeight">get_BlockbyHeight</td>
+                    <td>test_getblockbyheight</td>
+                    <td>根据区块高度查询</td>
+                    <td>21.5s</td>
+                    
+                        <td class="text-success">成功</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>{'code': 200, 'message': 'success', 'data': {'block_hash': '0xe3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'block_unix_timestamp': 1625058000000, 'height': 1, 'moniker': 'Injective Node 3', 'parent_hash': '0x0000000000000000000000000000000000000000000000000000000000000000', 'proposer': 'injvalcons1d8als5uv78vsgf6qhyku0wcgcssp47mepfxuuy', 'timestamp': '2021-06-30 13:00:00 +0000 UTC'}}
+test_getblockbyheight脚本完成
+该脚本总共用时：21.51
+test_getblockbyheight (tests.BlockExprole.GetBlockbyHeight.get_BlockbyHeight.test_getblockbyheight)执行——>【通过】
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>7</td>
+                    <td class="GetLatestTransactions">GetLatestTransactions</td>
+                    <td>test_GetLatestTransactions</td>
+                    <td>获取最新5条trans信息</td>
+                    <td>33.2s</td>
+                    
+                        <td class="text-success">成功</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>http://165.154.1.151:8000//demo/transaction/latest?page=1&page_size=5
+{'data': [{'block_number': 141432427, 'block_unix_timestamp': 1763032372307, 'error_log': '', 'hash': '0x0717e5150739a16b755412e19d3f7ab3d4f8bbd242bc1c5554bb6c77607b7212', 'messages': '[{"type":"/cosmos.distribution.v1beta1.MsgSetWithdrawAddress","value":{"delegator_address":"inj17ejcs48cm3hzvhax4rz8vjhhcegyxkrm7uxn89","withdraw_address":"inj17ejcs48cm3hzvhax4rz8vjhhcegyxkrm7uxn89"}},{"type":"/cosmos.authz.v1beta1.MsgExec","value":{"grantee":"inj17ejcs48cm3hzvhax4rz8vjhhcegyxkrm7uxn89","msgs":[{"@type":"/injective.exchange.v1beta1.MsgBatchUpdateOrders","sender":"inj18cajq5agkjfgwp3dlsek3w8vuzawqu3uaztpen","subaccount_id":"","spot_market_ids_to_cancel_all":[],"derivative_market_ids_to_cancel_all":[],"spot_orders_to_cancel":[],"derivative_orders_to_cancel":[{"market_id":"0x9b9980167ecc3645ff1a5517886652d94a0825e54a77d2057cbbe3ebee015963","subaccount_id":"0x3e3b2053a8b49287062dfc3368b8ece0bae0723c000000000000000000000003","order_hash":"","order_mask":0,"cid":"#00000006ed2f9ce8fcc60f180004e282"}],"spot_orders_to_create":[],"derivative_orders_to_create":[],"binary_options_orders_to_cancel":[],"binary_options_market_ids_to_cancel_all":[],"binary_options_orders_to_create":[]}]}}]'}, {'block_number': 141432427, 'block_unix_timestamp': 1763032372307, 'error_log': '', 'hash': '0xeccb1adb21b5b7999e0b42a519db09307c8b5043ad0ec42454030f9b5a4fdcbd', 'messages': '[{"type":"/cosmos.authz.v1beta1.MsgExec","value":{"grantee":"inj14na6a2l6fnaqt9zwu5jqj2hspme9688jkw6w8n","msgs":[{"@type":"/injective.exchange.v1beta1.MsgBatchUpdateOrders","sender":"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m","subaccount_id":"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000006","spot_market_ids_to_cancel_all":[],"derivative_market_ids_to_cancel_all":["0x8a325bd4bd29e20eb182fbc6acca2224f5f4067a29e9feb44f60b01f8e5dd0f3"],"spot_orders_to_cancel":[],"derivative_orders_to_cancel":[],"spot_orders_to_create":[],"derivative_orders_to_create":[{"market_id":"0x8a325bd4bd29e20eb182fbc6acca2224f5f4067a29e9feb44f60b01f8e5dd0f3","order_info":{"subaccount_id":"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000006","fee_recipient":"","price":"97540000.000000000000000000","quantity":"62.350000000000000000","cid":"3535e5f9-2734-45fe-a947-e72162ace6ee"},"order_type":"SELL_PO","margin":"0.000000000000000000","trigger_price":"0.000000000000000000"},{"market_id":"0x8a325bd4bd29e20eb182fbc6acca2224f5f4067a29e9feb44f60b01f8e5dd0f3","order_info":{"subaccount_id":"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000006","fee_recipient":"","price":"113900000.000000000000000000","quantity":"87.790000000000000000","cid":"7e88cbf7-9748-4c46-8fd8-38c4d14aadca"},"order_type":"SELL_PO","margin":"999000000.000000000000000000","trigger_price":"0.000000000000000000"},{"market_id":"0x8a325bd4bd29e20eb182fbc6acca2224f5f4067a29e9feb44f60b01f8e5dd0f3","order_info":{"subaccount_id":"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000006","fee_recipient":"","price":"61330000.000000000000000000","quantity":"163.040000000000000000","cid":"e043aca4-2d75-4629-86f2-3215a34caa82"},"order_type":"BUY_PO","margin":"999000000.000000000000000000","trigger_price":"0.000000000000000000"}],"binary_options_orders_to_cancel":[],"binary_options_market_ids_to_cancel_all":[],"binary_options_orders_to_create":[]}]}}]'}, {'block_number': 141432427, 'block_unix_timestamp': 1763032372307, 'error_log': '', 'hash': '0x32ceeae6f3a6d2efd43698ed622856029ec31d4ba8dd1de872a2e1b30f7735d0', 'messages': '[{"type":"/cosmos.authz.v1beta1.MsgExec","value":{"grantee":"inj14sph79aemnd0jsmgx0kpfl2tsutjfjaxwjf5x4","msgs":[{"@type":"/injective.exchange.v1beta1.MsgBatchUpdateOrders","sender":"inj14k7wgey85pt226ugr9sq4h2ya774n82hzy26nf","subaccount_id":"0xadbce46487a056a56b8819600add44efbd599d57000000000000000000000002","spot_market_ids_to_cancel_all":[],"derivative_market_ids_to_cancel_all":["0x329e14c73ef0712dd1359d56476f3dd9c1c032f9c755556e5bd0cb536fb479d3"],"spot_orders_to_cancel":[],"derivative_orders_to_cancel":[],"spot_orders_to_create":[],"derivative_orders_to_create":[{"market_id":"0x329e14c73ef0712dd1359d56476f3dd9c1c032f9c755556e5bd0cb536fb479d3","order_info":{"subaccount_id":"0xadbce46487a056a56b8819600add44efbd599d57000000000000000000000002","fee_recipient":"inj14k7wgey85pt226ugr9sq4h2ya774n82hzy26nf","price":"311760000.000000000000000000","quantity":"80.511000000000000000","cid":"019a7ceb-155c-7000-ac22-96bfabf2677f"},"order_type":"SELL_PO","margin":"3585860000.000000000000000000","trigger_price":"0.000000000000000000"},{"market_id":"0x329e14c73ef0712dd1359d56476f3dd9c1c032f9c755556e5bd0cb536fb479d3","order_info":{"subaccount_id":"0xadbce46487a056a56b8819600add44efbd599d57000000000000000000000002","fee_recipient":"inj14k7wgey85pt226ugr9sq4h2ya774n82hzy26nf","price":"299840000.000000000000000000","quantity":"83.712000000000000000","cid":"019a7ceb-155d-7000-ac22-9f3a486594d2"},"order_type":"BUY_PO","margin":"3585860000.000000000000000000","trigger_price":"0.000000000000000000"}],"binary_options_orders_to_cancel":[],"binary_options_market_ids_to_cancel_all":[],"binary_options_orders_to_create":[]}]}}]'}, {'block_number': 141432427, 'block_unix_timestamp': 1763032372307, 'error_log': '', 'hash': '0xeacbbbdddb4edec4ffc34128edfb6f1bab7fba47f61cfb026c95e439babad10d', 'messages': '[{"type":"/cosmos.authz.v1beta1.MsgExec","value":{"grantee":"inj1hasra9guzqk2x6zluk9kpqjmw7sh2gxd2q9glp","msgs":[{"@type":"/injective.exchange.v1beta1.MsgBatchUpdateOrders","sender":"inj1l2ucgpsq3m7azk8t3h0p2luzqrelvjzmumnj6m","subaccount_id":"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000006","spot_market_ids_to_cancel_all":[],"derivative_market_ids_to_cancel_all":["0x0db9bd22e4c6d4ef0a504f85708944056f5ecf82d753b9154c7be88b8c2ec5e9"],"spot_orders_to_cancel":[],"derivative_orders_to_cancel":[],"spot_orders_to_create":[],"derivative_orders_to_create":[{"market_id":"0x0db9bd22e4c6d4ef0a504f85708944056f5ecf82d753b9154c7be88b8c2ec5e9","order_info":{"subaccount_id":"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000006","fee_recipient":"","price":"301970000.000000000000000000","quantity":"33.115000000000000000","cid":"2a517d0c-1c10-4a35-91f5-ddfbc343e60f"},"order_type":"SELL_PO","margin":"999000000.000000000000000000","trigger_price":"0.000000000000000000"},{"market_id":"0x0db9bd22e4c6d4ef0a504f85708944056f5ecf82d753b9154c7be88b8c2ec5e9","order_info":{"subaccount_id":"0xfab98406008efdd158eb8dde157f8200f3f6485b000000000000000000000006","fee_recipient":"","price":"247070000.000000000000000000","quantity":"40.473000000000000000","cid":"20109d86-4c5e-4929-b067-781945b5214b"},"order_type":"BUY_PO","margin":"999000000.000000000000000000","trigger_price":"0.000000000000000000"}],"binary_options_orders_to_cancel":[],"binary_options_market_ids_to_cancel_all":[],"binary_options_orders_to_create":[]}]}}]'}, {'block_number': 141432427, 'block_unix_timestamp': 1763032372307, 'error_log': '', 'hash': '0xd9fd3b018a9cd932acc98229236a5690b4a097b52a9d4033a177e861a2a6f6bb', 'messages': '[{"type":"/cosmos.authz.v1beta1.MsgExec","value":{"grantee":"inj1vjcc4ltxy8qftfasqap7rxylxdp00cx24drakm","msgs":[{"@type":"/injective.exchange.v1beta1.MsgBatchUpdateOrders","sender":"inj18cajq5agkjfgwp3dlsek3w8vuzawqu3uaztpen","subaccount_id":"","spot_market_ids_to_cancel_all":[],"derivative_market_ids_to_cancel_all":[],"spot_orders_to_cancel":[],"derivative_orders_to_cancel":[{"market_id":"0x9b9980167ecc3645ff1a5517886652d94a0825e54a77d2057cbbe3ebee015963","subaccount_id":"0x3e3b2053a8b49287062dfc3368b8ece0bae0723c000000000000000000000003","order_hash":"","order_mask":0,"cid":"#00000006ed2f9ce8fcc60f180004e282"}],"spot_orders_to_create":[],"derivative_orders_to_create":[{"market_id":"0x9b9980167ecc3645ff1a5517886652d94a0825e54a77d2057cbbe3ebee015963","order_info":{"subaccount_id":"0x3e3b2053a8b49287062dfc3368b8ece0bae0723c000000000000000000000003","fee_recipient":"inj18cajq5agkjfgwp3dlsek3w8vuzawqu3uaztpen","price":"7480000.000000000000000000","quantity":"1336.898000000000000000","cid":"#00000006ed2fe077ce8275970004e28f"},"order_type":"SELL_PO","margin":"1999999408.000000357787939720","trigger_price":null}],"binary_options_orders_to_cancel":[],"binary_options_market_ids_to_cancel_all":[],"binary_options_orders_to_create":[]}]}}]'}], 'pagination': {'has_next': True, 'has_prev': False, 'page': 1, 'page_size': 5, 'total': 3151, 'total_pages': 631}}
+test_GetLatestTransactions脚本完成
+该脚本总共用时：33.247
+test_GetLatestTransactions (tests.BlockExprole.GetLatestTransactions.GetLatestTransactions.test_GetLatestTransactions)执行——>【通过】
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>8</td>
+                    <td class="GetTransactionbyHash">GetTransactionbyHash</td>
+                    <td>test_GetTransactionbyHash</td>
+                    <td>根据交易hash获取trans交易信息</td>
+                    <td>62.5s</td>
+                    
+                        <td class="text-success">成功</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>http://165.154.1.151:8000//demo/transaction/latest?page=1&page_size=5
+{'data': [{'block_number': 141432434, 'block_unix_timestamp': 1763032376608, 'error_log': '', 'hash': '0x2b2f856fe557c7be666db8c9649768f33a5f11ae35917e851f2d182db19042fd', 'messages': '[{"type":"/cosmos.distribution.v1beta1.MsgSetWithdrawAddress","value":{"delegator_address":"inj13a8z3cgdjyzrfrnd3x8x389l47a2sdep4r6y04","withdraw_address":"inj13a8z3cgdjyzrfrnd3x8x389l47a2sdep4r6y04"}},{"type":"/cosmos.authz.v1beta1.MsgExec","value":{"grantee":"inj13a8z3cgdjyzrfrnd3x8x389l47a2sdep4r6y04","msgs":[{"@type":"/injective.exchange.v1beta1.MsgBatchUpdateOrders","sender":"inj18cajq5agkjfgwp3dlsek3w8vuzawqu3uaztpen","subaccount_id":"","spot_market_ids_to_cancel_all":[],"derivative_market_ids_to_cancel_all":[],"spot_orders_to_cancel":[],"derivative_orders_to_cancel":[{"market_id":"0x9b9980167ecc3645ff1a5517886652d94a0825e54a77d2057cbbe3ebee015963","subaccount_id":"0x3e3b2053a8b49287062dfc3368b8ece0bae0723c000000000000000000000003","order_hash":"","order_mask":0,"cid":"#00000006ed310c1dbe694bb30004e2de"}],"spot_orders_to_create":[],"derivative_orders_to_create":[],"binary_options_orders_to_cancel":[],"binary_options_market_ids_to_cancel_all":[],"binary_options_orders_to_create":[]}]}}]'}, {'block_number': 141432434, 'block_unix_timestamp': 1763032376608, 'error_log': '', 'hash': '0xa98735491338580974a49fbfe47e286396959c64f70426c6f8925f4787b04057', 'messages': '[{"type":"/cosmos.distribution.v1beta1.MsgSetWithdrawAddress","value":{"delegator_address":"inj15my56c7twluuhhyd65nze5hzkv2vjaqd3v4tpu","withdraw_address":"inj15my56c7twluuhhyd65nze5hzkv2vjaqd3v4tpu"}},{"type":"/cosmos.authz.v1beta1.MsgExec","value":{"grantee":"inj15my56c7twluuhhyd65nze5hzkv2vjaqd3v4tpu","msgs":[{"@type":"/injective.exchange.v1beta1.MsgBatchUpdateOrders","sender":"inj18cajq5agkjfgwp3dlsek3w8vuzawqu3uaztpen","subaccount_id":"","spot_market_ids_to_cancel_all":[],"derivative_market_ids_to_cancel_all":[],"spot_orders_to_cancel":[],"derivative_orders_to_cancel":[{"market_id":"0x9b9980167ecc3645ff1a5517886652d94a0825e54a77d2057cbbe3ebee015963","subaccount_id":"0x3e3b2053a8b49287062dfc3368b8ece0bae0723c000000000000000000000003","order_hash":"","order_mask":0,"cid":"#00000006ed310c1dbe694bb30004e2de"}],"spot_orders_to_create":[],"derivative_orders_to_create":[],"binary_options_orders_to_cancel":[],"binary_options_market_ids_to_cancel_all":[],"binary_options_orders_to_create":[]}]}}]'}, {'block_number': 141432434, 'block_unix_timestamp': 1763032376608, 'error_log': '', 'hash': '0x93b44ed9ded5daa3b3491ea23d1fd81057c54ac45f9ebebb9e1c7f90e59ab105', 'messages': '[{"type":"/cosmos.distribution.v1beta1.MsgSetWithdrawAddress","value":{"delegator_address":"inj1cwmucpvqnyh8a4xtzy9ezxrwfzwffydfvzv6wz","withdraw_address":"inj1cwmucpvqnyh8a4xtzy9ezxrwfzwffydfvzv6wz"}},{"type":"/cosmos.authz.v1beta1.MsgExec","value":{"grantee":"inj1cwmucpvqnyh8a4xtzy9ezxrwfzwffydfvzv6wz","msgs":[{"@type":"/injective.exchange.v1beta1.MsgBatchUpdateOrders","sender":"inj18cajq5agkjfgwp3dlsek3w8vuzawqu3uaztpen","subaccount_id":"","spot_market_ids_to_cancel_all":[],"derivative_market_ids_to_cancel_all":[],"spot_orders_to_cancel":[],"derivative_orders_to_cancel":[{"market_id":"0x9b9980167ecc3645ff1a5517886652d94a0825e54a77d2057cbbe3ebee015963","subaccount_id":"0x3e3b2053a8b49287062dfc3368b8ece0bae0723c000000000000000000000003","order_hash":"","order_mask":0,"cid":"#00000006ed31436d93d5e8460004e2ef"}],"spot_orders_to_create":[],"derivative_orders_to_create":[],"binary_options_orders_to_cancel":[],"binary_options_market_ids_to_cancel_all":[],"binary_options_orders_to_create":[]}]}}]'}, {'block_number': 141432434, 'block_unix_timestamp': 1763032376608, 'error_log': '', 'hash': '0xaa44c45a88fec32e208d4a5aaa361292e9911b19a400ef36e2a5547fdd599f8e', 'messages': '[{"type":"/cosmos.distribution.v1beta1.MsgSetWithdrawAddress","value":{"delegator_address":"inj1fy0gjupxg74efx7am6633msta5v3jj5w4ppgas","withdraw_address":"inj1fy0gjupxg74efx7am6633msta5v3jj5w4ppgas"}},{"type":"/cosmos.authz.v1beta1.MsgExec","value":{"grantee":"inj1fy0gjupxg74efx7am6633msta5v3jj5w4ppgas","msgs":[{"@type":"/injective.exchange.v1beta1.MsgBatchUpdateOrders","sender":"inj18cajq5agkjfgwp3dlsek3w8vuzawqu3uaztpen","subaccount_id":"","spot_market_ids_to_cancel_all":[],"derivative_market_ids_to_cancel_all":[],"spot_orders_to_cancel":[{"market_id":"0xa508cb32923323679f29a032c70342c147c17d0145625922b0ef22e955c844c0","subaccount_id":"0x3e3b2053a8b49287062dfc3368b8ece0bae0723c000000000000000000000004","order_hash":"","order_mask":0,"cid":"#00000009ed5e68bab49b0f990004df31"},{"market_id":"0xa508cb32923323679f29a032c70342c147c17d0145625922b0ef22e955c844c0","subaccount_id":"0x3e3b2053a8b49287062dfc3368b8ece0bae0723c000000000000000000000004","order_hash":"","order_mask":0,"cid":"#00000009ed24e4034ffe89120004e09b"},{"market_id":"0xa508cb32923323679f29a032c70342c147c17d0145625922b0ef22e955c844c0","subaccount_id":"0x3e3b2053a8b49287062dfc3368b8ece0bae0723c000000000000000000000004","order_hash":"","order_mask":0,"cid":"#0000000aeca39e175091f9640004c406"}],"derivative_orders_to_cancel":[{"market_id":"0x9b9980167ecc3645ff1a5517886652d94a0825e54a77d2057cbbe3ebee015963","subaccount_id":"0x3e3b2053a8b49287062dfc3368b8ece0bae0723c000000000000000000000003","order_hash":"","order_mask":0,"cid":"#00000006ed311f0d1b8aec010004e2d9"},{"market_id":"0x9b9980167ecc3645ff1a5517886652d94a0825e54a77d2057cbbe3ebee015963","subaccount_id":"0x3e3b2053a8b49287062dfc3368b8ece0bae0723c000000000000000000000003","order_hash":"","order_mask":0,"cid":"#00000006ed310c1dbe694bb30004e2de"}],"spot_orders_to_create":[],"derivative_orders_to_create":[],"binary_options_orders_to_cancel":[],"binary_options_market_ids_to_cancel_all":[],"binary_options_orders_to_create":[]}]}}]'}, {'block_number': 141432434, 'block_unix_timestamp': 1763032376608, 'error_log': '', 'hash': '0x9949f7ab62dcf0ad6d53bc236dc3659be49c75163754717845c5f500dd178b41', 'messages': '[{"type":"/injective.wasmx.v1.MsgExecuteContractCompat","value":{"sender":"inj1klkteuvpmxmzxtv09qtusq3mlxq6vea8gj0t69","contract":"inj1f8z8jyqqxm5fjqcx457afu8l4d4ekpw8c478ca","msg":"{\\"feed_seat\\":{\\"seat_id\\":4,\\"feed_level\\":2}}","funds":"63000000000factory/inj1ng84mfnq4z4tuh0cd7a28x0hxw75vxcm70ls9q/HPNJ"}}]'}], 'pagination': {'has_next': True, 'has_prev': False, 'page': 1, 'page_size': 5, 'total': 3268, 'total_pages': 654}}
+0x2b2f856fe557c7be666db8c9649768f33a5f11ae35917e851f2d182db19042fd
+{'code': 200, 'message': 'success', 'data': {'block_number': 141432434, 'block_timestamp': '2025-11-13 11:12:56.608 +0000 UTC', 'block_unix_timestamp': 1763032376608, 'data': '\x12<\n:/cosmos.distribution.v1beta1.MsgSetWithdrawAddressResponse\x12.\n%/cosmos.authz.v1beta1.MsgExecResponse\x12\x05\n\x03\x12\x01\x00', 'error_log': '', 'gas_fee': '{"amount":[{"denom":"inj","amount":"30080000000000"}],"gas_limit":188000,"payer":"inj13a8z3cgdjyzrfrnd3x8x389l47a2sdep4r6y04"}', 'gas_used': 100699, 'gas_wanted': 188000, 'hash': '0x2b2f856fe557c7be666db8c9649768f33a5f11ae35917e851f2d182db19042fd', 'logs': '[{"msg_index":"1","events":[{"type":"message","attributes":[{"key":"action","value":"/cosmos.authz.v1beta1.MsgExec","index":true},{"key":"sender","value":"inj13a8z3cgdjyzrfrnd3x8x389l47a2sdep4r6y04","index":true},{"key":"module","value":"authz","index":true},{"key":"msg_index","value":"1","index":true}]},{"type":"injective.exchange.v2.EventOrderCancelFail","attributes":[{"key":"cid","value":"\\"#00000006ed310c1dbe694bb30004e2de\\"","index":true},{"key":"description","value":"\\"invalid order identifier string: struct field error\\"","index":true},{"key":"market_id","value":"\\"0x9b9980167ecc3645ff1a5517886652d94a0825e54a77d2057cbbe3ebee015963\\"","index":true},{"key":"order_hash","value":"\\"\\"","index":true},{"key":"subaccount_id","value":"\\"0x3e3b2053a8b49287062dfc3368b8ece0bae0723c000000000000000000000003\\"","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"1","index":true}]},{"type":"injective.exchange.v1beta1.EventOrderCancelFail","attributes":[{"key":"cid","value":"\\"\\"","index":true},{"key":"description","value":"\\"\\"","index":true},{"key":"market_id","value":"\\"0x9b9980167ecc3645ff1a5517886652d94a0825e54a77d2057cbbe3ebee015963\\"","index":true},{"key":"order_hash","value":"\\"\\"","index":true},{"key":"subaccount_id","value":"\\"\\"","index":true},{"key":"authz_msg_index","value":"0","index":true},{"key":"msg_index","value":"1","index":true}]}]},{"msg_index":"0","events":[{"type":"message","attributes":[{"key":"action","value":"/cosmos.distribution.v1beta1.MsgSetWithdrawAddress","index":true},{"key":"sender","value":"inj13a8z3cgdjyzrfrnd3x8x389l47a2sdep4r6y04","index":true},{"key":"module","value":"distribution","index":true},{"key":"msg_index","value":"0","index":true}]},{"type":"set_withdraw_address","attributes":[{"key":"withdraw_address","value":"inj13a8z3cgdjyzrfrnd3x8x389l47a2sdep4r6y04","index":true},{"key":"msg_index","value":"0","index":true}]}]}]', 'messages': '[{"type":"/cosmos.distribution.v1beta1.MsgSetWithdrawAddress","value":{"delegator_address":"inj13a8z3cgdjyzrfrnd3x8x389l47a2sdep4r6y04","withdraw_address":"inj13a8z3cgdjyzrfrnd3x8x389l47a2sdep4r6y04"}},{"type":"/cosmos.authz.v1beta1.MsgExec","value":{"grantee":"inj13a8z3cgdjyzrfrnd3x8x389l47a2sdep4r6y04","msgs":[{"@type":"/injective.exchange.v1beta1.MsgBatchUpdateOrders","sender":"inj18cajq5agkjfgwp3dlsek3w8vuzawqu3uaztpen","subaccount_id":"","spot_market_ids_to_cancel_all":[],"derivative_market_ids_to_cancel_all":[],"spot_orders_to_cancel":[],"derivative_orders_to_cancel":[{"market_id":"0x9b9980167ecc3645ff1a5517886652d94a0825e54a77d2057cbbe3ebee015963","subaccount_id":"0x3e3b2053a8b49287062dfc3368b8ece0bae0723c000000000000000000000003","order_hash":"","order_mask":0,"cid":"#00000006ed310c1dbe694bb30004e2de"}],"spot_orders_to_create":[],"derivative_orders_to_create":[],"binary_options_orders_to_cancel":[],"binary_options_market_ids_to_cancel_all":[],"binary_options_orders_to_create":[]}]}}]', 'payer': 'inj13a8z3cgdjyzrfrnd3x8x389l47a2sdep4r6y04', 'signatures': ['{"pubkey":"03566e947c76403e57c0b0573b96359eb72e10d63610c0532f01b6c3f64a63f429","address":"inj13a8z3cgdjyzrfrnd3x8x389l47a2sdep4r6y04","sequence":2805774,"signature":"/i1SniRbIk/YW6amKBu+SgydL5b0RWKmUotl2st+Gq5v7KeIdMLoK3JYA5k7sIrUqBQVATzV3KCihMwPcyXCgw=="}'], 'tx_number': 2648357682, 'tx_type': 'injective'}}
+test_GetTransactionbyHash脚本完成
+该脚本总共用时：62.521
+test_GetTransactionbyHash (tests.BlockExprole.GetTransactionbyHash.GetTransactionbyHash.test_GetTransactionbyHash)执行——>【通过】
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>9</td>
+                    <td class="Getvalidators">Getvalidators</td>
+                    <td>test_Getvalidators</td>
+                    <td>获取区块链验证人</td>
+                    <td>24.4s</td>
+                    
+                        <td class="text-success">成功</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>{'code': 200, 'message': 'success', 'data': {'data': [{'commission_update_time': '0001-01-01 00:00:00 +0000 UTC', 'consensus_address': 'injvaloper1ee7xnhczhvu064utmdn48sh0wx7zq3pgy6frgm', 'description': '{}', 'slashing_events': ['{"block_number":140548859,"block_timestamp":"2025-11-06 23:56:00.022 +0000 UTC","reason":"missing_valset_confirm","jailed":"operator_address:\\"injvaloper1ee7xnhczhvu064utmdn48sh0wx7zq3pgy6frgm\\" consensus_pubkey:<type_url:\\"/cosmos.crypto.ed25519.PubKey\\" value:\\"\\\\n +eo\\\\266\\\\207\\\\226\\\\016g\\\\372\\\\355\\\\225\\\\276\\\\370\\\\r\\\\022\\\\231\\\\334\\\\000\\\\337~.Ik\\\\027C\\\\367\\\\237s\\\\177\\\\310\\\\314\\\\360\\" > status:BOND_STATUS_UNBONDING tokens:\\"81328462438495479993628\\" delegator_shares:\\"81328462438495479993628000000000000000000\\" description:<moniker:\\"Stakecito\\" identity:\\"D16E26E5C8154E17\\" details:\\"Securing & Decentralizing PoS Networks.\\" > unbonding_height:140498858 unbonding_time:<seconds:1764256484 nanos:791993082 > commission:<commission_rates:<rate:\\"50000000000000000\\" max_rate:\\"200000000000000000\\" max_change_rate:\\"20000000000000000\\" > update_time:<seconds:1644853141 nanos:501166131 > > min_self_delegation:\\"1\\" unbonding_ids:435150 unbonding_ids:451263 unbonding_ids:451569 unbonding_ids:451818 unbonding_ids:454498 unbonding_ids:472963 "}'], 'timestamp': '0001-01-01 00:00:00 +0000 UTC', 'unbonding_time': '0001-01-01 00:00:00 +0000 UTC'}, {'commission_max_change_rate': '0.050000000000000000', 'commission_max_rate': '0.250000000000000000', 'commission_rate': '0.100000000000000000', 'commission_update_time': '2024-02-23 01:48:54.337 +0000 UTC', 'consensus_address': 'injvalcons1r8nnqc897ksdr3d9me2jmsjw3rcfjyvd7up3fm', 'delegator_shares': '1000000000000010000.000000000000000000', 'description': '{"moniker":"Data Nexus","identity":"9D89A6BF3B94837E","website":"https://data.nexus","security_contact":"security@datanexus.tech"}', 'image_url': 'https://s3.amazonaws.com/keybase_processed_uploads/3a93156009f32851dc2123eaf1983a05_360_360.jpg', 'moniker': 'Data Nexus', 'operator_address': 'injvaloper10aral7chdg04cjt33dc4p9lnw4pygv6ersc8hh', 'status': 1, 'timestamp': '2025-11-13 11:23:22.164 +0000 UTC', 'tokens': '1000000000000010000', 'unbonding_time': '1970-01-01 00:00:00 +0000 UTC'}, {'commission_max_change_rate': '0.100000000000000000', 'commission_max_rate': '0.100000000000000000', 'commission_rate': '0.070000000000000000', 'commission_update_time': '2023-03-20 16:07:09.662 +0000 UTC', 'consensus_address': 'injvalcons1m0xku293exk0dvfljkangv4cjt28yyqct85pkq', 'delegator_shares': '12631434084207349.279024442838061848', 'description': '{"moniker":"Galaxy","identity":"1718CFB46A0EC7FA","website":"www.galaxy.com","security_contact":"bci@galaxy.com","details":"Galaxy is a digital asset and blockchain leader helping institutions, startups, and qualified individuals shape a changing economy. We provide platform solutions custom-made for a digitally native ecosystem."}', 'image_url': 'https://s3.amazonaws.com/keybase_processed_uploads/09f6187142c890cf9fb7b6bc0811e505_360_360.jpg', 'jailed': True, 'moniker': 'Galaxy', 'operator_address': 'injvaloper10er2rpmfux7dwyrqfgre90e4dqmsj5n06twg4l', 'slashing_events': ['{"block_number":29445803,"block_timestamp":"2023-03-24 20:33:56.296 +0000 UTC","power":40011,"reason":"double_sign"}', '{"block_number":29445803,"block_timestamp":"2023-03-24 20:33:56.296 +0000 UTC","jailed":"injvalcons1m0xku293exk0dvfljkangv4cjt28yyqct85pkq"}'], 'status': 1, 'timestamp': '2025-11-13 11:23:22.164 +0000 UTC', 'tokens': '11999862537846461', 'unbonding_height': 29445803, 'unbonding_time': '2023-04-14 20:33:56.296 +0000 UTC'}, {'commission_max_change_rate': '0.010000000000000000', 'commission_max_rate': '0.200000000000000000', 'commission_rate': '0.050000000000000000', 'commission_update_time': '2023-01-20 12:42:35.742 +0000 UTC', 'consensus_address': 'injvalcons13zs6ah79f7d35nnhay9h9rvvvpn583hmdp5r3q', 'delegator_shares': '1920111441046300721.938141558323720715', 'description': '{"moniker":"BlockHunters 🎯","identity":"BEAC09B6FE7F908B","website":"https://blockhunters.org/","security_contact":"blockhunters@pm.me","details":"Hunt for the best stake. 🏹"}', 'image_url': 'https://s3.amazonaws.com/keybase_processed_uploads/bec2c55ae55d417f928a323fd8815105_360_360.jpg', 'jailed': True, 'moniker': 'BlockHunters 🎯', 'operator_address': 'injvaloper10gt552f5sw80lmd9a43rkvvgf6wj0nk3r7cwzf', 'slashing_events': ['{"block_number":25354308,"block_timestamp":"2023-02-02 15:05:12.769 +0000 UTC","power":879,"reason":"missing_signature","jailed":"injvalcons13zs6ah79f7d35nnhay9h9rvvvpn583hmdp5r3q"}'], 'status': 1, 'timestamp': '2025-11-13 11:23:22.164 +0000 UTC', 'tokens': '1916083200894855967', 'unbonding_height': 27978268, 'unbonding_time': '2023-03-27 19:19:33.897 +0000 UTC'}, {'commission_max_change_rate': '0.200000000000000000', 'commission_max_rate': '1.000000000000000000', 'commission_rate': '0.100000000000000000', 'commission_update_time': '2025-10-14 16:17:32.373 +0000 UTC', 'consensus_address': 'injvalcons1anhznypm0p3qukxu8pfvdg3qjtzkpqaneemrrh', 'delegator_shares': '30674061097600021172.164499774980334694', 'description': '{"moniker":"Mblock","identity":"BA3A575D29EFFBD3","details":"Mblock is a virtual asset, NFT, and blockchain comprehensive service company of Maekyung Media Group."}', 'image_url': 'https://s3.amazonaws.com/keybase_processed_uploads/ed5c13452327e5bca305d0ff03e73405_360_360.jpg', 'jailed': True, 'moniker': 'Mblock', 'operator_address': 'injvaloper10gunj074eyp4l8n5kta4w7960nxer2ucvfrdsv', 'proposed': 475, 'signed': 5303436, 'slashing_events': ['{"block_number":136955069,"block_timestamp":"2025-10-11 09:09:17.317 +0000 UTC","power":300078,"reason":"missing_signature","jailed":"injvalcons1anhznypm0p3qukxu8pfvdg3qjtzkpqaneemrrh"}', '{"block_number":137795696,"block_timestamp":"2025-10-17 17:13:59.599 +0000 UTC","power":300007,"reason":"missing_signature","jailed":"injvalcons1anhznypm0p3qukxu8pfvdg3qjtzkpqaneemrrh"}', '{"block_number":138349872,"block_timestamp":"2025-10-21 19:27:37.293 +0000 UTC","power":300004,"reason":"missing_signature","jailed":"injvalcons1anhznypm0p3qukxu8pfvdg3qjtzkpqaneemrrh"}', '{"block_number":138495616,"block_timestamp":"2025-10-22 21:43:11.79 +0000 UTC","power":300001,"reason":"missing_signature","jailed":"injvalcons1anhznypm0p3qukxu8pfvdg3qjtzkpqaneemrrh"}', '{"block_number":138764665,"block_timestamp":"2025-10-24 21:35:05.35 +0000 UTC","power":300098,"reason":"missing_signature","jailed":"injvalcons1anhznypm0p3qukxu8pfvdg3qjtzkpqaneemrrh"}', '{"block_number":139307086,"block_timestamp":"2025-10-28 21:05:36.161 +0000 UTC","power":300095,"reason":"missing_signature","jailed":"injvalcons1anhznypm0p3qukxu8pfvdg3qjtzkpqaneemrrh"}'], 'status': 2, 'timestamp': '2025-11-13 11:23:22.164 +0000 UTC', 'tokens': '30672220704107867683', 'unbonding_height': 139307086, 'unbonding_time': '2025-11-18 21:05:36.161 +0000 UTC'}], 'pagination': {'has_next': True, 'has_prev': False, 'page': 1, 'page_size': 5, 'total': 196, 'total_pages': 40}}}
+test_Getvalidators脚本完成
+该脚本总共用时：24.437
+test_Getvalidators (tests.BlockExprole.Getvalidators.Getvalidators.test_Getvalidators)执行——>【通过】
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+
+            </tbody>
+        </table>
+    </div>
+
+    <div style="height: 200px"></div>
+</div>
+
+
+<script>
+    var tbodyTr = $('tbody tr');
+    var testResult = $("#testResult");
+    var testClass = $("#testClass");
+    <!--    用例执行详细信息显示切换-->
+    $(".btn_info").click(function () {
+        $(this).parent().parent().next().toggle();
+
+    });
+    // 当选择用例类之后触发
+    testClass.change(function () {
+        var cls = $(this).val();
+        var res = testResult.val();
+        elementDisplay(cls, res);
+        sort()
+    });
+    testResult.change(function () {
+        var res = $(this).val();
+        var cls = testClass.val();
+        elementDisplay(cls, res);
+        sort()
+    });
+
+    function elementDisplay(cls, res) {
+        // 用例数据的显示
+        if (cls === "所有") {
+            if (res === "所有") {
+                tbodyTr.has('button').show();
+            } else if (res === '成功') {
+                tbodyTr.hide();
+                tbodyTr.has('button').has('.text-success').show()
+
+            } else if (res === '失败') {
+                tbodyTr.hide();
+                tbodyTr.has('button').has('.text-warning').show()
+
+            } else if (res === '错误') {
+                tbodyTr.hide();
+                tbodyTr.has('button').has('.text-danger').show()
+
+            } else if (res === '跳过') {
+                tbodyTr.hide();
+                tbodyTr.has('button').has('.text-info').show()
+            }
+        } else {
+            if (res === "所有") {
+                tbodyTr.hide();
+                tbodyTr.has('button').has('.' + cls + '').show()
+            } else if (res === '成功') {
+                tbodyTr.hide();
+                tbodyTr.has('button').has('.' + cls + '').has('.text-success').show()
+            } else if (res === '失败') {
+                tbodyTr.hide();
+                tbodyTr.has('button').has('.' + cls + '').has('.text-warning').show()
+            } else if (res === '错误') {
+                tbodyTr.hide();
+                tbodyTr.has('button').has('.' + cls + '').has('.text-danger').show()
+            } else if (res === '跳过') {
+                tbodyTr.hide();
+                tbodyTr.has('button').has('.' + cls + '').has('.text-info').show()
+            }
+        }
+    }
+
+    function sort() {
+        //重新排列显示序号
+        // 选择所有可以见的tr
+        var visibleTr = tbodyTr.filter(":visible");
+
+        visibleTr.each(function (index, element) {
+            element.firstElementChild.innerHTML = index + 1;
+
+        })
+
+    }
+
+
+</script>
+
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('char'));
+    var myChart2 = echarts.init(document.getElementById('char2'));
+    // 指定图表的配置项和数据
+    option = {
+        color: ['#00a10a', '#ddb518', 'rgba(204,46,41,0.73)', '#85898c'],
+        tooltip: {
+            trigger: 'item',
+            formatter: '{a} <br/>{b}: {c} ({d}%)'
+        },
+        legend: {
+            orient: 'vertical',
+            left: 10,
+            data: ['通过', '失败', '错误', '跳过']
+        },
+        series: [
+            {
+                name: '测试结果',
+                type: 'pie',
+                radius: ['50%', '70%'],
+                avoidLabelOverlap: false,
+                label: {
+                    show: false,
+                    position: 'center'
+                },
+                emphasis: {
+                    label: {
+                        show: true,
+                        fontSize: '30',
+                        fontWeight: 'bold'
+                    }
+                },
+                labelLine: {
+                    show: false
+                },
+                data: [
+                    {value: 6, name: '通过'},
+                    {value: 0, name: '失败'},
+                    {value: 3, name: '错误'},
+                    {value: 0, name: '跳过'}
+                ]
+            }
+        ]
+    };
+    option2 = {
+        tooltip: {
+            formatter: '{a} <br/>{b} : {c}%'
+        },
+        toolbox: {
+            feature: {
+                restore: {},
+                saveAsImage: {}
+            }
+        },
+        series: [
+            {
+                name: '测试结果',
+                type: 'gauge',
+                detail: {formatter: '66.67%'},
+                data: [{value: '66.67', name: '用例通过率'}],
+                axisLine: {
+                    lineStyle: {
+                        color: [
+                            [0.2, '#c20000'],
+                            [0.8, '#ddb518'],
+                            [1, '#00a10a']]
+                    }
+                }
+            }
+        ]
+    };
+
+
+    myChart2.setOption(option2);
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+
+
+</body>
+</html>

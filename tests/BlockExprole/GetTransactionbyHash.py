@@ -12,6 +12,7 @@ class GetTransactionbyHash(BaseData):
         hash_data=gethash.test_GetLatestTransactions()
         print(hash_data['data']['data'][0]['hash'])
         url=self.base_url+"/demo/transaction/by-hash?hash="+hash_data['data']['data'][0]['hash']
+        print("请求地址为" + url)
         response=requests.get(url,headers=self.headers)
         print(response.json())
         self.assertIsNotNone(response.json()['data'])

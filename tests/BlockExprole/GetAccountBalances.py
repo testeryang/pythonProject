@@ -13,6 +13,8 @@ class GetAccountBalances(BaseData):
         getaddressinfo = GetLatestTransactions()
         address = getaddressinfo.test_GetLatestTransactions()['data']['data'][0]['payer']
         url=self.base_url+"/demo/account/balances?address="+address
+        print("请求地址为" + url)
         response=requests.get(url,headers=self.headers)
         print("获取用户余额："+str(response.json()))
+
         self.assertIsNotNone(response.json()['data'])

@@ -15,5 +15,6 @@ class BaseData(unittest.TestCase):
         end_time = time.time()
         run_time = round(end_time - self.start_time, 3)
         print(self._testMethodName+"脚本完成")
+
         print("该脚本总共用时："+str(run_time))
         pass

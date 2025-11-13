@@ -8,6 +8,8 @@ class GetLatestTransactions(BaseData):
     def test_GetLatestTransactions(self):
         """获取最新5条trans信息"""
         url=self.base_url+"/demo/transaction/latest?page=1&page_size=5"
+        print("请求地址为" + url)
+        print(url)
         response=requests.get(url,headers=self.headers)
         print(response.json()['data'])
         self.assertIsNotNone(response.json()['data'])

@@ -5,9 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a7c7862-dce4-48dd-a517-45be7492e89b" name="更改" comment="更新区块链校验人接口">
+      <change afterPath="$PROJECT_DIR$/reports/2025-11-13_19.25测试报告.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reports/2025-11-13_19.40测试报告.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reports/2025-11-13_19.53测试报告.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/test_framework_20251113.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/test_framework_20251113.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/history.json" beforeDir="false" afterPath="$PROJECT_DIR$/reports/history.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/logger.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/BlockExprole/GetAccountBalances.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/GetAccountBalances.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/BlockExprole/GetAccountInfo.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/GetAccountInfo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/BlockExprole/GetAccountTransactions.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/GetAccountTransactions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/BlockExprole/GetBlockbyHeight.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/GetBlockbyHeight.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/BlockExprole/GetLatestBlockHeight.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/GetLatestBlockHeight.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/BlockExprole/GetLatestBlocks.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/GetLatestBlocks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/BlockExprole/GetLatestTransactions.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/GetLatestTransactions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/BlockExprole/GetTransactionbyHash.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/GetTransactionbyHash.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/BlockExprole/Getvalidators.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/Getvalidators.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/BlockExprole/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +80,7 @@
     "Python 测试.tests.BlockExprole.GetAccountTransactions.GetAccountTransactions.test_GetAccountTransactions 的 Python 测试.executor": "Run",
     "Python 测试.tests.BlockExprole.GetBlockbyHeight.get_BlockbyHeight.test_get_BlockbyHeight 的 Python 测试.executor": "Run",
     "Python 测试.tests.BlockExprole.GetBlockbyHeight.get_BlockbyHeight.test_get_blockbyheight 的 Python 测试.executor": "Run",
+    "Python 测试.tests.BlockExprole.GetBlockbyHeight.get_BlockbyHeight.test_getblockbyheight 的 Python 测试.executor": "Run",
     "Python 测试.tests.BlockExprole.GetLatestBlockHeight.GetLatestBlockHeight.test_getLatestBlockHeight 的 Python 测试.executor": "Run",
     "Python 测试.tests.BlockExprole.GetLatestBlocks.TestUserApi.test_get_existing_user 的 Python 测试.executor": "Run",
     "Python 测试.tests.BlockExprole.GetLatestBlocks.get_LatestBlocks.test_get_LatestBlocks 的 Python 测试.executor": "Run",
@@ -95,6 +110,28 @@
     </key>
   </component>
   <component name="RunManager" selected="Python 测试.tests.BlockExprole.GetAccountBalances.GetAccountBalances.test_GetAccountBalances 的 Python 测试">
+    <configuration name="logger" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PythonProject" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/core" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/core/logger.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PythonProject" />
       <option name="ENV_FILES" value="" />
@@ -132,7 +169,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="tests.BlockExprole.GetAccountInfo.GetAccountInfo.test_GetAccountInfo 的 Python 测试" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="tests.BlockExprole.GetBlockbyHeight.get_BlockbyHeight.test_getblockbyheight 的 Python 测试" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="PythonProject" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -143,22 +180,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.BlockExprole.GetAccountInfo.GetAccountInfo.test_GetAccountInfo&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="tests.BlockExprole.GetAccountTransactions.GetAccountTransactions.test_GetAccountTransactions 的 Python 测试" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="PythonProject" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.BlockExprole.GetAccountTransactions.GetAccountTransactions.test_GetAccountTransactions&quot;" />
+      <option name="_new_target" value="&quot;tests.BlockExprole.GetBlockbyHeight.get_BlockbyHeight.test_getblockbyheight&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -180,10 +202,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python 测试.tests.BlockExprole.GetAccountBalances.GetAccountBalances.test_GetAccountBalances 的 Python 测试" />
-        <item itemvalue="Python 测试.tests.BlockExprole.GetLatestTransactions.GetLatestTransactions.test_GetLatestTransactions 的 Python 测试" />
-        <item itemvalue="Python 测试.tests.BlockExprole.GetAccountTransactions.GetAccountTransactions.test_GetAccountTransactions 的 Python 测试" />
         <item itemvalue="Python.run" />
-        <item itemvalue="Python 测试.tests.BlockExprole.GetAccountInfo.GetAccountInfo.test_GetAccountInfo 的 Python 测试" />
+        <item itemvalue="Python.logger" />
+        <item itemvalue="Python 测试.tests.BlockExprole.GetBlockbyHeight.get_BlockbyHeight.test_getblockbyheight 的 Python 测试" />
+        <item itemvalue="Python 测试.tests.BlockExprole.GetLatestTransactions.GetLatestTransactions.test_GetLatestTransactions 的 Python 测试" />
       </list>
     </recent_temporary>
   </component>
@@ -314,7 +336,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763015133747</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="更新区块链校验人接口">
+      <option name="closed" value="true" />
+      <created>1763031452463</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1763031452463</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
