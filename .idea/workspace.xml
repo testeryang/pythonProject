@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a7c7862-dce4-48dd-a517-45be7492e89b" name="更改" comment="优化print输出方案">
-      <change afterPath="$PROJECT_DIR$/tests/BlockExprole/Getvalidators.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/BlockExprole/GetAccountTransactions.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/GetAccountTransactions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/history.json" beforeDir="false" afterPath="$PROJECT_DIR$/reports/history.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/BlockExprole/GetAccountInfo.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/GetAccountInfo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/BlockExprole/GetLatestTransactions.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/GetLatestTransactions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +62,7 @@
     "Python 测试.Python 测试 (runner.py 内).executor": "Run",
     "Python 测试.runner.test_login 的 Python 测试.executor": "Run",
     "Python 测试.runner.test_login_success 的 Python 测试.executor": "Run",
+    "Python 测试.tests.BlockExprole.GetAccountBalances.GetAccountBalances.test_GetAccountBalances 的 Python 测试.executor": "Run",
     "Python 测试.tests.BlockExprole.GetAccountBalances.GetAccountTransactions.test_GetAccountTransactions 的 Python 测试.executor": "Run",
     "Python 测试.tests.BlockExprole.GetAccountInfo.GetAccountInfo.test_GetAccountInfo 的 Python 测试.executor": "Run",
     "Python 测试.tests.BlockExprole.GetAccountTransactions.GetAccountTransactions.test_GetAccountTransactions 的 Python 测试.executor": "Run",
@@ -93,7 +96,7 @@
       <recent name="C:\Users\Administrator\PycharmProjects\PythonProject\tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Python 测试.tests.BlockExprole.Getvalidators.Getvalidators.test_Getvalidators 的 Python 测试">
+  <component name="RunManager" selected="Python.run">
     <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PythonProject" />
       <option name="ENV_FILES" value="" />
@@ -116,7 +119,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="tests.BlockExprole.GetAccountBalances.GetAccountTransactions.test_GetAccountTransactions 的 Python 测试" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="tests.BlockExprole.GetAccountBalances.GetAccountBalances.test_GetAccountBalances 的 Python 测试" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="PythonProject" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -127,7 +130,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.BlockExprole.GetAccountBalances.GetAccountTransactions.test_GetAccountTransactions&quot;" />
+      <option name="_new_target" value="&quot;tests.BlockExprole.GetAccountBalances.GetAccountBalances.test_GetAccountBalances&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -146,7 +149,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="tests.BlockExprole.GetAccountTransactions.GetAccountTransactions.test_GetAccountTransactions 的 Python 测试" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="tests.BlockExprole.GetLatestTransactions.GetLatestTransactions.test_GetLatestTransactions 的 Python 测试" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="PythonProject" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -157,7 +160,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.BlockExprole.GetAccountTransactions.GetAccountTransactions.test_GetAccountTransactions&quot;" />
+      <option name="_new_target" value="&quot;tests.BlockExprole.GetLatestTransactions.GetLatestTransactions.test_GetLatestTransactions&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -178,11 +181,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python 测试.tests.BlockExprole.Getvalidators.Getvalidators.test_Getvalidators 的 Python 测试" />
         <item itemvalue="Python.run" />
         <item itemvalue="Python 测试.tests.BlockExprole.GetAccountInfo.GetAccountInfo.test_GetAccountInfo 的 Python 测试" />
-        <item itemvalue="Python 测试.tests.BlockExprole.GetAccountTransactions.GetAccountTransactions.test_GetAccountTransactions 的 Python 测试" />
-        <item itemvalue="Python 测试.tests.BlockExprole.GetAccountBalances.GetAccountTransactions.test_GetAccountTransactions 的 Python 测试" />
+        <item itemvalue="Python 测试.tests.BlockExprole.GetAccountBalances.GetAccountBalances.test_GetAccountBalances 的 Python 测试" />
+        <item itemvalue="Python 测试.tests.BlockExprole.GetLatestTransactions.GetLatestTransactions.test_GetLatestTransactions 的 Python 测试" />
+        <item itemvalue="Python 测试.tests.BlockExprole.Getvalidators.Getvalidators.test_Getvalidators 的 Python 测试" />
       </list>
     </recent_temporary>
   </component>
@@ -297,7 +300,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762998318001</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="优化print输出方案">
+      <option name="closed" value="true" />
+      <created>1763001411234</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1763001411234</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

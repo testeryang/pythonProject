@@ -10,6 +10,7 @@ class GetAccountInfo(BaseData):
         address=getaddressinfo.test_GetLatestTransactions()['data']['data'][0]['payer']
 
         url=self.base_url+"/demo/account/info?address="+address
+        print(url)
         response=requests.get(url,headers=self.headers)
-
+        print(response.json())
         self.assertIsNotNone(response.json()['data'])

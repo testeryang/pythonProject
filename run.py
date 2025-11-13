@@ -12,6 +12,7 @@ from tests.BlockExprole.GetLatestBlockHeight import GetLatestBlockHeight
 from tests.BlockExprole.GetLatestBlocks import get_LatestBlocks
 from tests.BlockExprole.GetLatestTransactions import GetLatestTransactions
 from tests.BlockExprole.GetTransactionbyHash import GetTransactionbyHash
+from tests.BlockExprole.Getvalidators import Getvalidators
 
 
 def nowtime():
@@ -28,6 +29,7 @@ suite.addTest(GetAccountTransactions('test_GetAccountTransactions'))
 suite.addTest(get_BlockbyHeight('test_getblockbyheight'))
 suite.addTest(GetLatestTransactions('test_GetLatestTransactions'))
 suite.addTest(GetTransactionbyHash('test_GetTransactionbyHash'))
+suite.addTest(Getvalidators("test_Getvalidators"))
 
 one_runner = TestRunner(suite,
                         filename=nowtime()+"测试报告.html",
