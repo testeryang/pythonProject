@@ -11,7 +11,6 @@ class GetAccountInfo(BaseData):
 
         url=self.base_url+"/demo/account/info?address="+address
         print("请求地址为" + url)
-        print(url)
         response=requests.get(url,headers=self.headers)
         print(response.json())
         self.assertIsNotNone(response.json()['data'])

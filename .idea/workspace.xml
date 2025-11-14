@@ -5,23 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a7c7862-dce4-48dd-a517-45be7492e89b" name="更改" comment="更新区块链校验人接口">
-      <change afterPath="$PROJECT_DIR$/reports/2025-11-13_19.25测试报告.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reports/2025-11-13_19.40测试报告.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reports/2025-11-13_19.53测试报告.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/test_framework_20251113.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/test_framework_20251113.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reports/history.json" beforeDir="false" afterPath="$PROJECT_DIR$/reports/history.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/logger.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/BlockExprole/GetAccountBalances.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/GetAccountBalances.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/BlockExprole/GetAccountInfo.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/GetAccountInfo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/BlockExprole/GetAccountTransactions.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/GetAccountTransactions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/BlockExprole/GetBlockbyHeight.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/GetBlockbyHeight.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/BlockExprole/GetLatestBlockHeight.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/GetLatestBlockHeight.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/BlockExprole/GetLatestBlocks.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/GetLatestBlocks.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/BlockExprole/GetLatestTransactions.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/GetLatestTransactions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/BlockExprole/GetTransactionbyHash.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/GetTransactionbyHash.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/BlockExprole/Getvalidators.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/Getvalidators.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/BlockExprole/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +99,7 @@
       <recent name="C:\Users\Administrator\PycharmProjects\PythonProject\tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Python 测试.tests.BlockExprole.GetAccountBalances.GetAccountBalances.test_GetAccountBalances 的 Python 测试">
+  <component name="RunManager" selected="Python 测试.tests.BlockExprole.GetBlockbyHeight.get_BlockbyHeight.test_getblockbyheight 的 Python 测试">
     <configuration name="logger" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PythonProject" />
       <option name="ENV_FILES" value="" />
@@ -201,11 +191,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python 测试.tests.BlockExprole.GetAccountBalances.GetAccountBalances.test_GetAccountBalances 的 Python 测试" />
-        <item itemvalue="Python.run" />
-        <item itemvalue="Python.logger" />
         <item itemvalue="Python 测试.tests.BlockExprole.GetBlockbyHeight.get_BlockbyHeight.test_getblockbyheight 的 Python 测试" />
+        <item itemvalue="Python.run" />
         <item itemvalue="Python 测试.tests.BlockExprole.GetLatestTransactions.GetLatestTransactions.test_GetLatestTransactions 的 Python 测试" />
+        <item itemvalue="Python 测试.tests.BlockExprole.GetAccountBalances.GetAccountBalances.test_GetAccountBalances 的 Python 测试" />
+        <item itemvalue="Python.logger" />
       </list>
     </recent_temporary>
   </component>
@@ -344,7 +334,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763031452463</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="更新区块链校验人接口">
+      <option name="closed" value="true" />
+      <created>1763034897768</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1763034897768</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

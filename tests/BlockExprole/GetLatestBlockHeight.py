@@ -11,3 +11,4 @@ class GetLatestBlockHeight(BaseData):
         response=requests.get(url,headers=self.headers)
         print(response.json()['data']['height'])
         self.assertTrue(int(response.json()['data']['height'])>0)
+        return response.json()['data']['height']
