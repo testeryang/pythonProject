@@ -1,6 +1,5 @@
 
 import requests
-from loguru import logger
 
 from tests.BlockExprole import BaseData
 from tests.BlockExprole.GetLatestBlockHeight import GetLatestBlockHeight

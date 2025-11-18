@@ -1,7 +1,6 @@
 
 import requests
 
-from src.core.logger import logger
 from tests.BlockExprole import BaseData
 from tests.BlockExprole.GetLatestTransactions import GetLatestTransactions
 

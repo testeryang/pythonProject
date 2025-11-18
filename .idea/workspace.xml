@@ -4,14 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a7c7862-dce4-48dd-a517-45be7492e89b" name="更改" comment="更新区块链校验人接口">
+    <list default="true" id="0a7c7862-dce4-48dd-a517-45be7492e89b" name="更改" comment="更新实时获取block高度">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reports/history.json" beforeDir="false" afterPath="$PROJECT_DIR$/reports/history.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/logger.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/BlockExprole/GetAccountBalances.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/GetAccountBalances.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/BlockExprole/GetAccountInfo.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/GetAccountInfo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/BlockExprole/GetAccountTransactions.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/GetAccountTransactions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/BlockExprole/GetBlockbyHeight.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/GetBlockbyHeight.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/BlockExprole/GetLatestBlockHeight.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/GetLatestBlockHeight.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/BlockExprole/GetLatestTransactions.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/GetLatestTransactions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/BlockExprole/GetTransactionbyHash.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/GetTransactionbyHash.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/login.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,50 +58,50 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python 测试.Python 测试 (GetLatestBlockHeight.py 内).executor": "Run",
-    "Python 测试.Python 测试 (login.py 内).executor": "Run",
-    "Python 测试.Python 测试 (runner.py 内).executor": "Run",
-    "Python 测试.runner.test_login 的 Python 测试.executor": "Run",
-    "Python 测试.runner.test_login_success 的 Python 测试.executor": "Run",
-    "Python 测试.tests.BlockExprole.GetAccountBalances.GetAccountBalances.test_GetAccountBalances 的 Python 测试.executor": "Run",
-    "Python 测试.tests.BlockExprole.GetAccountBalances.GetAccountTransactions.test_GetAccountTransactions 的 Python 测试.executor": "Run",
-    "Python 测试.tests.BlockExprole.GetAccountInfo.GetAccountInfo.test_GetAccountInfo 的 Python 测试.executor": "Run",
-    "Python 测试.tests.BlockExprole.GetAccountTransactions.GetAccountTransactions.test_GetAccountTransactions 的 Python 测试.executor": "Run",
-    "Python 测试.tests.BlockExprole.GetBlockbyHeight.get_BlockbyHeight.test_get_BlockbyHeight 的 Python 测试.executor": "Run",
-    "Python 测试.tests.BlockExprole.GetBlockbyHeight.get_BlockbyHeight.test_get_blockbyheight 的 Python 测试.executor": "Run",
-    "Python 测试.tests.BlockExprole.GetBlockbyHeight.get_BlockbyHeight.test_getblockbyheight 的 Python 测试.executor": "Run",
-    "Python 测试.tests.BlockExprole.GetLatestBlockHeight.GetLatestBlockHeight.test_getLatestBlockHeight 的 Python 测试.executor": "Run",
-    "Python 测试.tests.BlockExprole.GetLatestBlocks.TestUserApi.test_get_existing_user 的 Python 测试.executor": "Run",
-    "Python 测试.tests.BlockExprole.GetLatestBlocks.get_LatestBlocks.test_get_LatestBlocks 的 Python 测试.executor": "Run",
-    "Python 测试.tests.BlockExprole.GetLatestTransactions.GetLatestTransactions.test_GetLatestTransactions 的 Python 测试.executor": "Run",
-    "Python 测试.tests.BlockExprole.GetTransactionbyHash.GetTransactionbyHash.test_GetTransactionbyHash 的 Python 测试.executor": "Run",
-    "Python 测试.tests.BlockExprole.Getvalidators.Getvalidators.test_Getvalidators 的 Python 测试.executor": "Run",
-    "Python 测试.tests.login.test_login 的 Python 测试.executor": "Run",
-    "Python.config.executor": "Run",
-    "Python.http_client.executor": "Run",
-    "Python.logger.executor": "Run",
-    "Python.login.executor": "Run",
-    "Python.run.executor": "Run",
-    "Python.runner.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "master",
-    "junie.onboarding.icon.badge.shown": "true",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "to.speed.mode.migration.done": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python 测试.Python 测试 (GetLatestBlockHeight.py 内).executor&quot;: &quot;Run&quot;,
+    &quot;Python 测试.Python 测试 (login.py 内).executor&quot;: &quot;Run&quot;,
+    &quot;Python 测试.Python 测试 (runner.py 内).executor&quot;: &quot;Run&quot;,
+    &quot;Python 测试.runner.test_login 的 Python 测试.executor&quot;: &quot;Run&quot;,
+    &quot;Python 测试.runner.test_login_success 的 Python 测试.executor&quot;: &quot;Run&quot;,
+    &quot;Python 测试.tests.BlockExprole.GetAccountBalances.GetAccountBalances.test_GetAccountBalances 的 Python 测试.executor&quot;: &quot;Run&quot;,
+    &quot;Python 测试.tests.BlockExprole.GetAccountBalances.GetAccountTransactions.test_GetAccountTransactions 的 Python 测试.executor&quot;: &quot;Run&quot;,
+    &quot;Python 测试.tests.BlockExprole.GetAccountInfo.GetAccountInfo.test_GetAccountInfo 的 Python 测试.executor&quot;: &quot;Run&quot;,
+    &quot;Python 测试.tests.BlockExprole.GetAccountTransactions.GetAccountTransactions.test_GetAccountTransactions 的 Python 测试.executor&quot;: &quot;Run&quot;,
+    &quot;Python 测试.tests.BlockExprole.GetBlockbyHeight.get_BlockbyHeight.test_get_BlockbyHeight 的 Python 测试.executor&quot;: &quot;Run&quot;,
+    &quot;Python 测试.tests.BlockExprole.GetBlockbyHeight.get_BlockbyHeight.test_get_blockbyheight 的 Python 测试.executor&quot;: &quot;Run&quot;,
+    &quot;Python 测试.tests.BlockExprole.GetBlockbyHeight.get_BlockbyHeight.test_getblockbyheight 的 Python 测试.executor&quot;: &quot;Run&quot;,
+    &quot;Python 测试.tests.BlockExprole.GetLatestBlockHeight.GetLatestBlockHeight.test_getLatestBlockHeight 的 Python 测试.executor&quot;: &quot;Run&quot;,
+    &quot;Python 测试.tests.BlockExprole.GetLatestBlocks.TestUserApi.test_get_existing_user 的 Python 测试.executor&quot;: &quot;Run&quot;,
+    &quot;Python 测试.tests.BlockExprole.GetLatestBlocks.get_LatestBlocks.test_get_LatestBlocks 的 Python 测试.executor&quot;: &quot;Run&quot;,
+    &quot;Python 测试.tests.BlockExprole.GetLatestTransactions.GetLatestTransactions.test_GetLatestTransactions 的 Python 测试.executor&quot;: &quot;Run&quot;,
+    &quot;Python 测试.tests.BlockExprole.GetTransactionbyHash.GetTransactionbyHash.test_GetTransactionbyHash 的 Python 测试.executor&quot;: &quot;Run&quot;,
+    &quot;Python 测试.tests.BlockExprole.Getvalidators.Getvalidators.test_Getvalidators 的 Python 测试.executor&quot;: &quot;Run&quot;,
+    &quot;Python 测试.tests.login.test_login 的 Python 测试.executor&quot;: &quot;Run&quot;,
+    &quot;Python.config.executor&quot;: &quot;Run&quot;,
+    &quot;Python.http_client.executor&quot;: &quot;Run&quot;,
+    &quot;Python.logger.executor&quot;: &quot;Run&quot;,
+    &quot;Python.login.executor&quot;: &quot;Run&quot;,
+    &quot;Python.run.executor&quot;: &quot;Run&quot;,
+    &quot;Python.runner.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Administrator\PycharmProjects\PythonProject\tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Python 测试.tests.BlockExprole.GetBlockbyHeight.get_BlockbyHeight.test_getblockbyheight 的 Python 测试">
+  <component name="RunManager" selected="Python.run">
     <configuration name="logger" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PythonProject" />
       <option name="ENV_FILES" value="" />
@@ -191,8 +193,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python 测试.tests.BlockExprole.GetBlockbyHeight.get_BlockbyHeight.test_getblockbyheight 的 Python 测试" />
         <item itemvalue="Python.run" />
+        <item itemvalue="Python 测试.tests.BlockExprole.GetBlockbyHeight.get_BlockbyHeight.test_getblockbyheight 的 Python 测试" />
         <item itemvalue="Python 测试.tests.BlockExprole.GetLatestTransactions.GetLatestTransactions.test_GetLatestTransactions 的 Python 测试" />
         <item itemvalue="Python 测试.tests.BlockExprole.GetAccountBalances.GetAccountBalances.test_GetAccountBalances 的 Python 测试" />
         <item itemvalue="Python.logger" />
@@ -342,7 +344,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763034897768</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="更新实时获取block高度">
+      <option name="closed" value="true" />
+      <created>1763089712571</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1763089712571</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -375,6 +385,7 @@
     <MESSAGE value="新增account api" />
     <MESSAGE value="优化print输出方案" />
     <MESSAGE value="更新区块链校验人接口" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新区块链校验人接口" />
+    <MESSAGE value="更新实时获取block高度" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新实时获取block高度" />
   </component>
 </project>

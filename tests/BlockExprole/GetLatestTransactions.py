@@ -1,6 +1,5 @@
 import requests
 
-from src.core.logger import logger
 from tests.BlockExprole import BaseData
 
 
