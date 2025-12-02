@@ -13,7 +13,7 @@ from tests.BlockExprole.GetLatestBlocks import get_LatestBlocks
 from tests.BlockExprole.GetLatestTransactions import GetLatestTransactions
 from tests.BlockExprole.GetTransactionbyHash import GetTransactionbyHash
 from tests.BlockExprole.Getvalidators import Getvalidators
-
+from tests.BlockExprole.test_play import *
 
 def nowtime():
     current_time = datetime.now()
@@ -30,6 +30,8 @@ suite.addTest(get_BlockbyHeight('test_getblockbyheight'))
 suite.addTest(GetLatestTransactions('test_GetLatestTransactions'))
 suite.addTest(GetTransactionbyHash('test_GetTransactionbyHash'))
 suite.addTest(Getvalidators("test_Getvalidators"))
+suite.addTest(Test_QuKuaiLian("test_blocks"))
+suite.addTest(Test_QuKuaiLian("test_health"))
 
 one_runner = TestRunner(suite,
                         filename=nowtime()+"测试报告.html",

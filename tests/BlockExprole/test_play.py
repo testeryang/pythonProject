@@ -1,9 +1,11 @@
 from contextlib import nullcontext
 
 import requests
+
+from tests.BlockExprole import BaseData
 from tests.BlockExprole.test_api import *
 
-class Test_QuKuaiLian():
+class Test_QuKuaiLian(BaseData):
     '''获取区块交易列表'''
     def test_blocks(self):
         a = {'page':1,'page_size':1}
