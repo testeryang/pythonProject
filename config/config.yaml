@@ -7,7 +7,7 @@ report_title: "API自动化测试报告"
 # 环境选择（dev/test/prod）
 active_env: dev
 
-url: "http://165.154.1.151:8000/"
+url: "https://prv.explorer.biya.io"
 #pre_base_url: "http://test-api.example.com"
 username: "test123"
 password: "123456"

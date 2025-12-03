@@ -4,11 +4,11 @@ import requests  # 需安装：pip install requests
 from tests.BlockExprole import BaseData
 
 # 用户接口测试类
-class get_LatestBlocks(BaseData):
+class GetLatestBlocks(BaseData):
     # 测试用例1：获取存在的用户信息（正常场景）
     def test_getLatestBlocks(self):
         """获取最新的区块信息"""
-        url = self.base_url+"demo/block/latest?page=1&page_size=1"
+        url = self.base_url+"/demo/block/latest?page=1&page_size=1"
         print("请求地址为" + url)
         # 发送 GET 请求
         response = requests.get(url, headers=self.headers)
