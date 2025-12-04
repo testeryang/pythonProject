@@ -22,6 +22,6 @@ class GetBlockbyHeight(BaseData):
         print(result)
 
         # 断言验证
-        self.assertEqual(response.status_code, 201, "状态码应为 200")  # 验证 HTTP 状态码
-        self.assertEqual(response.status_code, 201, "状态码应为 200")  # 验证 HTTP 状态码
+
+        self.assertEqual(response.status_code, 200, "状态码应为 200")  # 验证 HTTP 状态码
         self.assertEqual(result['message'],'success' )

@@ -1,4 +1,4 @@
-
+import json
 import unittest
 from datetime import datetime
 
@@ -19,6 +19,40 @@ def nowtime():
     current_time = datetime.now()
     formatted_time = current_time.strftime("%Y-%m-%d_%H.%M")
     return formatted_time
+
+
+def send_lark_text_webhook(webhook_url, content):
+    """
+    发送飞书文本类型Webhook消息
+    :param webhook_url: 飞书机器人Webhook地址
+    :param content: 消息内容（支持换行、@所有人等）
+    """
+    # 构造消息体（飞书文本消息格式）
+    payload = {
+        "msg_type": "text",  # 消息类型：文本
+        "content": {
+            "text": content  # 文本内容
+        }
+    }
+
+payload = {
+    "msg_type": "text",  # 消息类型：文本
+    "content": {
+        "text": "有区块浏览器接口报错了"  # 文本内容
+    }
+}
+def sendlark():
+    # 发送POST请求
+    response = requests.post(
+        url="https://open.larksuite.com/open-apis/bot/v2/hook/757b2b75-a512-48c5-a788-0bbac2c4fbbc",
+        headers={"Content-Type": "application/json"},  # 必须指定JSON格式
+        data=json.dumps(payload),  # 序列化JSON
+        timeout=10  # 超时时间，避免脚本卡死
+    )
+
+    # 校验响应结果
+    response.raise_for_status()  # 状态码非2xx时抛异常
+    result = response.json()
 
 suite = unittest.TestSuite()
 suite.addTest(GetLatestBlocks('test_getLatestBlocks'))
@@ -41,4 +75,7 @@ one_runner = TestRunner(suite,
                         desc="这里是接口自动化运行后获得的测试报告结果",
                         templates=1
                         )
-one_runner.run()
+test=one_runner.run()
+
+if test['fail']>0 or test['error']>0:
+    sendlark()
