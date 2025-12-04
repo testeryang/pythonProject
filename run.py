@@ -12,7 +12,7 @@ from tests.BlockExprole.GetLatestBlockHeight import GetLatestBlockHeight
 from tests.BlockExprole.GetLatestBlocks import GetLatestBlocks
 from tests.BlockExprole.GetLatestTransactions import GetLatestTransactions
 from tests.BlockExprole.GetTransactionbyHash import GetTransactionbyHash
-from tests.BlockExprole.Getvalidators import Getvalidators
+
 from tests.BlockExprole.test_play import *
 
 def nowtime():
