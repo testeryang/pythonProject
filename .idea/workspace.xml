@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0a7c7862-dce4-48dd-a517-45be7492e89b" name="更改" comment="更新 payer 字段为signer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/BlockExprole/GetBlockbyHeight.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/GetBlockbyHeight.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +100,7 @@
       <recent name="C:\Users\Administrator\PycharmProjects\PythonProject\tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Python 测试.tests.BlockExprole.GetBlockbyHeight.GetBlockbyHeight.test_getblockbyheight 的 Python 测试">
+  <component name="RunManager">
     <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PythonProject" />
       <option name="ENV_FILES" value="" />
@@ -284,7 +285,7 @@
       <option name="presentableId" value="Default" />
       <updated>1762414405846</updated>
       <workItem from="1764740023675" duration="2650000" />
-      <workItem from="1764744445469" duration="4689000" />
+      <workItem from="1764744445469" duration="6223000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <option name="closed" value="true" />
@@ -454,7 +455,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764835523093</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="更新 payer 字段为signer">
+      <option name="closed" value="true" />
+      <created>1764837731331</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1764837731331</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -496,7 +505,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="更新 payer 字段为signer" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/AutoApi$.coverage" NAME=" 覆盖结果" MODIFIED="1764837618238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AutoApi$.coverage" NAME=" 覆盖结果" MODIFIED="1764846615872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AutoApi$run.coverage" NAME="run 覆盖结果" MODIFIED="1764834703997" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

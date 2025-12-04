@@ -14,7 +14,7 @@ class GetBlockbyHeight(BaseData):
         getblockheight=GetLatestBlockHeight()
         heightdata=getblockheight.test_getLatestBlockHeight()
 
-        url = self.base_url + "/demo/block/by-height?height="+str(heightdata)
+        url = self.base_url + "/demo/block/by-height?height="+str(int(heightdata)-1)
         print("请求地址为" + url)
         # 发送 GET 请求
         response = requests.get(url, headers=self.headers)
