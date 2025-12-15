@@ -1,7 +1,7 @@
 import requests
 from config.url import *
 from grpc_client.explorer_client import ExplorerGRPCClient
-from 简单示例 import result
+
 
 
 def get_blocks_latest(a):
