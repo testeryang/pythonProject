@@ -30,8 +30,11 @@ suite.addTest(get_BlockbyHeight('test_getblockbyheight'))
 suite.addTest(GetLatestTransactions('test_GetLatestTransactions'))
 suite.addTest(GetTransactionbyHash('test_GetTransactionbyHash'))
 suite.addTest(Getvalidators("test_Getvalidators"))
-suite.addTest(Test_QuKuaiLian("test_blocks"))
+suite.addTest(Test_QuKuaiLian("test_blocks_latest"))
 suite.addTest(Test_QuKuaiLian("test_health"))
+suite.addTest(Test_QuKuaiLian("test_tui_blocks"))
+suite.addTest(Test_QuKuaiLian("test_Latest_Transactions"))
+suite.addTest(Test_QuKuaiLian("test_Account_Updates"))
 
 one_runner = TestRunner(suite,
                         filename=nowtime()+"测试报告.html",

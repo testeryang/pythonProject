@@ -1,0 +1,90 @@
+# Python相关
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# 虚拟环境
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+
+# IDE相关
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# 测试相关
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.hypothesis/
+
+# 日志文件
+*.log
+logs/*.log
+src/core/logs/*.log
+tests/logs/*.log
+
+# 测试报告（Jenkins会重新生成）
+reports/*.html
+reports/*.xml
+reports/history.json
+
+# 临时文件
+*.tmp
+*.bak
+*.swp
+.temp/
+temp/
+
+# 环境配置（敏感信息，不要上传）
+# 如果config.yaml包含敏感信息，考虑使用config.yaml.example
+# config/config.yaml
+
+# 编译的protobuf文件（如果从proto重新生成，可以忽略）
+# grpc_client/generated/**/*_pb2.py
+# grpc_client/generated/**/*_pb2_grpc.py
+
+# 文档（可选，根据需要决定是否上传）
+【完成】gRPC配置成功.md
+✅任务完成报告.md
+gRPC-Web配置完成报告.md
+修改总结报告.md
+操作总结.txt
+项目状态.txt
+给你的总结.txt
+所有文件清单.txt
+按你的习惯写的文件清单.txt
+
+# Windows相关
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
