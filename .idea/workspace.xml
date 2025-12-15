@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a7c7862-dce4-48dd-a517-45be7492e89b" name="更改" comment="更新实时获取block高度">
+    <list default="true" id="0a7c7862-dce4-48dd-a517-45be7492e89b" name="更改" comment="更新 payer 字段为signer">
+      <change afterPath="$PROJECT_DIR$/src/core/util/lark.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/history.json" beforeDir="false" afterPath="$PROJECT_DIR$/reports/history.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/BlockExprole/test_play.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/test_play.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,12 +31,12 @@
     &quot;assignee&quot;: &quot;testeryang&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/testeryang/pythonProject.git",
-    "accountId": "759951fe-90ab-4984-80e3-cd80f06a1355"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/testeryang/pythonProject.git&quot;,
+    &quot;accountId&quot;: &quot;83f5ba88-53cc-46cd-abb3-f57d944b6f00&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$USER_HOME$/AppData/Local/Programs/Python/Python313/Lib/unittest/suite.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/.venv/Lib/site-packages/yaml/__init__.py" root0="SKIP_INSPECTION" />
@@ -54,6 +56,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python 测试.Python 测试 (GetBlockbyHeight.py 内).executor": "Run",
     "Python 测试.Python 测试 (GetLatestBlockHeight.py 内).executor": "Run",
     "Python 测试.Python 测试 (login.py 内).executor": "Run",
     "Python 测试.Python 测试 (runner.py 内).executor": "Run",
@@ -63,6 +66,7 @@
     "Python 测试.tests.BlockExprole.GetAccountBalances.GetAccountTransactions.test_GetAccountTransactions 的 Python 测试.executor": "Run",
     "Python 测试.tests.BlockExprole.GetAccountInfo.GetAccountInfo.test_GetAccountInfo 的 Python 测试.executor": "Run",
     "Python 测试.tests.BlockExprole.GetAccountTransactions.GetAccountTransactions.test_GetAccountTransactions 的 Python 测试.executor": "Run",
+    "Python 测试.tests.BlockExprole.GetBlockbyHeight.GetBlockbyHeight.test_getblockbyheight 的 Python 测试.executor": "Run",
     "Python 测试.tests.BlockExprole.GetBlockbyHeight.get_BlockbyHeight.test_get_BlockbyHeight 的 Python 测试.executor": "Run",
     "Python 测试.tests.BlockExprole.GetBlockbyHeight.get_BlockbyHeight.test_get_blockbyheight 的 Python 测试.executor": "Run",
     "Python 测试.tests.BlockExprole.GetBlockbyHeight.get_BlockbyHeight.test_getblockbyheight 的 Python 测试.executor": "Run",
@@ -85,22 +89,21 @@
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "master",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "D:/pythonProject11/config",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "to.speed.mode.migration.done": "true"
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\pythonProject11\config" />
-      <recent name="D:\pythonProject11\tests\BlockExprole" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Administrator\PycharmProjects\PythonProject\tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.run">
-    <configuration name="logger" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager">
+    <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PythonProject" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -109,11 +112,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/core" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/core/logger.py" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -135,6 +139,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -154,8 +159,25 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;tests.BlockExprole.GetAccountBalances.GetAccountBalances.test_GetAccountBalances&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tests.BlockExprole.GetBlockbyHeight.GetBlockbyHeight.test_getblockbyheight 的 Python 测试" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="PythonProject" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.BlockExprole.GetBlockbyHeight.GetBlockbyHeight.test_getblockbyheight&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -169,6 +191,23 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.BlockExprole.GetBlockbyHeight.get_BlockbyHeight.test_getblockbyheight&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tests.BlockExprole.GetBlockbyHeight.get_BlockbyHeight.test_getblockbyheight 的 Python 测试" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="PythonProject" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;tests.BlockExprole.GetBlockbyHeight.get_BlockbyHeight.test_getblockbyheight&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
@@ -184,29 +223,62 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;tests.BlockExprole.GetLatestTransactions.GetLatestTransactions.test_GetLatestTransactions&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="tests.BlockExprole.GetLatestTransactions.GetLatestTransactions.test_GetLatestTransactions 的 Python 测试" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="PythonProject" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.BlockExprole.GetLatestTransactions.GetLatestTransactions.test_GetLatestTransactions&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tests.BlockExprole.Getvalidators.Getvalidators.test_Getvalidators 的 Python 测试" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="PythonProject" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.BlockExprole.Getvalidators.Getvalidators.test_Getvalidators&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python 测试.tests.BlockExprole.GetBlockbyHeight.GetBlockbyHeight.test_getblockbyheight 的 Python 测试" />
+        <item itemvalue="Python 测试.tests.BlockExprole.Getvalidators.Getvalidators.test_Getvalidators 的 Python 测试" />
         <item itemvalue="Python.run" />
         <item itemvalue="Python 测试.tests.BlockExprole.GetBlockbyHeight.get_BlockbyHeight.test_getblockbyheight 的 Python 测试" />
         <item itemvalue="Python 测试.tests.BlockExprole.GetLatestTransactions.GetLatestTransactions.test_GetLatestTransactions 的 Python 测试" />
-        <item itemvalue="Python 测试.tests.BlockExprole.GetAccountBalances.GetAccountBalances.test_GetAccountBalances 的 Python 测试" />
-        <item itemvalue="Python.logger" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-495700d161d3-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.22562.220" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-PY-252.27397.106" />
+        <option value="bundled-python-sdk-4e2b1448bda8-9a97661f3031-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.27397.106" />
       </set>
     </attachedChunks>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
       <changelist id="0a7c7862-dce4-48dd-a517-45be7492e89b" name="更改" comment="" />
@@ -214,6 +286,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1762414405846</updated>
+      <workItem from="1764740023675" duration="2650000" />
+      <workItem from="1764744445469" duration="8173000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <option name="closed" value="true" />
@@ -351,16 +425,75 @@
       <option name="project" value="LOCAL" />
       <updated>1763089712571</updated>
     </task>
-    <task id="LOCAL-00018" summary="更新实时获取block高度">
+    <task id="LOCAL-00018" summary="更新驼峰命名">
       <option name="closed" value="true" />
-      <created>1764658156084</created>
+      <created>1764740595449</created>
       <option name="number" value="00018" />
       <option name="presentableId" value="LOCAL-00018" />
       <option name="project" value="LOCAL" />
-      <updated>1764658156084</updated>
+      <updated>1764740595449</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="更新驼峰命名">
+      <option name="closed" value="true" />
+      <created>1764742530096</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1764742530096</updated>
+    </task>
+    <task id="LOCAL-00020" summary="更新驼峰命名">
+      <option name="closed" value="true" />
+      <created>1764742590332</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1764742590332</updated>
+    </task>
+    <task id="LOCAL-00021" summary="更新 payer 字段为signer">
+      <option name="closed" value="true" />
+      <created>1764835523093</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1764835523093</updated>
+    </task>
+    <task id="LOCAL-00022" summary="更新 payer 字段为signer">
+      <option name="closed" value="true" />
+      <created>1764837731331</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1764837731331</updated>
+    </task>
+    <task id="LOCAL-00023" summary="更新 payer 字段为signer">
+      <option name="closed" value="true" />
+      <created>1764846646907</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1764846646907</updated>
+    </task>
+    <task id="LOCAL-00024" summary="更新 payer 字段为signer">
+      <option name="closed" value="true" />
+      <created>1764847421070</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1764847421070</updated>
+    </task>
+    <task id="LOCAL-00025" summary="更新 payer 字段为signer">
+      <option name="closed" value="true" />
+      <created>1764848464090</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1764848464090</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -393,6 +526,12 @@
     <MESSAGE value="优化print输出方案" />
     <MESSAGE value="更新区块链校验人接口" />
     <MESSAGE value="更新实时获取block高度" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新实时获取block高度" />
+    <MESSAGE value="更新驼峰命名" />
+    <MESSAGE value="更新 payer 字段为signer" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新 payer 字段为signer" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/AutoApi$.coverage" NAME=" 覆盖结果" MODIFIED="1764846630560" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AutoApi$run.coverage" NAME="run 覆盖结果" MODIFIED="1764848580394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

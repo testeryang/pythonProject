@@ -7,36 +7,8 @@ report_title: "API自动化测试报告"
 # 环境选择（dev/test/prod）
 active_env: dev
 
-# HTTP接口配置
-url: "http://165.154.1.151:8000/"
+url: "https://prv.explorer.biya.io"
 #pre_base_url: "http://test-api.example.com"
 username: "test123"
 password: "123456"
-
-# gRPC接口配置
-grpc:
-  # 协议类型：grpc（标准gRPC）或 grpc-web（浏览器gRPC）
-  protocol: "grpc-web"  # 改为 grpc-web
-  
-  # gRPC服务器地址（可以是IP或域名，不包含http://）
-  # 示例：api.example.com 或 165.154.1.151
-  host: "prv.explorer-grpc.biya.io"
-  
-  # gRPC服务器端口（grpc-web通常用443或8080）
-  port: 443
-  
-  # 是否使用TLS加密（域名访问通常需要设为true）
-  use_tls: true
-  
-  # 如果use_tls=true，可以指定证书路径（可选）
-  # cert_path: "path/to/cert.pem"
-  
-  # 连接超时时间（秒）
-  timeout: 30
-  
-  # stream流式接口单次接收数据的超时时间（秒）
-  stream_timeout: 60
-  
-  # stream流式接口最大接收消息数（0表示无限制，用于测试时限制数量）
-  max_stream_messages: 10
 

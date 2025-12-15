@@ -7,7 +7,7 @@ class GetAccountInfo(BaseData):
     def test_GetAccountInfo(self):
         """获取用户详细信息"""
         getaddressinfo = GetLatestTransactions()
-        address=getaddressinfo.test_GetLatestTransactions()['data']['data'][0]['payer']
+        address=getaddressinfo.test_GetLatestTransactions()['data']['data'][0]['signer']
 
         url=self.base_url+"/demo/account/info?address="+address
         print("请求地址为" + url)
