@@ -31,7 +31,7 @@ suite.addTest(GetBlockbyHeight('test_getblockbyheight'))
 suite.addTest(GetLatestTransactions('test_GetLatestTransactions'))
 suite.addTest(GetTransactionbyHash('test_GetTransactionbyHash'))
 # suite.addTest(Getvalidators("test_Getvalidators"))
-suite.addTest(Test_QuKuaiLian("test_blocks"))
+suite.addTest(Test_QuKuaiLian("test_tui_blocks"))
 suite.addTest(Test_QuKuaiLian("test_health"))
 
 one_runner = TestRunner(suite,

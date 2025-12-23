@@ -29,6 +29,7 @@ def get_tui_blocks(max_messages):
         result = []
         for r in result1:
             result.append(r)
+        print(result)
     return result
 
 def get_Latest_Transactions(max_messages):

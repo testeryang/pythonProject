@@ -12,7 +12,6 @@ url: "http://165.154.1.151:8000/"
 #pre_base_url: "http://test-api.example.com"
 username: "test123"
 password: "123456"
-
 # gRPC接口配置
 grpc:
   # 协议类型：grpc（标准gRPC）或 grpc-web（浏览器gRPC）

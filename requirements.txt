@@ -13,11 +13,8 @@ protobuf>=4.21.0
 requests>=2.31.0
 
 # 测试框架
-pytest>=7.4.0
-pytest-html>=3.2.0
 
 # Excel操作（用于测试用例管理）
 openpyxl>=3.1.0
 
 # 其他可能需要的
-python-dotenv>=1.0.0
