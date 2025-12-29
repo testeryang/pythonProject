@@ -4,15 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a7c7862-dce4-48dd-a517-45be7492e89b" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/BlockExprole/试手.py" afterDir="false" />
+    <list default="true" id="0a7c7862-dce4-48dd-a517-45be7492e89b" name="更改" comment="更新流式1">
+      <change afterPath="$PROJECT_DIR$/hangqing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/playwright_usage_example.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/reports/history.json" beforeDir="false" afterPath="$PROJECT_DIR$/reports/history.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/BlockExprole/test_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/test_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/BlockExprole/test_play.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BlockExprole/test_play.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/playwright_service.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/BlockExprole/test_demo_pb.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,70 +56,72 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python 测试.Python 测试 (GetBlockbyHeight.py 内).executor&quot;: &quot;Run&quot;,
-    &quot;Python 测试.Python 测试 (GetLatestBlockHeight.py 内).executor&quot;: &quot;Run&quot;,
-    &quot;Python 测试.Python 测试 (login.py 内).executor&quot;: &quot;Run&quot;,
-    &quot;Python 测试.Python 测试 (runner.py 内).executor&quot;: &quot;Run&quot;,
-    &quot;Python 测试.Python 测试 (test_play.py 内).executor&quot;: &quot;Run&quot;,
-    &quot;Python 测试.runner.test_login 的 Python 测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python 测试.runner.test_login_success 的 Python 测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python 测试.tests.BlockExprole.GetAccountBalances.GetAccountBalances.test_GetAccountBalances 的 Python 测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python 测试.tests.BlockExprole.GetAccountBalances.GetAccountTransactions.test_GetAccountTransactions 的 Python 测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python 测试.tests.BlockExprole.GetAccountInfo.GetAccountInfo.test_GetAccountInfo 的 Python 测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python 测试.tests.BlockExprole.GetAccountTransactions.GetAccountTransactions.test_GetAccountTransactions 的 Python 测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python 测试.tests.BlockExprole.GetBlockbyHeight.GetBlockbyHeight.test_getblockbyheight 的 Python 测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python 测试.tests.BlockExprole.GetBlockbyHeight.get_BlockbyHeight.test_get_BlockbyHeight 的 Python 测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python 测试.tests.BlockExprole.GetBlockbyHeight.get_BlockbyHeight.test_get_blockbyheight 的 Python 测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python 测试.tests.BlockExprole.GetBlockbyHeight.get_BlockbyHeight.test_getblockbyheight 的 Python 测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python 测试.tests.BlockExprole.GetLatestBlockHeight.GetLatestBlockHeight.test_getLatestBlockHeight 的 Python 测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python 测试.tests.BlockExprole.GetLatestBlocks.TestUserApi.test_get_existing_user 的 Python 测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python 测试.tests.BlockExprole.GetLatestBlocks.get_LatestBlocks.test_get_LatestBlocks 的 Python 测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python 测试.tests.BlockExprole.GetLatestTransactions.GetLatestTransactions.test_GetLatestTransactions 的 Python 测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python 测试.tests.BlockExprole.GetTransactionbyHash.GetTransactionbyHash.test_GetTransactionbyHash 的 Python 测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python 测试.tests.BlockExprole.Getvalidators.Getvalidators.test_Getvalidators 的 Python 测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python 测试.tests.BlockExprole.test_play.Test_QuKuaiLian.test_Account_Updates 的 Python 测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python 测试.tests.BlockExprole.test_play.Test_QuKuaiLian.test_Latest_Transactions 的 Python 测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python 测试.tests.BlockExprole.test_play.Test_QuKuaiLian.test_YC_tui_blocks 的 Python 测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python 测试.tests.BlockExprole.test_play.Test_QuKuaiLian.test_tui_blocks 的 Python 测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python 测试.tests.login.test_login 的 Python 测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python.config.executor&quot;: &quot;Run&quot;,
-    &quot;Python.http_client.executor&quot;: &quot;Run&quot;,
-    &quot;Python.logger.executor&quot;: &quot;Run&quot;,
-    &quot;Python.login.executor&quot;: &quot;Run&quot;,
-    &quot;Python.run.executor&quot;: &quot;Run&quot;,
-    &quot;Python.runner.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/yj/PycharmProjects/AutoApi/tests/BlockExprole&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python 测试.Python 测试 (GetBlockbyHeight.py 内).executor": "Run",
+    "Python 测试.Python 测试 (GetLatestBlockHeight.py 内).executor": "Run",
+    "Python 测试.Python 测试 (login.py 内).executor": "Run",
+    "Python 测试.Python 测试 (runner.py 内).executor": "Run",
+    "Python 测试.Python 测试 (test_play.py 内).executor": "Run",
+    "Python 测试.runner.test_login 的 Python 测试.executor": "Run",
+    "Python 测试.runner.test_login_success 的 Python 测试.executor": "Run",
+    "Python 测试.tests.BlockExprole.GetAccountBalances.GetAccountBalances.test_GetAccountBalances 的 Python 测试.executor": "Run",
+    "Python 测试.tests.BlockExprole.GetAccountBalances.GetAccountTransactions.test_GetAccountTransactions 的 Python 测试.executor": "Run",
+    "Python 测试.tests.BlockExprole.GetAccountInfo.GetAccountInfo.test_GetAccountInfo 的 Python 测试.executor": "Run",
+    "Python 测试.tests.BlockExprole.GetAccountTransactions.GetAccountTransactions.test_GetAccountTransactions 的 Python 测试.executor": "Run",
+    "Python 测试.tests.BlockExprole.GetBlockbyHeight.GetBlockbyHeight.test_getblockbyheight 的 Python 测试.executor": "Run",
+    "Python 测试.tests.BlockExprole.GetBlockbyHeight.get_BlockbyHeight.test_get_BlockbyHeight 的 Python 测试.executor": "Run",
+    "Python 测试.tests.BlockExprole.GetBlockbyHeight.get_BlockbyHeight.test_get_blockbyheight 的 Python 测试.executor": "Run",
+    "Python 测试.tests.BlockExprole.GetBlockbyHeight.get_BlockbyHeight.test_getblockbyheight 的 Python 测试.executor": "Run",
+    "Python 测试.tests.BlockExprole.GetLatestBlockHeight.GetLatestBlockHeight.test_getLatestBlockHeight 的 Python 测试.executor": "Run",
+    "Python 测试.tests.BlockExprole.GetLatestBlocks.TestUserApi.test_get_existing_user 的 Python 测试.executor": "Run",
+    "Python 测试.tests.BlockExprole.GetLatestBlocks.get_LatestBlocks.test_get_LatestBlocks 的 Python 测试.executor": "Run",
+    "Python 测试.tests.BlockExprole.GetLatestTransactions.GetLatestTransactions.test_GetLatestTransactions 的 Python 测试.executor": "Run",
+    "Python 测试.tests.BlockExprole.GetTransactionbyHash.GetTransactionbyHash.test_GetTransactionbyHash 的 Python 测试.executor": "Run",
+    "Python 测试.tests.BlockExprole.Getvalidators.Getvalidators.test_Getvalidators 的 Python 测试.executor": "Run",
+    "Python 测试.tests.BlockExprole.test_play.Test_QuKuaiLian.test_Account_Updates 的 Python 测试.executor": "Run",
+    "Python 测试.tests.BlockExprole.test_play.Test_QuKuaiLian.test_Latest_Transactions 的 Python 测试.executor": "Run",
+    "Python 测试.tests.BlockExprole.test_play.Test_QuKuaiLian.test_YC_tui_blocks 的 Python 测试.executor": "Run",
+    "Python 测试.tests.BlockExprole.test_play.Test_QuKuaiLian.test_tui_blocks 的 Python 测试.executor": "Run",
+    "Python 测试.tests.login.test_login 的 Python 测试.executor": "Run",
+    "Python.config.executor": "Run",
+    "Python.http_client.executor": "Run",
+    "Python.logger.executor": "Run",
+    "Python.login.executor": "Run",
+    "Python.playwright_usage_example.executor": "Run",
+    "Python.run.executor": "Run",
+    "Python.runner.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "delete-jenkinsfile",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/Users/yj/PycharmProjects/AutoApi",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.intellij.mcpserver.settings",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/tests/BlockExprole" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/examples" />
       <recent name="$PROJECT_DIR$/tests/StreamGprc" />
       <recent name="$PROJECT_DIR$/tests/StreamGprc/explorer/v1" />
       <recent name="$PROJECT_DIR$/tests/StreamGprc/google/api" />
       <recent name="$PROJECT_DIR$/tests/StreamGprc/google" />
-      <recent name="C:\Users\Administrator\PycharmProjects\PythonProject\tests" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.run">
     <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PythonProject" />
       <option name="ENV_FILES" value="" />
@@ -244,7 +245,6 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-PY-252.28238.29" />
         <option value="bundled-python-sdk-a101402ee41c-968fe969f28a-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.28238.29" />
       </set>
     </attachedChunks>
@@ -261,7 +261,8 @@
       <workItem from="1765361773601" duration="1103000" />
       <workItem from="1765362903147" duration="11832000" />
       <workItem from="1765967183524" duration="6650000" />
-      <workItem from="1766455052018" duration="1431000" />
+      <workItem from="1766455052018" duration="3154000" />
+      <workItem from="1766486957048" duration="2164000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <option name="closed" value="true" />
@@ -471,7 +472,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764848603959</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="更新流式">
+      <option name="closed" value="true" />
+      <created>1766459637032</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1766459637032</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -501,7 +510,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="1" />
     <MESSAGE value="添加了apache服务器获取测试报告的内容" />
     <MESSAGE value="新增block api,transation api" />
     <MESSAGE value="新增account api" />
@@ -510,10 +518,13 @@
     <MESSAGE value="更新实时获取block高度" />
     <MESSAGE value="更新驼峰命名" />
     <MESSAGE value="更新 payer 字段为signer" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新 payer 字段为signer" />
+    <MESSAGE value="更新流式" />
+    <MESSAGE value="1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AutoApi$.coverage" NAME=" 覆盖结果" MODIFIED="1766459527926" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AutoApi$playwright_usage_example.coverage" NAME="playwright_usage_example 覆盖结果" MODIFIED="1766487084869" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/AutoApi$run.coverage" NAME="run 覆盖结果" MODIFIED="1766459618339" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
