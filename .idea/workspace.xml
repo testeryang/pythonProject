@@ -7,6 +7,7 @@
     <list default="true" id="0a7c7862-dce4-48dd-a517-45be7492e89b" name="更改" comment="新增行情服务接口">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hangqing.py" beforeDir="false" afterPath="$PROJECT_DIR$/hangqing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/history.json" beforeDir="false" afterPath="$PROJECT_DIR$/reports/history.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/util/lark.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/util/lark.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +96,9 @@
     "Python 测试.tests.BlockExprole.test_play.Test_QuKuaiLian.test_tui_blocks 的 Python 测试.executor": "Run",
     "Python 测试.tests.login.test_login 的 Python 测试.executor": "Run",
     "Python.config.executor": "Run",
+    "Python.hangqing.executor": "Run",
     "Python.http_client.executor": "Run",
+    "Python.lark.executor": "Run",
     "Python.logger.executor": "Run",
     "Python.login.executor": "Run",
     "Python.run.executor": "Run",
@@ -567,7 +570,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767085901631</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="新增行情服务接口">
+      <option name="closed" value="true" />
+      <created>1767086284642</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1767086284643</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

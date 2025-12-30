@@ -4,12 +4,16 @@ import requests
 
 
 def sendlark(msg,robotrul,resulturl,uid=None):
+    """msg是项目名
+    roboturl 是群组机器人 url
+    uid 是用户 id
+    """
     # 发送POST请求
     if uid!=None:
         payload = {
             "msg_type": "text",  # 消息类型：文本
             "content": {
-                "text": msg + "接口报错了,测试报告地址为：" + resulturl + "<at user_id=" + uid + ">负责人</at>"
+                "text": msg + "接口报错了,测试报告地址为：" + resulturl+f'<at user_id="{uid}"></at>'
             }
         }
     else:
