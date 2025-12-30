@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0a7c7862-dce4-48dd-a517-45be7492e89b" name="更改" comment="新增行情服务接口">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hangqing.py" beforeDir="false" afterPath="$PROJECT_DIR$/hangqing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/util/lark.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/util/lark.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -558,7 +559,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767085453829</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="新增行情服务接口">
+      <option name="closed" value="true" />
+      <created>1767085901631</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1767085901631</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
