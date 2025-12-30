@@ -3,4 +3,5 @@ from tests.BlockExprole import BaseData
 
 class test(BaseData):
     def test_1(self):
-        print("测试成功")
+        self.assertTrue(False)
+        print("测试失败")
