@@ -23,7 +23,5 @@ one_runner = TestRunner(suite,
                         templates=1
                         )
 test=one_runner.run()
-
 if test['fail']>0 or test['error']>0:
-    print("测试完成")
-    # sendlark()
+    sendlark("行情服务","https://open.larksuite.com/open-apis/bot/v2/hook/2311af1f-9bdf-4505-8fa7-e77bcdc4839e")

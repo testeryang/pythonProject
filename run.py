@@ -45,4 +45,4 @@ one_runner = TestRunner(suite,
 test=one_runner.run()
 
 if test['fail']>0 or test['error']>0:
-    sendlark()
+    sendlark("区块浏览器","https://open.larksuite.com/open-apis/bot/v2/hook/757b2b75-a512-48c5-a788-0bbac2c4fbbc")
