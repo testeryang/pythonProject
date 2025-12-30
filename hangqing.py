@@ -15,7 +15,7 @@ suite = unittest.TestSuite()
 suite.addTest(test("test_1"))
 
 one_runner = TestRunner(suite,
-                        filename=nowtime()+"测试报告.html",
+                        filename="行情服务测试报告.html",
                         report_dir=r"reports",
                         title="测试报告",
                         tester="杨杰",
