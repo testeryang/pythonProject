@@ -9,7 +9,7 @@ class GetAccountInfo(BaseData):
         getaddressinfo = GetLatestTransactions()
         address=getaddressinfo.test_GetLatestTransactions()['data']['data'][0]['signer']
 
-        url=self.base_url+"/demo/account/info?address="+address
+        url=self.base_url+"/api/v1/account/info?address="+address
         print("请求地址为" + url)
         response=requests.get(url,headers=self.headers)
         print(response.json())

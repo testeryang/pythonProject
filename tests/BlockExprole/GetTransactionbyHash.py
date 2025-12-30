@@ -10,7 +10,7 @@ class GetTransactionbyHash(BaseData):
         gethash = GetLatestTransactions()
         hash_data=gethash.test_GetLatestTransactions()
         print(hash_data['data']['data'][0]['hash'])
-        url=self.base_url+"/demo/transaction/by-hash?hash="+hash_data['data']['data'][0]['hash']
+        url=self.base_url+"/api/v1/transaction/by-hash?hash="+hash_data['data']['data'][0]['hash']
         print("请求地址为" + url)
         response=requests.get(url,headers=self.headers)
         print(response.json())
