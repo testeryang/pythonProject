@@ -3,12 +3,12 @@ import json
 import requests
 
 
-def sendlark(msg,robotrul,resulturl):
+def sendlark(msg,robotrul,resulturl,Uid):
     # 发送POST请求
     payload = {
         "msg_type": "text",  # 消息类型：文本
         "content": {
-            "text": msg+"接口报错了,测试报告地址为："+resulturl  # 文本内容
+            "text": msg+"接口报错了,测试报告地址为："+resulturl+"<at user_id='ou_503afccc8a9a7b0c51c02db96ec37099'>Tom</at>"
         }
     }
     response = requests.post(
