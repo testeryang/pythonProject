@@ -23,5 +23,5 @@ one_runner = TestRunner(suite,
                         templates=1
                         )
 test=one_runner.run()
-if test['fail']>0 or test['error']>0:
-    sendlark("行情服务","https://open.larksuite.com/open-apis/bot/v2/hook/2311af1f-9bdf-4505-8fa7-e77bcdc4839e","http://165.154.5.210:8081/%E8%A1%8C%E6%83%85%E6%9C%8D%E5%8A%A1%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A.html",'ou_d1811f4f743a173d1d94ea34a98322e2')
+# if test['fail']>0 or test['error']>0:
+#     sendlark("行情服务","https://open.larksuite.com/open-apis/bot/v2/hook/2311af1f-9bdf-4505-8fa7-e77bcdc4839e","http://165.154.5.210:8081/%E8%A1%8C%E6%83%85%E6%9C%8D%E5%8A%A1%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A.html",'ou_503afccc8a9a7b0c51c02db96ec37099')
